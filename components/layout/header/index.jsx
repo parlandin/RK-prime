@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import Styles from "./header.style";
+import Styles, {DropDownHover} from "./header.style";
 
 import LogoPicture from "../../../public/images/logo.svg";
 
@@ -35,9 +35,30 @@ const Header = () => {
                     </Styles.MenuItem>
 
                     <Styles.MenuItem>
-                        <Link href={"/acessorios"} passHref>
-                            <Styles.MenuLink>Geek</Styles.MenuLink>
-                        </Link>
+                        <DropDownHover>
+                            <Styles.DropDownText>Geek</Styles.DropDownText>
+                                <Styles.MenuDropDown>
+
+                                    <Styles.DropDownItem>
+                                        <Link href={"/acessorios"} passHref>
+                                            <Styles.MenuLink>Cospalyer</Styles.MenuLink>
+                                        </Link>
+                                    </Styles.DropDownItem>
+
+                                    <Styles.DropDownItem>
+                                        <Link href={"/acessorios"} passHref>
+                                            <Styles.MenuLink>acessorios</Styles.MenuLink>
+                                        </Link>
+                                    </Styles.DropDownItem>
+
+                                    <Styles.DropDownItem>
+                                        <Link href={"/acessorios"} passHref>
+                                            <Styles.MenuLink>alguma c</Styles.MenuLink>
+                                        </Link>
+                                    </Styles.DropDownItem>
+
+                                </Styles.MenuDropDown>
+                            </DropDownHover>
                     </Styles.MenuItem>
 
                     <Styles.MenuItem>
