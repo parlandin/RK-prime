@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import React, {useState} from "react"
+import React, {useEffect, useState} from "react"
 
 import Styles, {DropDownHover} from "./header.style";
 
@@ -9,16 +9,22 @@ import ShppingCartIMG from "../../../public/images/shopping-cart.svg";
 
 
 const Header = () => {
-
     const [activeButtonM, setAcitveButtonM] = useState(false)
+
+    
+    useEffect(()=> {
+        window.addEventListener('resize', () => {
+            setAcitveButtonM(false)
+        })
+
+    },[])
 
     function toggleStatebutton(){
         return setAcitveButtonM(!activeButtonM)
     }
 
-
     return (
-        <Styles.Wrapper active={activeButtonM}>
+        <Styles.WrapperHeader active={activeButtonM}>
             <Styles.WrapperFistColum>
                 <Styles.TempDiv></Styles.TempDiv>
 
@@ -32,24 +38,22 @@ const Header = () => {
                 </Styles.ShoppingCart>
             </Styles.WrapperFistColum>
 
-
-
             <Styles.Menu className={activeButtonM ? "active" : ""}>
-                <Styles.MenuList>
+                <Styles.MenuList >
 
-                    <Styles.MenuItem>
+                    <Styles.MenuItem onClick={activeButtonM ? toggleStatebutton : () => {}}>  
                         <Link href={"/"} passHref>
                             <Styles.MenuLink>Inicio</Styles.MenuLink>
                         </Link>
                     </Styles.MenuItem>
 
-                    <Styles.MenuItem>
+                    <Styles.MenuItem onClick={activeButtonM ? toggleStatebutton : () => {}}>
                         <Link href={"/acessorios"} passHref>
-                            <Styles.MenuLink>Acessorios</Styles.MenuLink>
+                            <Styles.MenuLink>Acessórios</Styles.MenuLink>
                         </Link>
                     </Styles.MenuItem>
 
-                    <Styles.MenuItem>
+                    <Styles.MenuItem onClick={activeButtonM ? toggleStatebutton : () => {}}>
                         <Link href={"/acessorios"} passHref>
                             <Styles.MenuLink>Roupas</Styles.MenuLink>
                         </Link>
@@ -60,21 +64,21 @@ const Header = () => {
                             <Styles.DropDownText>Geek</Styles.DropDownText>
                                 <Styles.MenuDropDown>
 
-                                    <Styles.DropDownItem>
+                                    <Styles.DropDownItem onClick={activeButtonM ? toggleStatebutton : () => {}}>
                                         <Link href={"/acessorios"} passHref>
                                             <Styles.MenuLink>Cospalyer</Styles.MenuLink>
                                         </Link>
                                     </Styles.DropDownItem>
 
-                                    <Styles.DropDownItem>
+                                    <Styles.DropDownItem onClick={activeButtonM ? toggleStatebutton : () => {}}>
                                         <Link href={"/acessorios"} passHref>
-                                            <Styles.MenuLink>acessorios</Styles.MenuLink>
+                                            <Styles.MenuLink>Acessórios</Styles.MenuLink>
                                         </Link>
                                     </Styles.DropDownItem>
 
-                                    <Styles.DropDownItem>
+                                    <Styles.DropDownItem onClick={activeButtonM ? toggleStatebutton : () => {}}>
                                         <Link href={"/acessorios"} passHref>
-                                            <Styles.MenuLink>alguma c</Styles.MenuLink>
+                                            <Styles.MenuLink>alguma </Styles.MenuLink>
                                         </Link>
                                     </Styles.DropDownItem>
 
@@ -82,9 +86,9 @@ const Header = () => {
                             </DropDownHover>
                     </Styles.MenuItem>
 
-                    <Styles.MenuItem>
+                    <Styles.MenuItem onClick={activeButtonM ? toggleStatebutton : () => {}}>
                         <Link href={"/acessorios"} passHref>
-                            <Styles.MenuLink>Tatto</Styles.MenuLink>
+                            <Styles.MenuLink>Tattoos</Styles.MenuLink>
                         </Link>
                     </Styles.MenuItem>
 
@@ -95,7 +99,7 @@ const Header = () => {
                 <Styles.ButtonMobile className={activeButtonM ? "active" : ""}>
                 </Styles.ButtonMobile>
             </Styles.MenuMobile>
-        </Styles.Wrapper>
+        </Styles.WrapperHeader>
     )
 }
 

@@ -2,7 +2,8 @@ import styled, { keyframes } from "styled-components";
 
 const Styles = {};
 
-Styles.Wrapper = styled.header`
+
+Styles.WrapperHeader = styled.div`
     margin: 0 auto;
     max-width: 1000px;
     width: 100%;
@@ -35,8 +36,6 @@ Styles.TempDiv = styled.div`
     }
 `
 
-
-
 Styles.WrapperFistColum = styled.div`
     display: flex;
     align-items: center;
@@ -59,7 +58,6 @@ Styles.ShoppingCartQntd = styled.div`
     margin-left: 5px;
 `
 
-
 Styles.WrapperLogo = styled.div`
     justify-content: center;
 
@@ -69,10 +67,10 @@ Styles.WrapperLogo = styled.div`
 `
 
 const visibleMenuAnim = keyframes`
-    from {
+    0% {
         transform: translateX(0px);
     }
-    to {
+    100% {
         transform: translateX(100px);
     }
 `
@@ -87,17 +85,15 @@ Styles.Menu = styled.nav`
         left: -100px;
         visibility: hidden;
         background-color: #121010de;
+        width: 100%; 
+        min-height:100vh;
+        transition: .50ms ease-in-out;
         
 
         &.active {
-            position: absolute;
-            display: flex;
-            width: 100%;
-            animation: ${visibleMenuAnim} 300ms forwards ;
+            animation: ${visibleMenuAnim} 300ms  forwards; 
             visibility: visible;
-            min-height:100vh;
             color: white;
-            top: 0px;
         }
        
     }
@@ -105,7 +101,7 @@ Styles.Menu = styled.nav`
 
 Styles.MenuList = styled.ul`
     display: flex;
-    position: absolute;
+  /*   position: absolute; */
 
     @media (max-width: 515px) {
 
@@ -146,8 +142,6 @@ Styles.MenuLink = styled.a`
     align-items: center;
     flex-direction: column;
 
-
-
     &::after {
         content: " ";
         width: 0%;
@@ -162,6 +156,7 @@ Styles.MenuLink = styled.a`
 
     @media (max-width: 515px) {
         color: white;
+        font-size: 1.5em;
     }
 `
 
@@ -175,6 +170,7 @@ Styles.DropDownText = styled.span`
     color: #000;
     cursor: pointer;
     padding-right:7px;
+    padding-bottom: 5px;
 
     &::after {
         content: '';
@@ -185,8 +181,8 @@ Styles.DropDownText = styled.span`
         border-right: 6px solid transparent;
         border-top: 6px solid #000;
         clear: both;
+        transition: 0.2s ease-in-out;
     }
-
 
     &:hover::after {
         content: '';
@@ -199,7 +195,6 @@ Styles.DropDownText = styled.span`
         border-top: none;
         clear: both;
     }
-
 
     ${DropDownHover}:hover &::after {
         content: '';
@@ -215,57 +210,45 @@ Styles.DropDownText = styled.span`
 
     @media (max-width: 515px) {
         color: white;
+        font-size: 1.5em;
     }
 `
 
-
 Styles.MenuDropDown = styled.ul`
+    display: flex;
     position: absolute;
     border: 1px solid #000;
-    display: flex;
     flex-direction: column;
     left: 50%;
-    top: 35px;
-    transform: translateX(-50%);
-    padding: 5px;
+    top: -300px;
+    transform: translateX(-50%)  rotateX(90deg); 
+    visibility: hidden;
+    padding: 10px;
     border-radius: 5px;
-    display: none;
     z-index: 2;
     background-color: white;
-
-    &::after {
-        content: "";
-        width: 0;
-        height: 0;
-        position: absolute;
-        border-left: 12px solid transparent;
-        border-right: 12px solid transparent;
-        border-bottom: 12px solid #000;
-        top: -12px; 
-        left: 40%;
-    }
+    transition: transform 0.2s ease-in-out;
 
     ${DropDownHover}:hover &{
-        display: flex;
+        transform: translateX(-50%) rotatex(0deg);
+        visibility: visible;
+        top: 25px;
     }
 
     &:hover {
         display: flex;
     }
 
-
     @media (max-width:515px){
         background-color: #121010de;
     }
 `
-
 
 Styles.DropDownItem = styled.li`
     font-family: 'Roboto', sans-serif;
     margin: 5px 0;
 
 `
-
 Styles.MenuMobile = styled.button`
     display: none;
     margin: 0 10px 0 15px;
@@ -279,8 +262,8 @@ Styles.MenuMobile = styled.button`
     @media (max-width:515px){
         display: block;
     }
-
 `
+
 Styles.ButtonMobile = styled.div`
     position: absolute;
     background-color: #000;
@@ -338,8 +321,5 @@ Styles.ButtonMobile = styled.div`
     }
 
 `
-
-
-
 
 export default Styles;
