@@ -11,6 +11,12 @@ const GlobalStyle = createGlobalStyle`
         list-style: none;
         text-decoration: none;
     }
+
+    body {
+        font-family: 'Roboto', sans-serif;
+        width: 100%;
+        height: 100vh;
+    }
     
 `;
 
