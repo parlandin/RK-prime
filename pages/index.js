@@ -3,10 +3,13 @@ import Container from '../components/layout/Container'
 import Header from '../components/layout/header'
 
 
-export default function Home() {
+ const Home = () => {
   return (
     <Container>
         <p>inicio</p>
     </Container>
   )
 }
+
+
+export default Home;

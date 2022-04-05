@@ -34,7 +34,7 @@ const Header = () => {
 
                 <Styles.ShoppingCart>
                     <Image  src={ShppingCartIMG} alt="" width="16px" height="16px"/>
-                    <Styles.ShoppingCartQntd>10</Styles.ShoppingCartQntd>
+                    <Styles.ShoppingCartQntd>0</Styles.ShoppingCartQntd>
                 </Styles.ShoppingCart>
             </Styles.WrapperFistColum>
 

@@ -86,7 +86,7 @@ Styles.Menu = styled.nav`
         visibility: hidden;
         background-color: #121010de;
         width: 100%; 
-        min-height:100vh;
+        height:100%;
         transition: .50ms ease-in-out;
         
 
@@ -109,7 +109,7 @@ Styles.MenuList = styled.ul`
             flex-direction: column;
             justify-content: center;
             width: 100%;
-            min-height: 100vh;
+            height: 100%;
             align-items: center;
         }
         
