@@ -11,7 +11,7 @@ import ShppingCartIMG from "../../../public/images/shopping-cart.svg";
 const Header = () => {
     const [activeButtonM, setAcitveButtonM] = useState(false)
 
-    
+
     useEffect(()=> {
         window.addEventListener('resize', () => {
             setAcitveButtonM(false)

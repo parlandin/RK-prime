@@ -9,7 +9,7 @@ export default function Document() {
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet" />
 
         <link 
-            href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;500;800&display=swap" rel="stylesheet">
+            href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400&display=swap" rel="stylesheet">
         </link>
       </Head>
       <body>

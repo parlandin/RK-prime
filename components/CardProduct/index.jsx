@@ -8,8 +8,8 @@ const CardProduto = ({img, desc, title, price}) => {
             <Styles.WrapperImage>
                 <Image src={img} alt="" />
             </Styles.WrapperImage>
-            <Styles.PTitle>Brinco cruz styles new 
-                limitado + par de anel
+            <Styles.PTitle>
+                {new String(title).length > 46 ?  `${new String(title).substr(0, 44)}..` : title}
             </Styles.PTitle>
             <Styles.Price>R${'100,00'}</Styles.Price>
         </Styles.Wrapper>

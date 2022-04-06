@@ -80,13 +80,13 @@ Styles.Menu = styled.nav`
     justify-content: center;
 
     @media (max-width: 515px) {
-        position: absolute;
+        position:fixed;
         top: 0px;
         left: -100px;
         visibility: hidden;
-        background-color: #121010de;
+        background-color: #000000f5;
         width: 100%; 
-        height:100%;
+        min-height:100vh;
         transition: .50ms ease-in-out;
         z-index: 5;
 
@@ -109,9 +109,8 @@ Styles.MenuList = styled.ul`
             flex-direction: column;
             justify-content: center;
             width: 100%;
-            height: 100%;
+            min-height: 100%;
             align-items: center;
-            
         }
         
     }

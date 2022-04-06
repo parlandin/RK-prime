@@ -40,19 +40,22 @@ const CarouselProducts = () => {
         className="mySwiper"
         >
             <SwiperSlide>
-               <CardProduto img={Product1} />
+               <CardProduto img={Product1} 
+               title="Brinco cruz styles new limitado + par de anel dbc"/>
             </SwiperSlide>
 
             <SwiperSlide>
-                <CardProduto img={Product2} />
+                <CardProduto img={Product2}
+                 title="Brinco cruz styles new limitado + par de  new limitado
+                 new limitado" />
             </SwiperSlide>
 
             <SwiperSlide>
-               <CardProduto img={Product1} />
+               <CardProduto img={Product1} title="Anel Minimalista Com Pulseira" />
             </SwiperSlide>
 
             <SwiperSlide>
-                <CardProduto img={Product2} />
+                <CardProduto img={Product2} title="Conjunto de joias de metal texturizado 5 peças" />
             </SwiperSlide>
 
             <SwiperSlide>
