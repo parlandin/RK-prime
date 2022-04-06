@@ -18,6 +18,12 @@ const GlobalStyle = createGlobalStyle`
         min-height: 100vh;
     }
     
+    span {
+
+        &.swiper-pagination-bullet.swiper-pagination-bullet-active{
+            
+        }
+    }
 `;
 
 

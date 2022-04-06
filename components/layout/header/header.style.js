@@ -3,7 +3,7 @@ import styled, { keyframes } from "styled-components";
 const Styles = {};
 
 
-Styles.WrapperHeader = styled.div`
+Styles.WrapperHeader = styled.header`
     margin: 0 auto;
     max-width: 1000px;
     width: 100%;
@@ -88,7 +88,7 @@ Styles.Menu = styled.nav`
         width: 100%; 
         height:100%;
         transition: .50ms ease-in-out;
-        
+        z-index: 5;
 
         &.active {
             animation: ${visibleMenuAnim} 300ms  forwards; 
@@ -111,6 +111,7 @@ Styles.MenuList = styled.ul`
             width: 100%;
             height: 100%;
             align-items: center;
+            
         }
         
     }

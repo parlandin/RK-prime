@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const Styles = {}
 
-Styles.WrapperContainer = styled.div`
+Styles.WrapperContainer = styled.section`
     max-width: 1000px;
     margin: 0 auto;
     width: 100%;
