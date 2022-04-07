@@ -1,5 +1,6 @@
 import Styles from "./Carousel.style";
 import { Swiper, SwiperSlide } from "swiper/react"
+import { Pagination } from "swiper";
 
 import "swiper/css/pagination";
 
@@ -12,9 +13,6 @@ const CarouselProducts = () => {
         <Swiper
         slidesPerView={2}
         spaceBetween={5}
-        pagination={{
-            clickable: true,
-          }}
         breakpoints={{
             370:{
                 slidesPerView: 2,
@@ -37,6 +35,7 @@ const CarouselProducts = () => {
                 spaceBetween: 10,
             },
         }}
+        
         className="mySwiper"
         >
             <SwiperSlide>

@@ -29,7 +29,13 @@ const Header = () => {
                 <Styles.TempDiv></Styles.TempDiv>
 
                 <Styles.WrapperLogo>
-                    <Image src={LogoPicture} alt="" width="300px" height="100px"/>
+                    <Link href="/" passHref>
+                        <a>
+                            <Image  src={LogoPicture} alt="" width="300px" height="100px"/>
+                        </a>
+                       
+                    </Link>
+                    
                 </Styles.WrapperLogo>
 
                 <Styles.ShoppingCart>
@@ -60,7 +66,7 @@ const Header = () => {
                     </Styles.MenuItem>
 
                     <Styles.MenuItem>
-                        <DropDownHover>
+                        <DropDownHover active={activeButtonM}>
                             <Styles.DropDownText>Geek</Styles.DropDownText>
                                 <Styles.MenuDropDown>
 

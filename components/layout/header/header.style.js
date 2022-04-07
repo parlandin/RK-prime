@@ -2,7 +2,6 @@ import styled, { keyframes } from "styled-components";
 
 const Styles = {};
 
-
 Styles.WrapperHeader = styled.header`
     margin: 0 auto;
     max-width: 1000px;
@@ -161,6 +160,9 @@ Styles.MenuLink = styled.a`
 `
 
 export const DropDownHover = styled.div`
+    @media (max-width: 515px){
+        display: ${({active}) => active ? "block" : "none" };
+    }
 `
 
 Styles.DropDownText = styled.span`
@@ -184,7 +186,7 @@ Styles.DropDownText = styled.span`
         transition: 0.2s ease-in-out;
     }
 
-    &:hover::after {
+    ${DropDownHover}:hover &::after, &:hover::after {
         content: '';
         top: 9px;
         left: 89%;
@@ -193,24 +195,18 @@ Styles.DropDownText = styled.span`
         border-right: 6px solid transparent;
         border-bottom: 6px solid #000;
         border-top: none;
-        clear: both;
-    }
-
-    ${DropDownHover}:hover &::after {
-        content: '';
-        top: 9px;
-        left: 89%;
-        position: absolute;
-        border-left: 6px solid transparent;
-        border-right: 6px solid transparent;
-        border-bottom: 6px solid #000;
-        border-top: none;
-        clear: both;
     }
 
     @media (max-width: 515px) {
         color: white;
         font-size: 1.5em;
+        &::after {
+            border-top: 6px solid white;
+        }
+
+        ${DropDownHover}:hover &::after {
+            border-bottom: 6px solid white;
+        }
     }
 `
 
@@ -233,10 +229,6 @@ Styles.MenuDropDown = styled.ul`
         transform: translateX(-50%) rotatex(0deg);
         visibility: visible;
         top: 25px;
-    }
-
-    &:hover {
-        display: flex;
     }
 
     @media (max-width:515px){
@@ -290,9 +282,11 @@ Styles.ButtonMobile = styled.div`
             top: 0;
             background-color: white;
         }
+
+        
     }
    
-   &::before {
+   &::before, &::after {
         display: block;
         content:" ";
         background-color: #000;
@@ -307,17 +301,8 @@ Styles.ButtonMobile = styled.div`
     }
 
     &::after {
-        display: block;
-        content:" ";
-        background-color: #000;
-        width: 30px;
-        height: 4px;
-        position: absolute;
-        right: 0;
         top: 10px;
-        transition: 0.5s;
-        border-radius: 2px;
-        box-shadow:  0px -1px 1px rgba(255, 255, 255, 0.534);
+        bottom: 0;
     }
 
 `
