@@ -16,9 +16,39 @@ Styles.Description = styled.p`
     font-size: 1rem;
     max-width: 400px;
     margin: 20px 0;
+    font-family: inherit;
+    
+    @media (max-width: 515px){
+        order: 5;
+    }
 `
 
+Styles.WrapperSize = styled.div`
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0 20px;
+`
+Styles.SizeText = styled.p`
+    font-size: 1.1rem;
+    font-weight: 500;
+`
+Styles.WrapperCheckBox = styled.div`
+    display: flex;
+`
 
+Styles.SelectSize = styled.div`
+    & + div {
+        margin-left: 10px;
+    }
+`
+
+Styles.CheckSize = styled.input`
+`
+Styles.CheckText = styled.label`
+    font-size: 1rem;
+    font-weight: 500;
+    margin-left: 2px;
+`
 
 
 Styles.Availability = styled.p`
@@ -34,6 +64,7 @@ Styles.WrapperGereric = styled.div`
 Styles.WrapperButtons = styled.div`
     display: flex;
     margin: 20px 0;
+    flex-wrap: wrap;
 `
 
 

@@ -53,7 +53,7 @@ const GalleryCarousel = () => {
                         type="button" 
                         key={index} 
                         className={index == currentSlide ? "selected" : ""}
-                        onClick={() => selectCurrent(index) }>
+                        onMouseEnter={() => selectCurrent(index) }>
                             <Image src={data.image} alt="" />
                         </Styles.OptionImage>
                     )

@@ -1,12 +1,16 @@
+import Head from "next/head";
 import Banner from '../components/Banner';
-import Container from '../components/layout/Container'
+import Container from '../components/layout/Container';
 import SectionCategorys from '../components/layout/SectionCategorys';
-import Styles from "./home.style"
+import Styles from "./home.style";
 
 
  const Home = () => {
   return (
     <Container>
+        <Head>
+          <title>RKprime | Riska Tattoo</title>
+        </Head>
         <Styles.WrapperHome>
            <Banner />
            <SectionCategorys title="Destaques" more={false}/>

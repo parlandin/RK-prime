@@ -10,9 +10,11 @@ Styles.Button = styled.button`
     justify-content: center;
     cursor: pointer;
     background-color: transparent;
+    margin: 5px 0;
+    margin-right: 10px;
 
-    & + button {
-        margin-left: 10px;
+    &:last-of-type {
+        margin-right: 0px;
     }
 `
 Styles.ButtonIcon = styled.div`

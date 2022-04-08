@@ -21,16 +21,14 @@ Styles.WrapperFeatured = styled.div`
 
 
 Styles.CurrentImage = styled.div`
-    min-width: 100%;
-    min-height: 100%;
     opacity: 0;
-    transition-duration: 600ms ease; 
-    order: 2;
+    transition-duration: 700ms ease; 
 
     &.CurrentImage-active {
-        order: 1;
+        min-width: 100%;
+        min-height: 100%;
         opacity: 1;
-        transition-duration: 600ms;
+        transition-duration: 700ms;
     }
 `
 

@@ -37,7 +37,7 @@ const Footer = () => {
 
                         <Styles.NetWork>
                             <Image src={Iwhatsapp} alt=""/>
-                           <Styles.NetWorkText>(99)9 9999-9999</Styles.NetWorkText>
+                           <Styles.NetWorkText href="#" target="_blank">(99)9 9999-9999</Styles.NetWorkText>
                         </Styles.NetWork>
                     </Styles.NetWorkColumn>
 

@@ -26,6 +26,27 @@ Styles.ProdutoInfo = styled.div`
         left: 50%;
         transform: translateX(-50%);
     }
+
+    @media (max-width:660px){
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 `
 
+Styles.WrapperGeneric = styled.div`
+    min-width: 243px;
+
+    &.SlideImages {
+        min-width: 360px;
+        margin-bottom: 20px;
+    }
+
+    @media (max-width: 380px){
+           min-width: 200px;
+    }
+
+    @media (max-width:940px){
+        margin: 10px;
+    }
+`
 export default Styles;

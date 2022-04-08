@@ -15,6 +15,27 @@ const DetailsProduct = () => {
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem eum, pariatur alias voluptatibus labore placeat sequi eveniet debitis assumenda iusto voluptate ullam nam consequuntur aspernatur ea qui.
             </Styles.Description>
             
+            <Styles.WrapperSize>
+                <Styles.SizeText>Tamanhos</Styles.SizeText>
+                <Styles.WrapperCheckBox>
+                    <Styles.SelectSize >
+                        <Styles.CheckSize id="productSize_P" type="checkbox" name="productSize"  required/>
+                        <Styles.CheckText htmlFor="productSize_P">P</Styles.CheckText>
+                    </Styles.SelectSize>
+
+                    <Styles.SelectSize>
+                        <Styles.CheckSize id="productSize_M" type="checkbox" name="productSize" />
+                        <Styles.CheckText htmlFor="productSize_M">M</Styles.CheckText>
+                    </Styles.SelectSize>
+
+                    <Styles.SelectSize>
+                        <Styles.CheckSize id="productSize_G" type="checkbox" name="productSize" />
+                        <Styles.CheckText htmlFor="productSize_G">G</Styles.CheckText>
+                    </Styles.SelectSize>
+                </Styles.WrapperCheckBox>
+        
+            </Styles.WrapperSize>
+
             <Styles.Availability>Disponivel na loja</Styles.Availability>
 
             <Styles.WrapperGereric>
