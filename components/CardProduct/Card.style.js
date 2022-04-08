@@ -30,8 +30,10 @@ Styles.WrapperImage = styled.div`
 Styles.PTitle = styled.p`
     font-size: 1.1rem;
     font-weight: 400px;
-    margin: 5px 0;
-    
+    margin: 5px ;
+    max-height: 42px;
+    min-height: 42px;
+    overflow: hidden;
 ` 
 
 Styles.Price = styled.span`

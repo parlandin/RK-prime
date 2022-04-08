@@ -13,6 +13,10 @@ Styles.TitleSection = styled.div`
     justify-content: space-between;
     align-items: center;
     padding-bottom: 10px;
+
+    @media (max-width: 1035px){
+        padding: 0 10px;
+    }
 `
 
 Styles.Alink = styled.a`
