@@ -2,19 +2,19 @@ import Image from "next/image";
 import Styles from "./Card.style";
 
 
-const CardProduto = ({img, desc, title, price}) => {
+const CardProduct = ({img, desc, title, price}) => {
     return (
         <Styles.Wrapper>
             <Styles.WrapperImage>
-                <Image src={img} alt="" />
+                <Image src={img} alt={desc}  width="100%" height="100%" />
             </Styles.WrapperImage>
             <Styles.PTitle>
-                {new String(title).length > 46 ?  `${new String(title).substr(0, 44)}..` : title}
+                {title}
             </Styles.PTitle>
-            <Styles.Price>R${'100,00'}</Styles.Price>
+            <Styles.Price>R${price}</Styles.Price>
         </Styles.Wrapper>
     )
 }
 
-export default CardProduto;
+export default CardProduct;
 

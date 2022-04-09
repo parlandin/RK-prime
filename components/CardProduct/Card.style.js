@@ -4,11 +4,13 @@ import styled from "styled-components";
 const Styles = {}
 
 Styles.Wrapper = styled.div`
-    max-width: 220px;
+    max-width: 200px;
+    min-width:200px;
     display: flex;
     flex-direction: column;
     cursor: pointer;
     padding: 5px;
+    margin: 5px;
 
     &:hover {
         background-color: #faf2f2;
@@ -18,9 +20,10 @@ Styles.Wrapper = styled.div`
 Styles.WrapperImage = styled.div`
     padding: 5px;
     border: 1px solid #000;
-    max-height: 180px;
-    min-height: 180px;
+    max-height: 160px;
+    min-height: 160px;
     max-width: 140px;
+    min-width: 140px;
     align-self: center;
     display: flex;
     align-items: center;
@@ -28,11 +31,12 @@ Styles.WrapperImage = styled.div`
 `
 
 Styles.PTitle = styled.p`
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 400px;
-    margin: 5px ;
-    max-height: 42px;
-    min-height: 42px;
+    margin: 10px 5px 5px ;
+    margin-right: 0;
+    max-height: 39px;
+    min-height: 39px;
     overflow: hidden;
 ` 
 

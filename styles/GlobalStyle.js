@@ -17,13 +17,6 @@ const GlobalStyle = createGlobalStyle`
         width: 100%;
         min-height: 100vh;
     }
-    
-    span {
-
-        &.swiper-pagination-bullet.swiper-pagination-bullet-active{
-            
-        }
-    }
 `;
 
 
