@@ -17,6 +17,10 @@ Styles.WrapperProducts = styled.div`
     @media (max-width: 856px){
         justify-content: center;
     }
+
+    @media (max-width: 438px){
+        justify-content:flex-start;
+    }
 `
 
 Styles.WrapperGeneric = styled.div`

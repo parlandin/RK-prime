@@ -39,7 +39,8 @@ const Category = ({dateApi}) => {
                             img={product.image} 
                             title={product.title}
                             desc={product.description}
-                            price={product.price}/>
+                            price={product.price}
+                            customClass="mobile-direct"/>
                             
                         </Styles.WrapperGeneric>
                         )

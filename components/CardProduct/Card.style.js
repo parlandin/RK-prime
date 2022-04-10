@@ -10,10 +10,19 @@ Styles.Wrapper = styled.div`
     flex-direction: column;
     cursor: pointer;
     padding: 5px;
-    margin: 5px;
 
     &:hover {
         background-color: #faf2f2;
+    }
+
+    &.mobile-direct {
+
+        @media (max-width: 438px) and  (min-width: 300px){
+            flex-direction: row;
+            max-width: 100%;
+            min-width: 100%;
+        }
+        
     }
 `
 
@@ -30,6 +39,11 @@ Styles.WrapperImage = styled.div`
     justify-content: center;
 `
 
+Styles.WrapperInfo = styled.div`
+    display: flex;
+    flex-direction: column;
+`
+
 Styles.PTitle = styled.p`
     font-size: 1rem;
     font-weight: 400px;
@@ -38,6 +52,13 @@ Styles.PTitle = styled.p`
     max-height: 39px;
     min-height: 39px;
     overflow: hidden;
+
+    &.mobile-direct {
+
+        @media (max-width: 438px) and  (min-width: 300px){
+            max-height:78px;
+        }
+    }
 ` 
 
 Styles.Price = styled.span`
@@ -45,6 +66,11 @@ Styles.Price = styled.span`
     font-weight: 400px;
     align-self: center;
     margin: 10px 0;
+
+    &.mobile-direct {
+        align-self: flex-start;
+        margin: 10px 5px;
+    }
 `
 
 export default Styles;
