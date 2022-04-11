@@ -68,8 +68,12 @@ Styles.Price = styled.span`
     margin: 10px 0;
 
     &.mobile-direct {
-        align-self: flex-start;
-        margin: 10px 5px;
+
+        @media (max-width: 438px) and  (min-width: 300px){
+            align-self: flex-start;
+            margin: 10px 5px;
+        }
+        
     }
 `
 
