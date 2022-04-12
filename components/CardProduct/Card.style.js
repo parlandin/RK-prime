@@ -3,13 +3,14 @@ import styled from "styled-components";
 
 const Styles = {}
 
-Styles.Wrapper = styled.div`
+Styles.Wrapper = styled.a`
     max-width: 200px;
     min-width:200px;
     display: flex;
     flex-direction: column;
     cursor: pointer;
     padding: 5px;
+    color: #202020;
 
     &:hover {
         background-color: #faf2f2;
@@ -17,7 +18,7 @@ Styles.Wrapper = styled.div`
 
     &.mobile-direct {
 
-        @media (max-width: 438px) and  (min-width: 300px){
+        @media (max-width: 476px) and  (min-width: 300px){
             flex-direction: row;
             max-width: 100%;
             min-width: 100%;
@@ -42,6 +43,7 @@ Styles.WrapperImage = styled.div`
 Styles.WrapperInfo = styled.div`
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 `
 
 Styles.PTitle = styled.p`
@@ -69,11 +71,39 @@ Styles.Price = styled.span`
 
     &.mobile-direct {
 
-        @media (max-width: 438px) and  (min-width: 300px){
+        @media (max-width: 476px) and  (min-width: 300px){
             align-self: flex-start;
             margin: 10px 5px;
         }
         
+    }
+`
+
+
+Styles.WrapperRating =styled.div`
+    align-self: center;
+    margin: 5px 5px 10px;
+    display: flex;
+    align-items: center;
+
+
+    @media (max-width: 478px) and  (min-width: 300px){
+           align-self: flex-start;
+        }
+`
+
+Styles.Icon = styled.span`
+    font-size: 0.9rem;
+    & + span {
+        margin-left: 2px;
+    }
+
+    &:hover .icon-star_icon{
+        color: #ffc600db;
+    }
+
+    &.title {
+       
     }
 `
 

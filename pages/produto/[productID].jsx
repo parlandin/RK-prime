@@ -5,11 +5,16 @@ import SectionCategorys from "../../components/layout/SectionCategorys"
 import Styles from './produtos.style';
 import DetailsProduct from '../../components/DetailsProduct';
 
+import { useRouter } from 'next/router'
+
 const Produtos = () => {
+    const router = useRouter()
+    const { productID } = router.query
+
     return (
         <Container>
             <Head>
-                <title>{`${"Kit Cosplayer kimetsu no yaiba inosuke trousers + Cabeça"} | RK Prime`}</title>
+                <title>{`${productID} | RK Prime`}</title>
             </Head>
             <Styles.Wrapper>
                 <Styles.ProdutoInfo>
@@ -18,7 +23,7 @@ const Produtos = () => {
                     </Styles.WrapperGeneric>
                     
                     <Styles.WrapperGeneric>
-                        <DetailsProduct />
+                        <DetailsProduct title={productID} />
                     </Styles.WrapperGeneric>
                    
                    

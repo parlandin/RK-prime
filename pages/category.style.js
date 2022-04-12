@@ -9,6 +9,12 @@ Styles.Wrapper = styled.div`
     margin-top: 35px;
 `
 
+Styles.WrapperTitle = styled.div`
+    @media (max-width: 1030px){
+        margin-left: 10px;
+    }
+`
+
 Styles.WrapperProducts = styled.div`
     display:flex;
     flex-wrap: wrap;
@@ -18,13 +24,17 @@ Styles.WrapperProducts = styled.div`
         justify-content: center;
     }
 
-    @media (max-width: 438px){
+    @media (max-width: 476px){
         justify-content:flex-start;
+    }
+
+    @media (max-width: 300px){
+        justify-content: center;
     }
 `
 
 Styles.WrapperGeneric = styled.div`
-    margin: 15px 0;
+    margin: 15px;
 `
 
 export default Styles;
