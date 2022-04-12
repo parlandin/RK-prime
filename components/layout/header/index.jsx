@@ -60,7 +60,7 @@ const Header = () => {
                     </Styles.MenuItem>
 
                     <Styles.MenuItem onClick={activeButtonM ? toggleStatebutton : () => {}}>
-                        <Link href={"/acessorios"} passHref>
+                        <Link href={"/roupas"} passHref>
                             <Styles.MenuLink>Roupas</Styles.MenuLink>
                         </Link>
                     </Styles.MenuItem>
@@ -71,20 +71,20 @@ const Header = () => {
                                 <Styles.MenuDropDown>
 
                                     <Styles.DropDownItem onClick={activeButtonM ? toggleStatebutton : () => {}}>
-                                        <Link href={"/acessorios"} passHref>
+                                        <Link href={"/cospalyer"} passHref>
                                             <Styles.MenuLink>Cospalyer</Styles.MenuLink>
                                         </Link>
                                     </Styles.DropDownItem>
 
                                     <Styles.DropDownItem onClick={activeButtonM ? toggleStatebutton : () => {}}>
-                                        <Link href={"/acessorios"} passHref>
+                                        <Link href={"/acessoriosGeek"} passHref>
                                             <Styles.MenuLink>Acessórios</Styles.MenuLink>
                                         </Link>
                                     </Styles.DropDownItem>
 
                                     <Styles.DropDownItem onClick={activeButtonM ? toggleStatebutton : () => {}}>
-                                        <Link href={"/acessorios"} passHref>
-                                            <Styles.MenuLink>alguma </Styles.MenuLink>
+                                        <Link href={"/Mangas"} passHref>
+                                            <Styles.MenuLink>Mangás</Styles.MenuLink>
                                         </Link>
                                     </Styles.DropDownItem>
 
@@ -93,7 +93,7 @@ const Header = () => {
                     </Styles.MenuItem>
 
                     <Styles.MenuItem onClick={activeButtonM ? toggleStatebutton : () => {}}>
-                        <Link href={"/acessorios"} passHref>
+                        <Link href={"/tattos"} passHref>
                             <Styles.MenuLink>Tattoos</Styles.MenuLink>
                         </Link>
                     </Styles.MenuItem>

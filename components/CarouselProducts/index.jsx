@@ -6,7 +6,7 @@ import "swiper/css/pagination";
 
 import Product1 from "../../public/images/product1.jpg"
 import Product2 from "../../public/images/product2.jpg"
-import CardProduto from "../CardProduct";
+import CardProduct from "../CardProduct";
 
 const CarouselProducts = () => {
     return (
@@ -39,38 +39,41 @@ const CarouselProducts = () => {
         className="mySwiper"
         >
             <SwiperSlide>
-               <CardProduto img={Product1} 
-               title="Brinco cruz styles new limitado + par de anel dbc"/>
+               <CardProduct img={Product1} 
+               title="Brinco cruz styles new limitado + par de anel dbc"  
+               price={"100"}/>
             </SwiperSlide>
 
             <SwiperSlide>
-                <CardProduto img={Product2}
+                <CardProduct img={Product2}
                  title="Brinco cruz styles new limitado + par de  new limitado
-                 new limitado" />
+                 new limitado"
+                 price={"100"} />
             </SwiperSlide>
 
             <SwiperSlide>
-               <CardProduto img={Product1} title="Anel Minimalista Com Pulseira" />
+               <CardProduct img={Product1} title="Anel Minimalista Com Pulseira" price={"100"}/>
             </SwiperSlide>
 
             <SwiperSlide>
-                <CardProduto img={Product2} title="Conjunto de joias de metal texturizado 5 peças" />
+                <CardProduct img={Product2} title="Conjunto de joias de metal texturizado 5 peças" 
+                price={"100"}/>
             </SwiperSlide>
 
             <SwiperSlide>
-               <CardProduto img={Product1} />
+               <CardProduct img={Product1} price={"100"}/>
             </SwiperSlide>
 
             <SwiperSlide>
-                <CardProduto img={Product2} />
+                <CardProduct img={Product2} price={"100"}/>
             </SwiperSlide>
 
             <SwiperSlide>
-               <CardProduto img={Product1} />
+               <CardProduct img={Product1} price={"100"}/>
             </SwiperSlide>
 
             <SwiperSlide>
-                <CardProduto img={Product2} />
+                <CardProduct img={Product2} price={"100"}/>
             </SwiperSlide>
 
         </Swiper>
