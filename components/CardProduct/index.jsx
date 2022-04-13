@@ -18,7 +18,7 @@ const CardProduct = ({img, desc, title, price, customClass}) => {
                 </Styles.PTitle>
                 <Styles.Price className={customClass}>R${price}</Styles.Price>
 
-                <Styles.WrapperRating>
+                <Styles.WrapperRating className={customClass}>
                     <Styles.Icon className="title">Avaliação:</Styles.Icon>
 
                     <Styles.Icon>

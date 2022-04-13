@@ -79,17 +79,18 @@ Styles.Price = styled.span`
     }
 `
 
-
 Styles.WrapperRating =styled.div`
     align-self: center;
     margin: 5px 5px 10px;
     display: flex;
     align-items: center;
 
+    &.mobile-direct {
 
-    @media (max-width: 478px) and  (min-width: 300px){
-           align-self: flex-start;
-        }
+        @media (max-width: 478px) and  (min-width: 300px){
+            align-self: flex-start;
+            }  
+        } 
 `
 
 Styles.Icon = styled.span`
