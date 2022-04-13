@@ -1,8 +1,8 @@
 import Styles from "./Carousel.style";
 import { Swiper, SwiperSlide } from "swiper/react"
-import { Pagination } from "swiper";
+import { Navigation } from "swiper";
 
-import "swiper/css/pagination";
+import "swiper/css/navigation";
 
 import Product1 from "../../public/images/product1.jpg"
 import Product2 from "../../public/images/product2.jpg"
@@ -10,73 +10,89 @@ import CardProduct from "../CardProduct";
 
 const CarouselProducts = () => {
     return (
-        <Swiper
-        slidesPerView={2}
-        spaceBetween={5}
-        breakpoints={{
-            370:{
-                slidesPerView: 2,
-                spaceBetween: 5,
-            },
-            420:{
-                slidesPerView: 3,
-                spaceBetween: 10,
-            },
-            600: {
-                slidesPerView: 3,
-                spaceBetween: 5,
-            },
-            640: {
-                slidesPerView: 3,
-                spaceBetween: 10,
-            },
-            789: {
-                slidesPerView: 4,
-                spaceBetween: 10,
-            },
-        }}
-        
-        className="mySwiper"
-        >
-            <SwiperSlide>
-               <CardProduct img={Product1} 
-               title="Brinco cruz styles new limitado + par de anel dbc"  
-               price={"100"}/>
-            </SwiperSlide>
-
-            <SwiperSlide>
-                <CardProduct img={Product2}
-                 title="Brinco cruz styles new limitado + par de  new limitado
-                 new limitado"
-                 price={"100"} />
-            </SwiperSlide>
-
-            <SwiperSlide>
-               <CardProduct img={Product1} title="Anel Minimalista Com Pulseira" price={"100"}/>
-            </SwiperSlide>
-
-            <SwiperSlide>
-                <CardProduct img={Product2} title="Conjunto de joias de metal texturizado 5 peças" 
+        <Styles.WrapperGereric>
+            <Swiper
+            slidesPerView={2}
+            spaceBetween={140}
+            breakpoints={{
+                100: {
+                    slidesPerView: "auto",
+                    centeredSlides: true,
+                },
+                273: {
+                    slidesPerView: '2',
+                    spaceBetween: 120,
+                    centeredSlides: false,
+                },
+                370:{
+                    slidesPerView: '2',
+                    spaceBetween: 50,
+                },
+                420:{
+                    slidesPerView: '3',
+                    spaceBetween: 150,
+                },
+                580: {
+                    slidesPerView: '3',
+                    spaceBetween: 5,
+                },
+                640: {
+                    slidesPerView: '3',
+                    spaceBetween: 10,
+                },
+                789: {
+                    slidesPerView: '4',
+                    spaceBetween: 20,
+                },
+                940: {
+                    slidesPerView: '5',
+                    spaceBetween: 20,
+                },
+            }}
+            navigation={true}
+            modules={[Navigation]}
+            className="mySwiper"
+            >
+                <SwiperSlide>
+                <CardProduct img={Product1} 
+                title="Brinco cruz styles new limitado + par de anel dbc"  
                 price={"100"}/>
-            </SwiperSlide>
+                </SwiperSlide>
 
-            <SwiperSlide>
-               <CardProduct img={Product1} price={"100"}/>
-            </SwiperSlide>
+                <SwiperSlide>
+                    <CardProduct img={Product2}
+                    title="Brinco cruz styles new limitado + par de  new limitado
+                    new limitado"
+                    price={"100"} />
+                </SwiperSlide>
 
-            <SwiperSlide>
-                <CardProduct img={Product2} price={"100"}/>
-            </SwiperSlide>
+                <SwiperSlide>
+                <CardProduct img={Product1} title="Anel Minimalista Com Pulseira" price={"100"}/>
+                </SwiperSlide>
 
-            <SwiperSlide>
-               <CardProduct img={Product1} price={"100"}/>
-            </SwiperSlide>
+                <SwiperSlide>
+                    <CardProduct img={Product2} title="Conjunto de joias de metal texturizado 5 peças" 
+                    price={"100"}/>
+                </SwiperSlide>
 
-            <SwiperSlide>
-                <CardProduct img={Product2} price={"100"}/>
-            </SwiperSlide>
+                <SwiperSlide>
+                <CardProduct img={Product1} price={"100"}/>
+                </SwiperSlide>
 
-        </Swiper>
+                <SwiperSlide>
+                    <CardProduct img={Product2} price={"100"}/>
+                </SwiperSlide>
+
+                <SwiperSlide>
+                <CardProduct img={Product1} price={"100"}/>
+                </SwiperSlide>
+
+                <SwiperSlide>
+                    <CardProduct img={Product2} price={"100"}/>
+                </SwiperSlide>
+
+            </Swiper>
+        </Styles.WrapperGereric>
     )
 }
 

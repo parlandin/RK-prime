@@ -5,11 +5,11 @@ import Button from "../Button";
 import CartImage from "../../public/images/shopping-cart-button.svg"
 import WhatImage from "../../public/images/whatsapp-logo-button.svg"
 
-const DetailsProduct = () => {
+const DetailsProduct = ({title}) => {
     return (
         <Styles.Wrapper>
             <Styles.Title>
-                Kit Cosplayer kimetsu no yaiba inosuke trousers + Cabeça 
+               {title}
             </Styles.Title>
             <Styles.Description>
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem eum, pariatur alias voluptatibus labore placeat sequi eveniet debitis assumenda iusto voluptate ullam nam consequuntur aspernatur ea qui.

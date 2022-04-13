@@ -10,7 +10,7 @@ const SectionCategorys = ({title, categorys, more}) => {
             <Styles.TitleSection>
                 <TitleCategory title={title}/>
                 {more && 
-                    <Link href="/" passHref>
+                    <Link href={`/${categorys}`} passHref>
                     <Styles.Alink>Ver mais</Styles.Alink>
                  </Link>
                 }

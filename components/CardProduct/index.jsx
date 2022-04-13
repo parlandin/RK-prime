@@ -1,10 +1,13 @@
 import Image from "next/image";
+import Link from "next/link";
 import Styles from "./Card.style";
+import StarIcon from "../../public/images/star_icon.svg"
 
 
 const CardProduct = ({img, desc, title, price, customClass}) => {
     return (
-        <Styles.Wrapper className={customClass}>
+        <Link href={`/produto/${title}`} passHref>
+            <Styles.Wrapper className={customClass}>
             <Styles.WrapperImage>
                 <Image src={img} alt={desc}  width="100%" height="100%" />
             </Styles.WrapperImage>
@@ -14,9 +17,33 @@ const CardProduct = ({img, desc, title, price, customClass}) => {
                     {title}
                 </Styles.PTitle>
                 <Styles.Price className={customClass}>R${price}</Styles.Price>
+
+                <Styles.WrapperRating className={customClass}>
+                    <Styles.Icon className="title">Avaliação:</Styles.Icon>
+
+                    <Styles.Icon>
+                        <i className="icon-star_icon"></i>
+                    </Styles.Icon>
+                    <Styles.Icon>
+                        <i className="icon-star_icon"></i>
+                    </Styles.Icon>
+                    <Styles.Icon>
+                        <i className="icon-star_icon"></i>
+                    </Styles.Icon>
+                    <Styles.Icon>
+                        <i className="icon-star_icon"></i>
+                    </Styles.Icon>
+                    <Styles.Icon>
+                        <i className="icon-star_icon"></i>
+                    </Styles.Icon>
+
+                </Styles.WrapperRating>
+                   
             </Styles.WrapperInfo>
             
         </Styles.Wrapper>
+        </Link>
+        
     )
 }
 

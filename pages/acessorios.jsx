@@ -29,8 +29,10 @@ const Category = ({dateApi}) => {
     return (
         <Container>
             <Styles.Wrapper>
-                <TitleCategory title={"Acessorios"}  />
-
+                <Styles.WrapperTitle>
+                    <TitleCategory title={"Acessórios"}  />
+                </Styles.WrapperTitle>
+               
                 <Styles.WrapperProducts>
                     {dateApi.map((product) => {
                         return (
