@@ -2,7 +2,7 @@ import Head from "next/head"
 import Container from '../../components/layout/Container'
 import GalleryCarousel from '../../components/GalleryCarousel';
 import SectionCategorys from "../../components/layout/SectionCategorys"
-import Styles from './produtos.style';
+import {Styles} from '../../styles/produtos.style';
 import DetailsProduct from '../../components/DetailsProduct';
 
 import { useRouter } from 'next/router'

@@ -15,15 +15,15 @@ const Footer = () => {
 
                         <Styles.NetWork >
                             <Image src={Iinstragram} alt="logo do instragram" />
-                            <Styles.NetWorkText href="https://www.instagram.com/pinduca_eletric/" target="_bank">
-                                @pinduca_eletri
+                            <Styles.NetWorkText href="https://www.instagram.com/" target="_bank">
+                                @instagram
                             </Styles.NetWorkText>
                         </Styles.NetWork>
 
                         <Styles.NetWork>
                            <Image  src={Iinstragram} alt="logo do whatsapp"/> 
-                           <Styles.NetWorkText  href="https://www.instagram.com/rk_prime_/" target="_bank">
-                               @rk_prime
+                           <Styles.NetWorkText  href="https://www.instagram.com/" target="_bank">
+                               @instagram
                             </Styles.NetWorkText>
                         </Styles.NetWork>
 
@@ -42,7 +42,7 @@ const Footer = () => {
                     </Styles.NetWorkColumn>
 
                     <Styles.Address>
-                        Rua. Onze, 05 - Guarujá - Expansão, Água Boa - MT, 78635-000
+                        Rua. lorem, 05 - lorem -lorem, lorem - PT, 00000-000
                     </Styles.Address>
                     
                 </Styles.WrapperNetWork>

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Styles = {}
+export  const Styles = {}
 
 Styles.Wrapper = styled.section`
     display: flex;
@@ -49,4 +49,3 @@ Styles.WrapperGeneric = styled.div`
         margin: 10px;
     }
 `
-export default Styles;
