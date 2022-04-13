@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router'
 import Container from "../components/layout/Container"
 import TitleCategory from "../components/TitleCategory"
-import Styles from './category.style'
+import {Styles} from '../styles/category.style'
 import CardProduct from "../components/CardProduct"
 
 

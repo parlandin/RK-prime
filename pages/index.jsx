@@ -2,7 +2,7 @@ import Head from "next/head";
 import Banner from '../components/Banner';
 import Container from '../components/layout/Container';
 import SectionCategorys from '../components/layout/SectionCategorys';
-import Styles from "./home.style";
+import {Styles} from "../styles/Home.Styles";
 
 
  const Home = () => {
