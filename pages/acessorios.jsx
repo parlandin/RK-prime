@@ -5,10 +5,6 @@ import Styles from './category.style'
 import CardProduct from "../components/CardProduct"
 
 
-import Product1 from "../public/images/product1.jpg"
-import Product2 from "../public/images/product2.jpg"
-
-
 export async function getStaticProps(){
     const res = await fetch("https://fakestoreapi.com/products")
     const dateApi = await res.json()
@@ -19,8 +15,6 @@ export async function getStaticProps(){
         }
     }
 }
-
-
 
 const Category = ({dateApi}) => {
     const router = useRouter()
