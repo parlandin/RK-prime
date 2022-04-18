@@ -16,6 +16,7 @@ const GlobalStyle = createGlobalStyle`
         font-family: 'Roboto', sans-serif;
         width: 100%;
         min-height: 100vh;
+        overflow: ${({mobileAtive}) => mobileAtive ? "hidden": "scroll" };
     }
 `;
 

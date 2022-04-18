@@ -16,10 +16,15 @@ const CarouselProducts = () => {
             spaceBetween={140}
             breakpoints={{
                 100: {
-                    slidesPerView: "auto",
+                    slidesPerView: "1",
                     centeredSlides: true,
                 },
                 273: {
+                    slidesPerView: '1',
+                    spaceBetween: 200,
+                    centeredSlides: true,
+                },
+                290: {
                     slidesPerView: '2',
                     spaceBetween: 120,
                     centeredSlides: false,

@@ -8,7 +8,7 @@ import LogoPicture from "../../../public/images/logoMen.svg";
 import ShppingCartIMG from "../../../public/images/shopping-cart.svg";
 
 
-const Header = () => {
+const Header = ({mobileAtive}) => {
     const [activeButtonM, setAcitveButtonM] = useState(false)
 
 
@@ -20,6 +20,7 @@ const Header = () => {
     },[])
 
     function toggleStatebutton(){
+        mobileAtive()
         return setAcitveButtonM(!activeButtonM)
     }
 
@@ -38,10 +39,15 @@ const Header = () => {
                     
                 </Styles.WrapperLogo>
 
-                <Styles.ShoppingCart>
-                    <Image  src={ShppingCartIMG} alt="" width="16px" height="16px"/>
-                    <Styles.ShoppingCartQntd>0</Styles.ShoppingCartQntd>
-                </Styles.ShoppingCart>
+                <Link href={"/shoppingcart"} passHref>
+
+                    <Styles.ShoppingCartLink>
+                        <Image  src={ShppingCartIMG} alt="" width="16px" height="16px"/>
+                        <Styles.ShoppingCartQntd>0</Styles.ShoppingCartQntd>
+                    </Styles.ShoppingCartLink>
+
+                </Link>
+                    
             </Styles.WrapperFistColum>
 
             <Styles.Menu className={activeButtonM ? "active" : ""}>

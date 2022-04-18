@@ -17,6 +17,10 @@ Styles.WrapperFeatured = styled.div`
     margin-bottom: 10px;
     overflow: hidden;
     display: flex;
+
+    @media (max-width: 360px) {
+        min-height: 200px;
+    }
 `
 
 

@@ -20,7 +20,7 @@ Styles.WrapperProducts = styled.div`
     flex-wrap: wrap;
     justify-content: space-between;
 
-    @media (max-width: 856px){
+    @media (max-width: 936px){
         justify-content: center;
     }
 
@@ -35,4 +35,8 @@ Styles.WrapperProducts = styled.div`
 
 Styles.WrapperGeneric = styled.div`
     margin: 15px;
+    @media (max-width: 476px){
+        width: 100%
+    }
+    ;
 `

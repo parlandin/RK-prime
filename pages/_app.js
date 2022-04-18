@@ -3,17 +3,24 @@ import Footer from "../components/layout/footer";
 import 'swiper/css';
 import GlobalStyle from "../styles/GlobalStyle";
 import "../public/style.css"
+import React, {useState} from "react"
 
 //custom swiper carousel 
 import SwiperGlobal from "../styles/swiperGlobal" 
 
 
 function MyApp({ Component, pageProps }) {
+    const [menuMobile, setMenuMobile] = useState(false)
+
+    function setStateMenu(){
+        setMenuMobile(!menuMobile)
+    }
+
   return (
     <>
-        <GlobalStyle />
+        <GlobalStyle mobileAtive={menuMobile} />
         <SwiperGlobal />
-        <Header />
+        <Header mobileAtive={setStateMenu}/>
         <Component {...pageProps} />
         <Footer />
     </>
