@@ -12,33 +12,35 @@ import IBanner3 from "../../public/images/banner3.png"
 
 const Banner = () => {
     return (
-        <Swiper
-        slidesPerView={1}
-        spaceBetween={30}
-        autoplay={{
-            delay: 2500,
-            disableOnInteraction: false,
-          }}
-        loop={true}
-        pagination={{
-          clickable: true,
-        }}
-        modules={[Pagination, Autoplay]}
-        className="mySwiper"
-        >
-            <SwiperSlide>
-                <Image src={IBanner1} alt="" />
-            </SwiperSlide>
-            <SwiperSlide>
-                <Image src={IBanner2} alt="" />
-            </SwiperSlide>
-            <SwiperSlide>
-                <Image src={IBanner1} alt="" />
-            </SwiperSlide>
-            <SwiperSlide>
-                <Image src={IBanner3} alt="" />
-            </SwiperSlide>
-        </Swiper>
+        <Styles.Wrapper>
+            <Swiper
+            slidesPerView={1}
+            spaceBetween={30}
+            autoplay={{
+                delay: 2500,
+                disableOnInteraction: false,
+            }}
+            loop={true}
+            pagination={{
+            clickable: true,
+            }}
+            modules={[Pagination, Autoplay]}
+            className="mySwiper"
+            >
+                <SwiperSlide>
+                    <Image src={IBanner1} alt="" />
+                </SwiperSlide>
+                <SwiperSlide>
+                    <Image src={IBanner2} alt="" />
+                </SwiperSlide>
+                <SwiperSlide>
+                    <Image src={IBanner1} alt="" />
+                </SwiperSlide>
+                <SwiperSlide>
+                    <Image src={IBanner3} alt="" />
+                </SwiperSlide>
+            </Swiper>
+        </Styles.Wrapper>
     )
 }
 

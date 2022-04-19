@@ -39,6 +39,10 @@ Styles.WrapperGeneric = styled.div`
     &.SlideImages {
         min-width: 360px;
         margin-bottom: 20px;
+
+        @media (max-width: 360px){
+            min-width: 200px;
+        }
     }
 
     @media (max-width: 380px){

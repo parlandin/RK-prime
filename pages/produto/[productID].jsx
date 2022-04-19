@@ -32,7 +32,7 @@ const Produtos = () => {
                 <SectionCategorys  title={"Itens que podem ser do seu interesse"}/>
                 
             </Styles.Wrapper>
-            <div style={{margin: "20px 0", borderRadius:"5px", padding: "10px"}}>
+            <div style={{margin: "20px 0", borderRadius:"5px", padding: "10px"}} id="comentario">
                 <h1 style={{marginBottom: "5px",fontSize:"1.2rem" }}>Descrição</h1>
                 <p>
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem non ducimus vitae porro! Tenetur laboriosam recusandae nobis enim ea, aliquam, deleniti neque quidem provident esse sint quam, similique suscipit. Sapiente.

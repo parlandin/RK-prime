@@ -42,19 +42,16 @@ Styles.WrapperFistColum = styled.div`
     justify-content: space-between;
 `
 
-Styles.ShoppingCart = styled.button`
-    display: flex;
-    border: none;
-    cursor: pointer;
-    background-color: transparent;
 
-    @media (max-width: 1009px){
-        margin-right: 10px;
-    }
+Styles.ShoppingCartLink = styled.a`
+    display: flex;
+    align-items: center;
+    color: #000;
 `
 
 Styles.ShoppingCartQntd = styled.div`
     margin-left: 5px;
+    font-size: 1.05rem;
 `
 
 Styles.WrapperLogo = styled.div`

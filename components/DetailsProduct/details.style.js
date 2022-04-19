@@ -20,8 +20,16 @@ Styles.Description = styled.p`
     
     @media (max-width: 515px){
         order: 5;
+        display: none;
     }
 `
+Styles.DescriptionButton = styled.a`
+    border-bottom:1px solid #000;
+    font-size: 1.1rem;
+    margin-left: 5px;
+    color: #3e0551;
+`
+
 
 Styles.WrapperSize = styled.div`
     display: flex;

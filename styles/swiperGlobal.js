@@ -10,6 +10,10 @@ const SwiperGlobal = createGlobalStyle`
             z-index: 5;
             border-radius: 5px;
             visibility: hidden;
+
+            @media (max-width: 700px){
+                visibility: visible;
+            }
         }
 
         &.swiper-button-prev{
@@ -23,6 +27,10 @@ const SwiperGlobal = createGlobalStyle`
         &.swiper-button-prev::after , &.swiper-button-next::after {
             color: #000;
             font-size: 2rem;
+        }
+
+        &.swiper-button-disabled {
+            display: none;
         }
     }
 `;

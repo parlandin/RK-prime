@@ -12,7 +12,7 @@ const DetailsProduct = ({title}) => {
                {title}
             </Styles.Title>
             <Styles.Description>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem eum, pariatur alias voluptatibus labore placeat sequi eveniet debitis assumenda iusto voluptate ullam nam consequuntur aspernatur ea qui.
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem eum, pariatur alias voluptatibus labore placeat sequi eveniet debitis assumenda iusto voluptate ullam nam consequuntur aspernatur ea qui.<Styles.DescriptionButton href="#comentario">ler mais</Styles.DescriptionButton>
             </Styles.Description>
             
             <Styles.WrapperSize>
