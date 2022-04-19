@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import React, {useEffect, useState} from "react"
+import getCartLength from "../../../services/getItemCart"
 
 import Styles, {DropDownHover} from "./header.style";
 
@@ -10,17 +11,20 @@ import ShppingCartIMG from "../../../public/images/shopping-cart.svg";
 
 const Header = ({mobileAtive}) => {
     const [activeButtonM, setAcitveButtonM] = useState(false)
-
+    const [cartLength, setCartLength] = useState(0)
 
     useEffect(()=> {
-        window.addEventListener('resize', () => {
-            setAcitveButtonM(false)
-        })
-
-    },[])
+        if(window.width > 516 ){
+            window.addEventListener('resize', () => {
+                setAcitveButtonM(false)
+                mobileAtive(true)
+            })
+        }
+        setCartLength(getCartLength())
+    },[mobileAtive])
 
     function toggleStatebutton(){
-        mobileAtive()
+        mobileAtive(activeButtonM)
         return setAcitveButtonM(!activeButtonM)
     }
 
@@ -31,10 +35,7 @@ const Header = ({mobileAtive}) => {
 
                 <Styles.WrapperLogo>
                     <Link href="/" passHref>
-                        <a>
-                            <Image  src={LogoPicture} alt="" width="300px" height="100px"/>
-                        </a>
-                       
+                        <a><Image  src={LogoPicture} alt="" width="300px" height="100px"/></a>
                     </Link>
                     
                 </Styles.WrapperLogo>
@@ -42,8 +43,10 @@ const Header = ({mobileAtive}) => {
                 <Link href={"/shoppingcart"} passHref>
 
                     <Styles.ShoppingCartLink>
+
                         <Image  src={ShppingCartIMG} alt="" width="16px" height="16px"/>
-                        <Styles.ShoppingCartQntd>0</Styles.ShoppingCartQntd>
+                        <Styles.ShoppingCartQntd>{cartLength}</Styles.ShoppingCartQntd>
+                        
                     </Styles.ShoppingCartLink>
 
                 </Link>

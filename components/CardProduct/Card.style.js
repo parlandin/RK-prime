@@ -10,7 +10,9 @@ Styles.Wrapper = styled.a`
     flex-direction: column;
     cursor: pointer;
     padding: 5px;
-    color: #202020;
+    color: #2c2c2c;
+    background-color: #fff;
+    border-radius: 10px;
 
     &:hover {
         background-color: #faf2f2;

@@ -14,7 +14,7 @@ Styles.Title = styled.h2`
     font-size: 1.5rem;
     font-family: inherit;
     font-weight: 500;
-    color: #000;
+    color: #2c2c2c;
 `
 
 export default Styles;
