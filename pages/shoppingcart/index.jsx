@@ -3,7 +3,7 @@ import CartProduct from "../../components/CartProduct"
 import Container from "../../components/layout/Container"
 import Styles from "../../styles/shopingcart.style"
 
-import IMAGE from "../../../backend/produtos images/roupas/jamaal-cooks-pt3l-gUpgOU-unsplash.jpg"
+import IMAGE from "../../public/images/product1.jpg"
 
 const ShoppingCart = () => {
     const [shopCart, setShopCart] = useState([])
