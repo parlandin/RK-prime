@@ -29,7 +29,7 @@ const Banner = () => {
             className="mySwiper"
             >
                 <SwiperSlide>
-                    <Image src={BannerF} alt="" />
+                    <Image src={BannerF} alt="" width="1000" height="400"/>
                 </SwiperSlide>
                 <SwiperSlide>
                     <Image src={BannerF} alt="" />

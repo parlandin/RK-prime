@@ -30,28 +30,11 @@ const Header = ({mobileAtive}) => {
 
     return (
         <Styles.WrapperHeader active={activeButtonM}>
-            <Styles.WrapperFistColum>
-                <Styles.TempDiv></Styles.TempDiv>
-
-                <Styles.WrapperLogo>
-                    <Link href="/" passHref>
-                        <a><Image  src={LogoPicture} alt="" width="300px" height="100px"/></a>
-                    </Link>
-                    
-                </Styles.WrapperLogo>
-
-                <Link href={"/shoppingcart"} passHref>
-
-                    <Styles.ShoppingCartLink>
-
-                        <Image  src={ShppingCartIMG} alt="" width="16px" height="16px"/>
-                        <Styles.ShoppingCartQntd>{cartLength}</Styles.ShoppingCartQntd>
-                        
-                    </Styles.ShoppingCartLink>
-
+            <Styles.WrapperLogo>
+                <Link href="/" passHref>
+                    <a><Image  src={LogoPicture} alt="" width="160px" height="60px"/></a>
                 </Link>
-                    
-            </Styles.WrapperFistColum>
+            </Styles.WrapperLogo>
 
             <Styles.Menu className={activeButtonM ? "active" : ""}>
                 <Styles.MenuList >
@@ -114,6 +97,15 @@ const Header = ({mobileAtive}) => {
                 <Styles.ButtonMobile className={activeButtonM ? "active" : ""}>
                 </Styles.ButtonMobile>
             </Styles.MenuMobile>
+
+
+            
+            <Link href={"/shoppingcart"} passHref>
+                <Styles.ShoppingCartLink>
+                    <Image  src={ShppingCartIMG} alt="" width="16px" height="16px"/>
+                    <Styles.ShoppingCartQntd>{cartLength}</Styles.ShoppingCartQntd>
+                </Styles.ShoppingCartLink>
+            </Link>
         </Styles.WrapperHeader>
     )
 }

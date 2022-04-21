@@ -7,15 +7,12 @@ Styles.WrapperHeader = styled.header`
     max-width: 1000px;
     width: 100%;
     display: flex;
-    flex-direction: column;
     align-items: center;
-
-    &::after {
-        content: " ";
-        width: 70%;
-        height: 1px;
-        background-color: #000;
-    }
+    justify-content: space-between;
+    padding: 0px 10px;
+    background-color: #fff;
+    border-radius: 10px;
+    margin-top: 15px;
 
     @media (max-width: 515px) {
         flex-direction: row;
