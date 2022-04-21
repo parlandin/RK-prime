@@ -13,9 +13,11 @@ Styles.Wrapper = styled.a`
     color: #2c2c2c;
     background-color: #fff;
     border-radius: 10px;
+    transition: transform  opacity 100ms ease-in;
 
     &:hover {
-        background-color: #faf2f2;
+        transform: scale(1.1);
+        opacity: 0.9;
     }
 
     &.mobile-direct {
@@ -31,7 +33,7 @@ Styles.Wrapper = styled.a`
 
 Styles.WrapperImage = styled.div`
     padding: 5px;
-    border: 1px solid #000;
+    //border: 1px solid #000;
     max-height: 160px;
     min-height: 160px;
     max-width: 140px;
@@ -40,6 +42,7 @@ Styles.WrapperImage = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: 10px;
 `
 
 Styles.WrapperInfo = styled.div`

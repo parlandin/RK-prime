@@ -9,6 +9,7 @@ import Image from "next/image"
 import IBanner1 from "../../public/images/banner1.png"
 import IBanner2 from "../../public/images/banner2.png"
 import IBanner3 from "../../public/images/banner3.png"
+import BannerF from "../../public/images/final-exemplo.png"
 
 const Banner = () => {
     return (
@@ -28,16 +29,16 @@ const Banner = () => {
             className="mySwiper"
             >
                 <SwiperSlide>
-                    <Image src={IBanner1} alt="" />
+                    <Image src={BannerF} alt="" />
                 </SwiperSlide>
                 <SwiperSlide>
-                    <Image src={IBanner2} alt="" />
+                    <Image src={BannerF} alt="" />
                 </SwiperSlide>
                 <SwiperSlide>
-                    <Image src={IBanner1} alt="" />
+                    <Image src={BannerF} alt="" />
                 </SwiperSlide>
                 <SwiperSlide>
-                    <Image src={IBanner3} alt="" />
+                    <Image src={BannerF} alt="" />
                 </SwiperSlide>
             </Swiper>
         </Styles.Wrapper>
