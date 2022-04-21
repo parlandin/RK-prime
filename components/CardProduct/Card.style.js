@@ -14,6 +14,7 @@ Styles.Wrapper = styled.a`
     background-color: #fff;
     border-radius: 10px;
     transition: transform  opacity 100ms ease-in;
+    box-shadow: 1px 1px 5px 1px #e2e2e2;
 
     &:hover {
         transform: scale(1.1);

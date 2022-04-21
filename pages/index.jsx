@@ -14,8 +14,8 @@ import {Styles} from "../styles/Home.Styles";
         <Styles.WrapperHome>
            <Banner />
            <SectionCategorys title="Destaques" more={false}/>
-           <SectionCategorys title="Roupas" more={true} categorys={"roupas"}/>
-           <SectionCategorys title="Acessorios" more={true}/>
+           <SectionCategorys title="Acessórios" more={true} categorys={"roupas"}/>
+           <SectionCategorys title="Tattoos" more={true}/>
         </Styles.WrapperHome>
     </Container>
   )

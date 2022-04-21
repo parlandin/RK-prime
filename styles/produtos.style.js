@@ -15,6 +15,9 @@ Styles.ProdutoInfo = styled.div`
     width: 100%;
     margin-bottom: 20px;
     justify-content: space-between;
+    background-color: #fff;
+    box-shadow: 1px 1px 5px 1px #e2e2e2;
+    padding-top: 10px;
 
     &::after {
         content: "";
