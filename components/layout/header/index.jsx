@@ -93,19 +93,18 @@ const Header = ({mobileAtive}) => {
                 </Styles.MenuList>
             </Styles.Menu>
 
-            <Styles.MenuMobile onClick={toggleStatebutton}>
-                <Styles.ButtonMobile className={activeButtonM ? "active" : ""}>
-                </Styles.ButtonMobile>
-            </Styles.MenuMobile>
-
-
-            
             <Link href={"/shoppingcart"} passHref>
                 <Styles.ShoppingCartLink>
                     <Image  src={ShppingCartIMG} alt="" width="16px" height="16px"/>
                     <Styles.ShoppingCartQntd>{cartLength}</Styles.ShoppingCartQntd>
                 </Styles.ShoppingCartLink>
             </Link>
+
+            <Styles.MenuMobile onClick={toggleStatebutton}>
+                <Styles.ButtonMobile className={activeButtonM ? "active" : ""}>
+                </Styles.ButtonMobile>
+            </Styles.MenuMobile>
+
         </Styles.WrapperHeader>
     )
 }
