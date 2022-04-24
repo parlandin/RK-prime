@@ -23,7 +23,7 @@ Styles.Wrapper = styled.a`
 
     &.mobile-direct {
 
-        @media (max-width: 476px) and  (min-width: 300px){
+        @media (max-width: 476px) and  (min-width: 350px){
             flex-direction: row;
             max-width: 100%;
             min-width: 100%;
@@ -77,7 +77,7 @@ Styles.Price = styled.span`
 
     &.mobile-direct {
 
-        @media (max-width: 476px) and  (min-width: 300px){
+        @media (max-width: 476px) and  (min-width: 350px){
             align-self: flex-start;
             margin: 10px 5px;
         }
@@ -93,7 +93,7 @@ Styles.WrapperRating =styled.div`
 
     &.mobile-direct {
 
-        @media (max-width: 478px) and  (min-width: 300px){
+        @media (max-width: 478px) and  (min-width: 350px){
             align-self: flex-start;
             }  
         } 

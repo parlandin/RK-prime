@@ -12,42 +12,58 @@ const CarouselProducts = () => {
     return (
         <Styles.WrapperGereric>
             <Swiper
-            slidesPerView={2}
-            spaceBetween={140}
             breakpoints={{
                 100: {
-                    slidesPerView: "1",
+                    slidesPerView: "auto",
                     centeredSlides: true,
-                },
-                273: {
-                    slidesPerView: '1',
-                    spaceBetween: 200,
-                    centeredSlides: true,
+                    spaceBetween: 10,
                 },
                 290: {
-                    slidesPerView: '2',
-                    spaceBetween: 120,
+                    centeredSlides: false,
+                    lidesPerView: '2',
+                    spaceBetween: 150,
+                },
+                330: {
+                    lidesPerView: '2',
+                    spaceBetween: 140,
                     centeredSlides: false,
                 },
                 370:{
                     slidesPerView: '2',
-                    spaceBetween: 50,
+                    spaceBetween: 90,
                 },
-                420:{
+               
+                425: {
+                    slidesPerView: '2',
+                    spaceBetween: 70,
+                },
+                484: {
+                    slidesPerView: '2',
+                    spaceBetween: 20,
+                },
+                514 :{
                     slidesPerView: '3',
-                    spaceBetween: 150,
+                    spaceBetween: 180,
                 },
                 580: {
                     slidesPerView: '3',
-                    spaceBetween: 5,
+                    spaceBetween: 100,
                 },
-                640: {
+                680: {
                     slidesPerView: '3',
-                    spaceBetween: 10,
+                    spaceBetween: 20,
+                },
+                714: {
+                    slidesPerView: '3',
+                    spaceBetween: 50,
                 },
                 789: {
                     slidesPerView: '4',
-                    spaceBetween: 20,
+                    spaceBetween: 110,
+                },
+                890: {
+                    slidesPerView: '4',
+                    spaceBetween: 30,
                 },
                 940: {
                     slidesPerView: '4',
@@ -59,11 +75,14 @@ const CarouselProducts = () => {
             className="mySwiper"
             >
                 <SwiperSlide>
-                <CardProduct img={Product1} 
-                title="Brinco cruz styles new limitado + par de anel dbc"  
-                price={"100"}/>
+                    <Styles.WrapperCard>
+                        <CardProduct img={Product1} 
+                        title="Brinco cruz styles new limitado + par de anel dbc"  
+                        price={"100"}/>
+                    </Styles.WrapperCard>
                 </SwiperSlide>
-
+                
+                
                 <SwiperSlide>
                     <CardProduct img={Product2}
                     title="Brinco cruz styles new limitado + par de  new limitado

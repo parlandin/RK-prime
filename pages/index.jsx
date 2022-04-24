@@ -9,7 +9,7 @@ import {Styles} from "../styles/Home.Styles";
   return (
     <Container>
         <Head>
-          <title>RKprime | Riska Tattoo</title>
+          <title>RK Prime | Riska Tattoo</title>
         </Head>
         <Styles.WrapperHome>
            <Banner />

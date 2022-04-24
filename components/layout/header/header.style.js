@@ -3,6 +3,12 @@ import styled, { keyframes } from "styled-components";
 const Styles = {};
 
 Styles.WrapperHeader = styled.header`
+    width: 100%;
+    background-color: #fff;
+    border-radius: 10px;
+`
+
+Styles.Header = styled.div`
     margin: 0 auto;
     max-width: 1000px;
     width: 100%;
@@ -10,9 +16,7 @@ Styles.WrapperHeader = styled.header`
     align-items: center;
     justify-content: space-between;
     padding: 0px 10px;
-    background-color: #fff;
-    border-radius: 10px;
-    margin-top: 15px;
+    //margin-top: 15px;
 
     @media (max-width: 515px) {
         flex-direction: row;
@@ -25,12 +29,6 @@ Styles.WrapperHeader = styled.header`
     }
 `
 
-Styles.TempDiv = styled.div`
-    width: 38.8px;
-    @media (max-width: 515px) {
-        display: none;
-    }
-`
 
 Styles.WrapperFistColum = styled.div`
     display: flex;
@@ -40,24 +38,9 @@ Styles.WrapperFistColum = styled.div`
 `
 
 
-Styles.ShoppingCartLink = styled.a`
-    display: flex;
-    align-items: center;
-    color: #000;
-`
 
-Styles.ShoppingCartQntd = styled.div`
-    margin-left: 5px;
-    font-size: 1.05rem;
-`
 
-Styles.WrapperLogo = styled.div`
-    justify-content: center;
 
-    @media (max-width: 515px){
-        max-width: 200px;
-    }
-`
 
 const visibleMenuAnim = keyframes`
     0% {
@@ -235,70 +218,6 @@ Styles.DropDownItem = styled.li`
     margin: 5px 0;
 
 `
-Styles.MenuMobile = styled.button`
-    display: none;
-    margin: 0 10px 0 15px;
-    position: relative;
-    cursor: pointer;
-    border: none;
-    background: transparent;
-    width: 30px;
-    height: 30px;
 
-    @media (max-width:515px){
-        display: block;
-    }
-`
-
-Styles.ButtonMobile = styled.div`
-    position: absolute;
-    background-color: #000;
-    width: 30px;
-    height: 4px;
-    border-radius: 4px;
-    right: 0;  
-    transition: 0.5s;
-    border-radius: 2px;
-    box-shadow:  0px -1px 1px rgba(255, 255, 255, 0.534);
-    z-index: 5;
-
-    &.active {
-        background-color: transparent;
-        box-shadow: none;
-        &::before {
-            transform: rotate(45deg);
-            bottom: 0;
-            background-color: white;
-        }
-
-        &::after {
-            transform: rotate(133deg);
-            top: 0;
-            background-color: white;
-        }
-
-        
-    }
-   
-   &::before, &::after {
-        display: block;
-        content:" ";
-        background-color: #000;
-        width: 30px;
-        height: 4px;
-        position: absolute;
-        right: 0;
-        bottom:10px;
-        transition: 0.5s;
-        border-radius: 2px;
-        box-shadow:  0px -1px 1px rgba(255, 255, 255, 0.534);
-    }
-
-    &::after {
-        top: 10px;
-        bottom: 0;
-    }
-
-`
 
 export default Styles;
