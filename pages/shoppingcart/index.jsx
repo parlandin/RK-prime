@@ -7,7 +7,6 @@ import IMAGE from "../../public/images/product1.jpg"
 
 const ShoppingCart = () => {
     const [shopCart, setShopCart] = useState([])
-    const [totalValue, setTotalValue] = useState(0)
 
     useEffect(() => {
         let itens = localStorage.getItem("shopCart")

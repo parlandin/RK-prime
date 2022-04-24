@@ -6,9 +6,7 @@ import "swiper/css/pagination";
 
 
 import Image from "next/image"
-import IBanner1 from "../../public/images/banner1.png"
-import IBanner2 from "../../public/images/banner2.png"
-import IBanner3 from "../../public/images/banner3.png"
+import BannerF2 from "../../public/images/final-exemplo2.jpg"
 
 const Banner = () => {
     return (
@@ -28,16 +26,13 @@ const Banner = () => {
             className="mySwiper"
             >
                 <SwiperSlide>
-                    <Image src={IBanner1} alt="" />
+                    <Image src={BannerF2} alt=""/>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <Image src={IBanner2} alt="" />
+                    <Image src={BannerF2} alt="" />
                 </SwiperSlide>
                 <SwiperSlide>
-                    <Image src={IBanner1} alt="" />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <Image src={IBanner3} alt="" />
+                    <Image src={BannerF2} alt="" />
                 </SwiperSlide>
             </Swiper>
         </Styles.Wrapper>

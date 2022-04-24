@@ -10,7 +10,7 @@ const CartProduct = ({img, desc, title, price, customClass}) => {
             <Link href={`/produto/${title}`} passHref>
                 <Styles.WrapperGereric>
                     <Styles.WrapperImage>
-                        <Image src={img} alt={desc}  width="100%" height="100%" />
+                        <Image src={img} alt={desc}  width="100" height="100" />
                     </Styles.WrapperImage>
 
                     <Styles.WrapperInfo >

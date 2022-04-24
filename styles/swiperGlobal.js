@@ -5,7 +5,7 @@ const SwiperGlobal = createGlobalStyle`
     div {
 
         &.swiper-button-prev, &.swiper-button-next {
-            background-color:#3f3b3ba3;
+            background-color:#b7b0b070;
             width: 40px;
             z-index: 5;
             border-radius: 5px;

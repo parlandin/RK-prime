@@ -13,14 +13,17 @@ Styles.Wrapper = styled.a`
     color: #2c2c2c;
     background-color: #fff;
     border-radius: 10px;
+    transition: transform  opacity 100ms ease-in;
+    box-shadow: 1px 1px 5px 1px #e2e2e2;
 
     &:hover {
-        background-color: #faf2f2;
+        transform: scale(1.1);
+        opacity: 0.9;
     }
 
     &.mobile-direct {
 
-        @media (max-width: 476px) and  (min-width: 300px){
+        @media (max-width: 476px) and  (min-width: 350px){
             flex-direction: row;
             max-width: 100%;
             min-width: 100%;
@@ -31,7 +34,7 @@ Styles.Wrapper = styled.a`
 
 Styles.WrapperImage = styled.div`
     padding: 5px;
-    border: 1px solid #000;
+    //border: 1px solid #000;
     max-height: 160px;
     min-height: 160px;
     max-width: 140px;
@@ -40,6 +43,7 @@ Styles.WrapperImage = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: 10px;
 `
 
 Styles.WrapperInfo = styled.div`
@@ -73,7 +77,7 @@ Styles.Price = styled.span`
 
     &.mobile-direct {
 
-        @media (max-width: 476px) and  (min-width: 300px){
+        @media (max-width: 476px) and  (min-width: 350px){
             align-self: flex-start;
             margin: 10px 5px;
         }
@@ -89,7 +93,7 @@ Styles.WrapperRating =styled.div`
 
     &.mobile-direct {
 
-        @media (max-width: 478px) and  (min-width: 300px){
+        @media (max-width: 478px) and  (min-width: 350px){
             align-self: flex-start;
             }  
         } 

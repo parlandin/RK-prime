@@ -9,13 +9,13 @@ import {Styles} from "../styles/Home.Styles";
   return (
     <Container>
         <Head>
-          <title>RKprime | Riska Tattoo</title>
+          <title>RK Prime | Riska Tattoo</title>
         </Head>
         <Styles.WrapperHome>
            <Banner />
            <SectionCategorys title="Destaques" more={false}/>
-           <SectionCategorys title="Roupas" more={true} categorys={"roupas"}/>
-           <SectionCategorys title="Acessorios" more={true}/>
+           <SectionCategorys title="Acessórios" more={true} categorys={"roupas"}/>
+           <SectionCategorys title="Tattoos" more={true}/>
         </Styles.WrapperHome>
     </Container>
   )
