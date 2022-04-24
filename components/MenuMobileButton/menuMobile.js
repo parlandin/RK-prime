@@ -12,7 +12,7 @@ Styles.MenuMobile = styled.button`
     width: 30px;
     height: 30px;
 
-    @media (max-width:515px){
+    @media (max-width:730px){
         display: block;
     }
 `

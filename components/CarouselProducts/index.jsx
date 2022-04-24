@@ -67,7 +67,7 @@ const CarouselProducts = () => {
                 },
                 940: {
                     slidesPerView: '4',
-                    spaceBetween: 20,
+                    spaceBetween: 50,
                 },
             }}
             navigation={true}

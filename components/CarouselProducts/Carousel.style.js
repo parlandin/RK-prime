@@ -12,6 +12,10 @@ Styles.WrapperGereric = styled.div`
     @media (max-width: 520px){
         margin:0 10px;
     }
+
+    @media (max-width: 1050px){
+        margin-left: 20px;
+    }
 `
 
 Styles.WrapperCard = styled.div`

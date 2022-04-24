@@ -8,6 +8,10 @@ Styles.WrapperLogo = styled.div`
     @media (max-width: 515px){
         max-width: 200px;
     }
+
+    @media (max-width: 290px){
+        max-width: 130px;
+    }
 `
 
 
