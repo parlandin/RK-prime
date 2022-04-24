@@ -4,17 +4,24 @@ import styled from "styled-components";
 const Styles = {}
 
 Styles.Wrapper = styled.div`
+    position: relative;
     display: flex;
     cursor: pointer;
     padding: 5px;
     position: relative;
-    background-color: #fff;
     border-radius: 10px;
     justify-content: space-between;
     align-items: center;
 
-    &:hover {
-        background-color: #faf2f2;
+    &::after {
+        content: " ";
+        position: absolute;
+        bottom: 1px;
+        width: 90%;
+        height: 1px;
+        background-color:  #7774748a;
+        left: 50%;
+        transform: translateX(-52%);
     }
 
 `
@@ -31,7 +38,6 @@ Styles.WrapperGereric = styled.a`
 
 Styles.WrapperImage = styled.div`
     padding: 5px;
-    border: 1px solid #000;
     align-self: flex-start;
     display: flex;
     align-items: center;
@@ -106,23 +112,8 @@ Styles.Button = styled.button`
     color: #fff;
     border: none;
     cursor: pointer;
-
-    @media (max-width:534px){
-
-        & + button {
-
-        }
-        margin: 0px 10px 0px 0px;
-    }
+    background-color: transparent;
     
-    
-    &.finish {
-        background-color: #5aaa5a;
-    }
-
-    &.canceled {
-        background-color: #cc3c3c;
-    }
 `
 
 

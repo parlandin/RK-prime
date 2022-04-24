@@ -23,6 +23,8 @@ Styles.WrapperCart = styled.div`
     max-height: 70vh;
     overflow-y: scroll;
     overflow-x: hidden;
+    background-color: #fff;
+    border-radius: 5px;
 `
 
 Styles.CardCart = styled.div`
@@ -36,12 +38,23 @@ Styles.CardCart = styled.div`
 `
 
 Styles.WrapperTotal = styled.div`
+    position: relative;
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 30px 0 10px;
     flex-wrap: wrap;
+    background-color: #fff;
+    
+    &::before {
+        content: " ";
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 1px;
+        background-color:  #7774748a;
+    }
 `
 
 Styles.GerericTotal = styled.div`

@@ -2,6 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import Styles from "./Cart.style";
 import StarIcon from "../../public/images/star_icon.svg"
+import DeleteIcon from "../../public/images/deleteIcon.svg"
+
 
 
 const CartProduct = ({img, desc, title, price, customClass}) => {
@@ -47,8 +49,15 @@ const CartProduct = ({img, desc, title, price, customClass}) => {
 
 
                 <Styles.WrapperButton>
-                    <Styles.Button className="finish">Finalizar</Styles.Button>
-                    <Styles.Button className="canceled">Remover</Styles.Button>
+                    <Styles.Button className="finish">
+                        <label>
+                            <input type="checkbox" name="" id="" />
+                        </label>
+                    </Styles.Button>
+
+                    <Styles.Button className="canceled">
+                        <Image src={DeleteIcon} alt="" height="16" width="16" />
+                    </Styles.Button>
                     
                 </Styles.WrapperButton>
 
