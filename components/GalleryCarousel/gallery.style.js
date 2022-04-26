@@ -22,7 +22,13 @@ Styles.WrapperFeatured = styled.div`
     border-bottom: 1px solid #7774748a;
 
     @media (max-width: 360px) {
+        min-height: 300px;
+        max-height: 300px;
+    }
+
+    @media (max-width: 300px) {
         min-height: 200px;
+        max-height: 200px;
     }
 `
 
@@ -103,6 +109,30 @@ Styles.OptionImage = styled.button`
     }
     &.selected {
         border: 1px solid #7774748a;
+    }
+
+    @media (max-width:360px){
+        max-width: 50px;
+        width: 60px;
+        height: 50px;
+
+        margin-right: 10px;
+
+        &:last-of-type {
+            margin-right: 0;
+        }
+    }
+    
+    @media (max-width:264px){
+        max-width: 50px;
+        width: 60px;
+        height: 40px;
+
+        margin-right: 8px;
+
+        &:last-of-type {
+            margin-right: 0;
+        }
     }
 `
 

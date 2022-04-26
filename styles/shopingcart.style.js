@@ -9,6 +9,15 @@ Styles.Wrapper = styled.section`
     width: 100%;
     height: 75vh;
 `
+
+Styles.WrapperGeneric  = styled.div`
+    padding: 10px;
+    background-color: #fff;
+    margin-top:30px;
+    border-radius: 5px;
+`
+
+
 Styles.Textnull = styled.p`
     font-size: 1.1rem;
     color: #141414;
@@ -16,15 +25,12 @@ Styles.Textnull = styled.p`
 
 
 Styles.WrapperCart = styled.div`
-    margin-top:30px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    max-height: 70vh;
+    max-height: 63vh;
     overflow-y: scroll;
     overflow-x: hidden;
-    background-color: #fff;
-    border-radius: 5px;
 `
 
 Styles.CardCart = styled.div`

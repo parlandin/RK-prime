@@ -13,7 +13,7 @@ Styles.Wrapper = styled.div`
     justify-content: space-between;
     align-items: center;
 
-    &::after {
+    &::before {
         content: " ";
         position: absolute;
         bottom: 1px;
@@ -31,9 +31,9 @@ Styles.WrapperGereric = styled.a`
     width: 100%;
     color: #2c2c2c;
 
-    @media (max-width: 405px){
+   /*  @media (max-width: 405px){
         flex-direction: column;
-    }
+    } */
 `
 
 Styles.WrapperImage = styled.div`

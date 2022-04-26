@@ -10,7 +10,7 @@ import Gallery2 from '../../public/images/Gallery2.jpg'
 
 
 
-const GalleryCarousel = () => {
+const GalleryCarousel = ({arrayImages}) => {
     const [currentSlide, setCurrentSlide] = useState(0);
     const length = dataImages.length
 
