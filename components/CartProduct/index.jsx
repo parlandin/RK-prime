@@ -22,23 +22,6 @@ const CartProduct = ({img, desc, title, price, customClass}) => {
                         <Styles.Price className={customClass}>R${price}</Styles.Price>
 
                         <Styles.WrapperRating className={customClass}>
-                            <Styles.Icon className="title">Avaliação:</Styles.Icon>
-
-                            <Styles.Icon>
-                                <i className="icon-star_icon"></i>
-                            </Styles.Icon>
-                            <Styles.Icon>
-                                <i className="icon-star_icon"></i>
-                            </Styles.Icon>
-                            <Styles.Icon>
-                                <i className="icon-star_icon"></i>
-                            </Styles.Icon>
-                            <Styles.Icon>
-                                <i className="icon-star_icon"></i>
-                            </Styles.Icon>
-                            <Styles.Icon>
-                                <i className="icon-star_icon"></i>
-                            </Styles.Icon>
 
                         </Styles.WrapperRating>
                         

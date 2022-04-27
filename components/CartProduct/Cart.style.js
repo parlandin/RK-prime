@@ -4,7 +4,6 @@ import styled from "styled-components";
 const Styles = {}
 
 Styles.Wrapper = styled.div`
-    position: relative;
     display: flex;
     cursor: pointer;
     padding: 5px;
@@ -12,17 +11,6 @@ Styles.Wrapper = styled.div`
     border-radius: 10px;
     justify-content: space-between;
     align-items: center;
-
-    &::before {
-        content: " ";
-        position: absolute;
-        bottom: 1px;
-        width: 90%;
-        height: 1px;
-        background-color:  #7774748a;
-        left: 50%;
-        transform: translateX(-52%);
-    }
 
 `
 
