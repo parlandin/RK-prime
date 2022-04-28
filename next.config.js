@@ -3,7 +3,7 @@
 const nextConfig = {
     reactStrictMode: true,
     images: {
-        domains: ['fakestoreapi.com'],
+        domains: ['fakestoreapi.com','drive.google.com'],
     },
     compiler: {
         styledComponents: true,

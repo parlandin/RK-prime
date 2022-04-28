@@ -1,48 +1,69 @@
 import Image from "next/image";
 import Link from "next/link";
 import Styles from "./Cart.style";
-import StarIcon from "../../public/images/star_icon.svg"
-import DeleteIcon from "../../public/images/deleteIcon.svg"
+import {VscTrash} from "react-icons/vsc"
+import {AiOutlinePlus, AiOutlineMinus} from "react-icons/ai"
+import removeItemCart from "../../services/removeItemCart";
 
 
 
-const CartProduct = ({img, desc, title, price, customClass}) => {
+const CartProduct = ({img, desc, title, price, customClass, amount, setAmountProduct, id}) => {
+
+    function setMinuQtd() {
+        setAmountProduct(id, "min")
+    }
+
+    function setPlusQtd(){
+        setAmountProduct(id, "plus")
+    }
+
+
     return (
         <Styles.Wrapper className={customClass}>
             <Link href={`/produto/${title}`} passHref>
-                <Styles.WrapperGereric>
-                    <Styles.WrapperImage>
-                        <Image src={img} alt={desc}  width="100" height="100" />
-                    </Styles.WrapperImage>
-
-                    <Styles.WrapperInfo >
-                        <Styles.PTitle className={customClass}>
-                            {title}
-                        </Styles.PTitle>
-                        <Styles.Price className={customClass}>R${price}</Styles.Price>
-
-                        <Styles.WrapperRating className={customClass}>
-
-                        </Styles.WrapperRating>
-                        
-                    </Styles.WrapperInfo>
-
-                </Styles.WrapperGereric>
+                <Styles.LinkProduct></Styles.LinkProduct>
             </Link> 
 
+            <Styles.WrapperGereric>
+                <Styles.WrapperImage>
+                    <Image src={img} alt={desc}  width="60" height="60" />
+                </Styles.WrapperImage>
 
-                <Styles.WrapperButton>
-                    <Styles.Button className="finish">
-                        <label>
-                            <input type="checkbox" name="" id="" />
-                        </label>
-                    </Styles.Button>
+                <Styles.WrapperInfo >
 
-                    <Styles.Button className="canceled">
-                        <Image src={DeleteIcon} alt="" height="16" width="16" />
-                    </Styles.Button>
-                    
-                </Styles.WrapperButton>
+                    <Styles.PTitle className={customClass}>{title}</Styles.PTitle>
+
+                    <Styles.Price className={customClass}>R${price}</Styles.Price>
+
+                    <Styles.WrapperQtd>
+                        <Styles.ButtonQtd onClick={setMinuQtd}>
+                            <AiOutlineMinus />
+                        </Styles.ButtonQtd>
+
+                        <Styles.Span>Qtd: {amount ? amount : 1}</Styles.Span>
+
+                        <Styles.ButtonQtd>
+                            <AiOutlinePlus onClick={setPlusQtd}/>
+                        </Styles.ButtonQtd>
+                    </Styles.WrapperQtd>
+                </Styles.WrapperInfo>
+
+            </Styles.WrapperGereric>
+           
+
+
+            <Styles.WrapperButton>
+                <Styles.Button className="finish">
+                    <label>
+                        <input type="checkbox" name="" id="" />
+                    </label>
+                </Styles.Button>
+
+                <Styles.Button className="canceled" onClick={() => removeItemCart(id)}>
+                    <VscTrash style={{color: "#000", height:"1.3em", width: "1.3em"}} />
+                </Styles.Button>
+                
+            </Styles.WrapperButton>
 
         </Styles.Wrapper>
        

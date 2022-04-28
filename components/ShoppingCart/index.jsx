@@ -10,21 +10,26 @@ import ShppingCartIMG from "../../public/images/shopping-cart.svg";
 
 const ShoppingCart = () => {
     const [cartLength, setCartLength] = useState(0)
+    const [isOpen, setIsOpen] = useState(false)
 
     useEffect(()=> {
         setCartLength(getCartLength())
     },[])
 
+    function handleOnClick(bool){
+        if(bool) return setIsOpen(bool)
+
+        return setIsOpen(!isOpen)
+    }
+
     return (
         <>
-            <Link href={"/shoppingcart"} passHref>
-                <Styles.ShoppingCartLink>
-                    <Styles.ShoppingCartQntd>{cartLength}</Styles.ShoppingCartQntd>
-                    <Image  src={ShppingCartIMG} alt="" width="16px" height="16px"/>
-                </Styles.ShoppingCartLink>
-            </Link>
-
-            <ShoppingCartModal />
+            <Styles.ShoppingCartLink onClick={handleOnClick}>
+                <Styles.ShoppingCartQntd>{cartLength}</Styles.ShoppingCartQntd>
+                <Image  src={ShppingCartIMG} alt="" width="16px" height="16px"/>
+            </Styles.ShoppingCartLink>
+           
+            {isOpen && <ShoppingCartModal handleOnClick={handleOnClick}/>}
         </>
     )
 }

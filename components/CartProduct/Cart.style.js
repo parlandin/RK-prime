@@ -5,7 +5,6 @@ const Styles = {}
 
 Styles.Wrapper = styled.div`
     display: flex;
-    cursor: pointer;
     padding: 5px;
     position: relative;
     border-radius: 10px;
@@ -14,14 +13,24 @@ Styles.Wrapper = styled.div`
 
 `
 
-Styles.WrapperGereric = styled.a`
+Styles.WrapperGereric = styled.div`
     display: flex;
     width: 100%;
     color: #2c2c2c;
+    align-items: flex-start;
 
    /*  @media (max-width: 405px){
         flex-direction: column;
     } */
+`
+
+Styles.LinkProduct = styled.a`
+    position: absolute;
+    width: 83%;
+    height: 69px;
+    top: 0;
+    cursor: pointer;
+    z-index: 4;
 `
 
 Styles.WrapperImage = styled.div`
@@ -35,44 +44,47 @@ Styles.WrapperImage = styled.div`
 Styles.WrapperInfo = styled.div`
     display: flex;
     flex-direction: column;
+    margin-left: 10px;
+    min-height: 96px;
 `
 
 Styles.PTitle = styled.p`
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     font-weight: 400;
-    margin: 10px 5px 5px;
     margin-right: 0;
     overflow: hidden;
-
-
 ` 
 
 Styles.Price = styled.span`
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: 400px;
-    margin: 10px 5px;
-
+    margin: 10px 0px;
 `
 
-Styles.WrapperRating =styled.div`
-    margin: 5px 5px 10px;
+Styles.WrapperQtd = styled.div`
+    position: absolute;
+    bottom: 0;
+    left: 86px;
+    z-index: 20;
     display: flex;
     align-items: center;
+    background: #F0F2F2;
+    box-shadow: 0 2px 5px rgb(15 17 17 / 15%);
+    box-sizing: 5px;
+    padding: 5px;
+    //max-width: 109px;
+`
+Styles.Span = styled.span`
+    margin: 0px 5px;
 `
 
-Styles.Icon = styled.span`
-    font-size: 0.9rem;
-    & + span {
-        margin-left: 2px;
-    }
-
-    &:hover .icon-star_icon{
-        color: #ffc600db;
-    }
-
-    &.title {
-       
-    }
+Styles.ButtonQtd = styled.button`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3px;
+    border: none;
+    cursor: pointer;
 `
 
 Styles.WrapperButton = styled.div`
@@ -80,7 +92,7 @@ Styles.WrapperButton = styled.div`
     flex-direction: column;
     position: absolute;
     top: 50%;
-    right: 25px;
+    right: 10px;
     transform: translateY(-50%);
 
     @media (max-width: 534px) {
@@ -101,7 +113,6 @@ Styles.Button = styled.button`
     border: none;
     cursor: pointer;
     background-color: transparent;
-    
 `
 
 
