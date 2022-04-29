@@ -3,7 +3,7 @@ import styled, {css} from "styled-components";
 const Styles = {}
 
 Styles.Wrapper = styled.section`
-    position: absolute;
+    position: fixed;
     top: 0px;
     right: 0px;
     display: flex;
@@ -11,7 +11,10 @@ Styles.Wrapper = styled.section`
     align-items: center;
     width: 100%;
     max-width: 400px;
-    height: 75vh;
+    height: 100vh;
+    background-color: #fff;
+    z-index: 20;
+    box-shadow: 1px 1px 10px 3px #c2c0c0;
 `
 
 Styles.Textnull = styled.p`

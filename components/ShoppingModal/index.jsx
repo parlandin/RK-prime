@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import CartProduct from "../CartProduct"
 import Styles from "./modal.style"
-import {FaTimes} from "react-icons/fa"
+import {FiX} from "react-icons/fi"
 import {BsWhatsapp} from "react-icons/bs"
 import upadateItemCart from "../../services/updateItemCart"
 
@@ -46,6 +46,10 @@ const ShoppingCartModal = ({handleOnClick}) => {
     if(shopCart.length == 0){
         return (
         <Styles.Wrapper>
+            <Styles.ClosedButton onClick={() => handleOnClick(false)}>
+                <FiX style={{height: "2em",width: "2em"}}/>
+            </Styles.ClosedButton>
+
            <Styles.Textnull>seu carrinho está vazio</Styles.Textnull>
         </Styles.Wrapper>
     )}
@@ -56,10 +60,9 @@ const ShoppingCartModal = ({handleOnClick}) => {
         <Styles.WrapperGeneric>
             <Styles.Title>Carrinho de compras</Styles.Title>
             <Styles.ClosedButton onClick={() => handleOnClick(false)}>
-                <FaTimes style={{height: "2em",width: "2em"}}/>
+                <FiX style={{height: "2em",width: "2em"}}/>
             </Styles.ClosedButton>
             
-
             <Styles.WrapperCart>
                 {shopCart.map((product, index) => {
                             return (
