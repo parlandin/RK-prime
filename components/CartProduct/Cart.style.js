@@ -53,12 +53,20 @@ Styles.PTitle = styled.p`
     font-weight: 400;
     margin-right: 0;
     overflow: hidden;
+
+    @media (max-width: 404px){
+        font-size: 1rem;
+    }
 ` 
 
 Styles.Price = styled.span`
     font-size: 1.2rem;
     font-weight: 400px;
     margin: 10px 0px;
+
+    @media (max-width: 404px){
+        font-size: 1.1rem;
+    }
 `
 
 Styles.WrapperQtd = styled.div`
@@ -72,7 +80,10 @@ Styles.WrapperQtd = styled.div`
     box-shadow: 0 2px 5px rgb(15 17 17 / 15%);
     box-sizing: 5px;
     padding: 5px;
-    //max-width: 109px;
+   
+   @media (max-width:404px) {
+       bottom: -28px;
+   }
 `
 Styles.Span = styled.span`
     margin: 0px 5px;
@@ -102,6 +113,10 @@ Styles.WrapperButton = styled.div`
         right: unset;
         left: 1;
     }
+
+    @media (max-width:404px) {
+       bottom: -75px;
+   }
 `
 
 Styles.Button = styled.button`

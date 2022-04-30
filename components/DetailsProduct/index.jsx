@@ -6,6 +6,14 @@ import CartImage from "../../public/images/shopping-cart-button.svg"
 import WhatImage from "../../public/images/whatsapp-logo-button.svg"
 
 const DetailsProduct = ({title}) => {
+
+    function sendMessage(name, price, qtd){
+        const message = `*Produtos*\n*nome*: ${name} \n*preço*: R$${price} \n*quantidade:* ${5}`
+        const urlText =  window.encodeURIComponent(message)
+        const link = `https://api.whatsapp.com/send/?phone=5566984359798&text=${urlText}`
+        window.open(link)   
+    }
+
     return (
         <Styles.Wrapper>
             <Styles.Title>
@@ -41,7 +49,11 @@ const DetailsProduct = ({title}) => {
             <Styles.WrapperGereric>
                 <Styles.WrapperButtons>
                     <Button icon={CartImage} text="Adicionar no carrinho" />
-                    <Button icon={WhatImage} text="Fazer pedido"/>
+                    
+                    <Button 
+                    icon={WhatImage}
+                    text="Fazer pedido"
+                    onClick={() => sendMessage(title, 10.00)}/>
                 </Styles.WrapperButtons>
 
                 <Styles.Warning>*obs: todos os pedidos e compras são feitos atraves do Whatsapp</Styles.Warning>

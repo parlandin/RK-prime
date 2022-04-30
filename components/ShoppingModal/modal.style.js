@@ -2,19 +2,23 @@ import styled, {css} from "styled-components";
 
 const Styles = {}
 
-Styles.Wrapper = styled.section`
+
+Styles.WrapperModal = styled.div`
     position: fixed;
-    top: 0px;
-    right: 0px;
+    min-height: 100vh;
+    min-width: 100%;
+    background-color: #1b1b1bbf;
+    opacity: 0.8;
+    z-index: 5;
+    inset: 0;
+`
+
+Styles.WrapperNull = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    max-width: 400px;
     height: 100vh;
-    background-color: #fff;
-    z-index: 20;
-    box-shadow: 1px 1px 10px 3px #c2c0c0;
 `
 
 Styles.Textnull = styled.p`
@@ -31,7 +35,8 @@ Styles.WrapperGeneric = styled.div`
     height: 100vh;
     z-index: 10;
     background-color: #fff;
-    box-shadow: 1px 1px 10px 3px #c2c0c0;
+    //box-shadow: 1px 1px 10px 3px #c2c0c0;
+    z-index: 10;
 `
 
 Styles.Title = styled.h1`
@@ -63,7 +68,7 @@ Styles.WrapperCart = styled.div`
     align-items: flex-start;
     overflow-y: scroll;
     max-height: 100vh;
-    padding-bottom: 100px;
+    padding-bottom: 200px;
 `
 
 const lines = css`
@@ -88,12 +93,20 @@ Styles.CardCart = styled.div`
         content: " ";
         top: -24px;
         ${lines}
+
+        @media (max-width: 404px) {
+            top: -27px;
+        }
     } 
 
     &::after {
         content: " ";
         bottom: -17px;
         ${lines}
+
+        @media (max-width: 404px) {
+            bottom: -34px;
+        }
     }
 
     &:first-of-type {
@@ -148,7 +161,7 @@ Styles.Button = styled.button`
     font-size: 1rem;
     color: #fff;
     border-radius: 5px;
-    background-color: #5aaa5a;
+    background-color: #39ab39f2;
     cursor: pointer;
     border: none;
     margin: 5px 0;

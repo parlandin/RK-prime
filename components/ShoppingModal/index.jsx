@@ -30,7 +30,7 @@ const ShoppingCartModal = ({handleOnClick}) => {
                     product.qtd++
                 }
                 else {
-                    product.qtd > 0 ? product.qtd-- : 0
+                    product.qtd > 1 ? product.qtd-- : 0
                 }
             }
         }
@@ -43,57 +43,68 @@ const ShoppingCartModal = ({handleOnClick}) => {
         return total.toFixed(2)
     }
 
-    if(shopCart.length == 0){
-        return (
-        <Styles.Wrapper>
-            <Styles.ClosedButton onClick={() => handleOnClick(false)}>
-                <FiX style={{height: "2em",width: "2em"}}/>
-            </Styles.ClosedButton>
-
-           <Styles.Textnull>seu carrinho está vazio</Styles.Textnull>
-        </Styles.Wrapper>
-    )}
+    function sendMessage(){
+        let message = ""
+        for(let product of shopCart){
+            message += `*nome*: ${product.nome} \n*preço*: R$${product.preco} \n*quantidade:* ${product.qtd}\n\n`
+        }
+        const messageFinaly = `*Produtos* \n\n${message} \n *total*: ${getTotal()}`
+        const urlText =  window.encodeURIComponent(messageFinaly)
+        const link = `https://api.whatsapp.com/send/?phone=5566984359798&text=${urlText}`
+        window.open(link)   
+    }
 
 
     return (
     <>
+        <Styles.WrapperModal onClick={() => handleOnClick(false)}>
+        </Styles.WrapperModal>
+
         <Styles.WrapperGeneric>
             <Styles.Title>Carrinho de compras</Styles.Title>
             <Styles.ClosedButton onClick={() => handleOnClick(false)}>
                 <FiX style={{height: "2em",width: "2em"}}/>
             </Styles.ClosedButton>
-            
-            <Styles.WrapperCart>
-                {shopCart.map((product, index) => {
-                            return (
-                            <Styles.CardCart key={index}>
-                                <CartProduct 
-                                img={IMAGE} 
-                                title={product.nome}
-                                desc={product.descricao}
-                                price={product.preco}
-                                amount={product.qtd}
-                                id={product.id}
-                                setAmountProduct={setAmountProduct}/>
-                                
-                            </Styles.CardCart>
-                            )
-                        })}
-            </Styles.WrapperCart>
+        
+            {shopCart.length ==  0
+                ? (
+                    <Styles.WrapperNull>
+                        <Styles.Textnull>seu carrinho está vazio</Styles.Textnull>
+                    </Styles.WrapperNull>
+                )
+                : (<>
+                <Styles.WrapperCart>
+                    {shopCart.map((product, index) => {
+                                return (
+                                <Styles.CardCart key={index}>
+                                    <CartProduct 
+                                    img={IMAGE} 
+                                    title={product.nome}
+                                    desc={product.descricao}
+                                    price={product.preco}
+                                    amount={product.qtd}
+                                    id={product.id}
+                                    setAmountProduct={setAmountProduct}/>
+                                    
+                                </Styles.CardCart>
+                                )
+                            })}
+                </Styles.WrapperCart>
 
-            <Styles.WrapperTotal>
-                <Styles.GerericTotal>
-                    <Styles.TotalText>Total:</Styles.TotalText>
-                    <Styles.Total>
-                        R$ {getTotal()}
-                    </Styles.Total>
-                </Styles.GerericTotal>
+                <Styles.WrapperTotal>
+                    <Styles.GerericTotal>
+                        <Styles.TotalText>Total:</Styles.TotalText>
+                        <Styles.Total>
+                            R$ {getTotal()}
+                        </Styles.Total>
+                    </Styles.GerericTotal>
 
-                <Styles.Button>
-                    <BsWhatsapp style={{marginRight: '10px'}}/>
-                    Finalizar pedido
-                </Styles.Button>
-            </Styles.WrapperTotal>
+                    <Styles.Button onClick={() =>  sendMessage()}>
+                        <BsWhatsapp style={{marginRight: '10px'}}/>
+                        Finalizar pedido
+                    </Styles.Button>
+                </Styles.WrapperTotal>
+            </>)}
 
         </Styles.WrapperGeneric>
     </>
