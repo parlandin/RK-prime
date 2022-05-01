@@ -2,21 +2,11 @@ import Image from "next/image";
 import Link from "next/link";
 import Styles from "./Cart.style";
 import {VscTrash} from "react-icons/vsc"
-import {AiOutlinePlus, AiOutlineMinus} from "react-icons/ai"
 import removeItemCart from "../../services/removeItemCart";
-
+import AmountButton from "../AmountButton";
 
 
 const CartProduct = ({img, desc, title, price, customClass, amount, setAmountProduct, id}) => {
-
-    function setMinuQtd() {
-        setAmountProduct(id, "min")
-    }
-
-    function setPlusQtd(){
-        setAmountProduct(id, "plus")
-    }
-
 
     return (
         <Styles.Wrapper className={customClass}>
@@ -36,16 +26,9 @@ const CartProduct = ({img, desc, title, price, customClass, amount, setAmountPro
                     <Styles.Price className={customClass}>R${price}</Styles.Price>
 
                     <Styles.WrapperQtd>
-                        <Styles.ButtonQtd onClick={setMinuQtd}>
-                            <AiOutlineMinus />
-                        </Styles.ButtonQtd>
-
-                        <Styles.Span>Qtd: {amount ? amount : 1}</Styles.Span>
-
-                        <Styles.ButtonQtd>
-                            <AiOutlinePlus onClick={setPlusQtd}/>
-                        </Styles.ButtonQtd>
+                        <AmountButton amount={amount} setAmountProduct={setAmountProduct} id={id}/>
                     </Styles.WrapperQtd>
+
                 </Styles.WrapperInfo>
 
             </Styles.WrapperGereric>

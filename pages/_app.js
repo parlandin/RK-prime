@@ -6,7 +6,6 @@ import { Hydrate, QueryClient, QueryClientProvider } from 'react-query'
 
 //css
 import GlobalStyle from "../styles/GlobalStyle";
-import "../public/style.css"
 
 
 //custom swiper carousel 

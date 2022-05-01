@@ -12,15 +12,13 @@ Styles.Button = styled.button`
     background-color: transparent;
     margin: 5px 0;
     margin-right: 10px;
+    align-items: center;
 
     &:last-of-type {
         margin-right: 0px;
     }
 `
-Styles.ButtonIcon = styled.div`
-    width: 20px;
-    height: 20px;
-`
+
 Styles.ButtonText = styled.span`
     font-size: 1.1rem;
     font-weight: 400;

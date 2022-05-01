@@ -38,6 +38,7 @@ const ShoppingCartModal = ({handleOnClick}) => {
         upadateItemCart(newProductArray)
         return
     }
+    
     function getTotal(){
         const total = shopCart.reduce((prev, current) => prev + (current.preco * current.qtd), 0)
         return total.toFixed(2)
@@ -46,9 +47,9 @@ const ShoppingCartModal = ({handleOnClick}) => {
     function sendMessage(){
         let message = ""
         for(let product of shopCart){
-            message += `*nome*: ${product.nome} \n*preço*: R$${product.preco} \n*quantidade:* ${product.qtd}\n\n`
+            message += `*nome:* ${product.nome} \n*preço:* R$${product.preco} \n*quantidade:* ${product.qtd}\n\n`
         }
-        const messageFinaly = `*Produtos* \n\n${message} \n *total*: ${getTotal()}`
+        const messageFinaly = `*Produtos* \n\n${message} \n *total:* ${getTotal()}`
         const urlText =  window.encodeURIComponent(messageFinaly)
         const link = `https://api.whatsapp.com/send/?phone=5566984359798&text=${urlText}`
         window.open(link)   

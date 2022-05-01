@@ -100,6 +100,9 @@ Styles.WrapperRating =styled.div`
 `
 
 Styles.Icon = styled.span`
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 0.9rem;
     & + span {
         margin-left: 2px;

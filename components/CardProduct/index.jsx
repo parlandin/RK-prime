@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Styles from "./Card.style";
-import StarIcon from "../../public/images/star_icon.svg"
+import {MdOutlineStarOutline} from "react-icons/md"
 
 
 const CardProduct = ({img, desc, title, price, customClass}) => {
@@ -22,19 +22,19 @@ const CardProduct = ({img, desc, title, price, customClass}) => {
                     <Styles.Icon className="title">Avaliação:</Styles.Icon>
 
                     <Styles.Icon>
-                        <i className="icon-star_icon"></i>
+                       <MdOutlineStarOutline style={{height: "1em",width: "1em", color:"#5b5b5b"}}/>
                     </Styles.Icon>
                     <Styles.Icon>
-                        <i className="icon-star_icon"></i>
+                        <MdOutlineStarOutline style={{height: "1em",width: "1em", color:"#5b5b5b"}}/>
                     </Styles.Icon>
                     <Styles.Icon>
-                        <i className="icon-star_icon"></i>
+                        <MdOutlineStarOutline style={{height: "1em",width: "1em", color:"#5b5b5b"}}/>
                     </Styles.Icon>
                     <Styles.Icon>
-                        <i className="icon-star_icon"></i>
+                        <MdOutlineStarOutline style={{height: "1em",width: "1em", color:"#5b5b5b"}}/>
                     </Styles.Icon>
                     <Styles.Icon>
-                        <i className="icon-star_icon"></i>
+                        <MdOutlineStarOutline style={{height: "1em",width: "1em", color:"#5b5b5b"}}/>
                     </Styles.Icon>
 
                 </Styles.WrapperRating>

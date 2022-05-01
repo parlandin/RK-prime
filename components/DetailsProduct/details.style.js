@@ -31,33 +31,12 @@ Styles.DescriptionButton = styled.a`
 `
 
 
-Styles.WrapperSize = styled.div`
-    display: flex;
-    flex-direction: column;
+Styles.WrapperQtd = styled.div`
     margin: 10px 0 20px;
-`
-Styles.SizeText = styled.p`
-    font-size: 1.1rem;
-    font-weight: 500;
-`
-Styles.WrapperCheckBox = styled.div`
     display: flex;
+    justify-content: flex-start;
+    align-items: center;
 `
-
-Styles.SelectSize = styled.div`
-    & + div {
-        margin-left: 10px;
-    }
-`
-
-Styles.CheckSize = styled.input`
-`
-Styles.CheckText = styled.label`
-    font-size: 1rem;
-    font-weight: 500;
-    margin-left: 2px;
-`
-
 
 Styles.Availability = styled.p`
     font-size: 1.1rem;
