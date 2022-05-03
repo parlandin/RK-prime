@@ -35,6 +35,11 @@ Styles.DescriptionButton = styled.a`
     color: #3e0551;
 `
 
+Styles.Price = styled.p`
+    font-weight: 500;
+    margin: 10px 0;
+    font-size: 1.5rem;
+`
 
 Styles.WrapperQtd = styled.div`
     margin: 10px 0 20px;

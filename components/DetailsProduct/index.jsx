@@ -24,6 +24,8 @@ const DetailsProduct = ({title, price, amount, description}) => {
                 {description}
                 <Styles.DescriptionButton href="#comentario">ler mais</Styles.DescriptionButton>
             </Styles.Description>
+
+            <Styles.Price>R$:{price}</Styles.Price>
             
             <Styles.WrapperQtd>
                 <AmountButton />
@@ -39,7 +41,7 @@ const DetailsProduct = ({title, price, amount, description}) => {
                     
                     <Button 
                     text="Fazer pedido"
-                    onClick={() => sendMessage(title, 10.00)}>
+                    onClick={() => sendMessage(title, price)}>
                          <FaWhatsapp style={{height: "1.4em",width: "1.4em"}}/>
                     </Button>
                 </Styles.WrapperButtons>

@@ -79,7 +79,7 @@ const ShoppingCartModal = ({handleOnClick}) => {
                                 return (
                                 <Styles.CardCart key={index}>
                                     <CartProduct 
-                                    img={IMAGE} 
+                                    img={product.image} 
                                     title={product.nome}
                                     desc={product.descricao}
                                     price={product.preco}
