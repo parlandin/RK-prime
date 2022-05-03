@@ -13,10 +13,14 @@ Styles.Title = styled.h1`
 `
 
 Styles.Description = styled.p`
+    position: relative;
     font-size: 1rem;
     max-width: 400px;
     margin: 20px 0;
     font-family: inherit;
+    max-height: 80px;
+    min-height: 80px;
+    overflow: hidden;
     
     @media (max-width: 515px){
         order: 5;
@@ -24,6 +28,7 @@ Styles.Description = styled.p`
     }
 `
 Styles.DescriptionButton = styled.a`
+    position: absolute;
     border-bottom:1px solid #000;
     font-size: 1.1rem;
     margin-left: 5px;

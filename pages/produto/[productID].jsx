@@ -5,26 +5,76 @@ import SectionCategorys from "../../components/layout/SectionCategorys"
 import {Styles} from '../../styles/produtos.style';
 import DetailsProduct from '../../components/DetailsProduct';
 import ProductDescription from "../../components/ProductDescription";
+import { dehydrate, QueryClient, useQuery } from 'react-query';
 
-import { useRouter } from 'next/router'
 
-const Produtos = () => {
-    const router = useRouter()
-    const { productID } = router.query
 
+export async function getStaticProps(context){
+    const {params} = context
+    const [title, id] = params.productId.split("&id=")
+
+    const queryClient = new QueryClient()
+    console.log("product:", params.productId)
+
+    await queryClient.prefetchQuery(`${id}`, 
+        async () => await (await fetch(`http://localhost:5000/produtos/${id}`)).json()
+    )
+    
+    return {
+        props: {
+            dehydratedState: dehydrate(queryClient),
+            productId: params
+        }
+    }
+}
+
+export  async function getStaticPaths(){
+    const response = await (await fetch(`http://localhost:5000/produtos/`)).json()
+    const paths = response.map((product) => {
+        return {
+            params: {
+                productId: `${product.nome}&id=${product._id}`
+            }
+        }
+    })
+    
+    return {paths, fallback:false}
+    
+}
+
+
+
+const Produtos = (props) => {
+    const {productId} = props.productId
+
+    const [title, id] = productId.split("&id=")
+
+
+
+    const {data, isLoading} = useQuery(
+        `${id}`, 
+        async () => await (await fetch(`http://localhost:5000/produtos/${id}`)).json(), 
+        { initialData: props.dehydratedState, staleTime: 50000 })
+
+    console.log(data)
+    
     return (
         <Container>
             <Head>
-                <title>{`${productID} | RK Prime`}</title>
+                <title>{`${title} | RK Prime`}</title>
             </Head>
             <Styles.Wrapper>
                 <Styles.ProdutoInfo>
                     <Styles.WrapperGeneric className="SlideImages">
-                        <GalleryCarousel  />
+                        <GalleryCarousel arrayImages={data.imagens} description={data.descricao}/>
                     </Styles.WrapperGeneric>
                     
                     <Styles.WrapperGeneric>
-                        <DetailsProduct title={productID} />
+                        <DetailsProduct 
+                        title={data.nome} 
+                        price={data.preco}
+                        amount={data.quantidade}
+                        description={data.descricao}/>
                     </Styles.WrapperGeneric>
                    
                    
@@ -34,8 +84,7 @@ const Produtos = () => {
                 
             </Styles.Wrapper>
         
-            <ProductDescription  description=" Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem non ducimus vitae porro! Tenetur laboriosam recusandae nobis enim ea, aliquam, deleniti neque quidem provident esse sint quam, similique suscipit. Sapiente.
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto amet sint voluptas minus neque ad repellendus eaque repudiandae id illum?"/>
+            <ProductDescription  description={data.descricao}/>
         </Container>
         
     )

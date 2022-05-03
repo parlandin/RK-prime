@@ -83,7 +83,8 @@ const CarouselProducts = ({arrayProducts, categorys}) => {
                             <Styles.WrapperCard>
                                 <CardProduct img={product.imagens[0]} 
                                 title={product.nome}  
-                                price={product.preco}/>
+                                price={product.preco}
+                                id={product._id}/>
                             </Styles.WrapperCard>
                         </SwiperSlide>
                     )

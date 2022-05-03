@@ -1,4 +1,3 @@
-import { useRouter } from 'next/router'
 import Container from "../components/layout/Container"
 import TitleCategory from "../components/TitleCategory"
 import {Styles} from '../styles/category.style'
@@ -42,7 +41,6 @@ export  async function getStaticPaths(){
 
 
 const Category = (props) => {
-    const router = useRouter()
     const {categorys} = props.category
 
     const {data, isLoading} = useQuery(
@@ -50,18 +48,29 @@ const Category = (props) => {
         async () => await (await fetch(`http://localhost:5000/produtos/categoria/${categorys}`)).json(), 
         { initialData: props.dehydratedState, staleTime: 50000 })
     
+    function trasnformTitleText(title) {
+        const texts = {
+            acessorios: "Acessórios",
+            roupas: "Roupas",
+            tattoos: "Tattoos",
+            acessoriosgeeks: "Acessórios Geeks",
+            cospalyers: "Cospalyers",
+            mangas: "Mangas"
+        }
 
+        return texts[title] || "essa pagina não existe"
+    }
 
     return (
         <>
             <Head>
-                <title>{`${categorys} | RK Prime`}</title>
+                <title>{`${trasnformTitleText(categorys)} | RK Prime`}</title>
             </Head>
 
             <Container>
                 <Styles.Wrapper>
                     <Styles.WrapperTitle>
-                        <TitleCategory title={"Acessórios"}  />
+                        <TitleCategory title={trasnformTitleText(categorys)}  />
                     </Styles.WrapperTitle>
                 
                     <Styles.WrapperProducts>
@@ -73,6 +82,7 @@ const Category = (props) => {
                                 title={product.nome}
                                 desc={product.descricao}
                                 price={product.preco}
+                                id={product._id}
                                 customClass="mobile-direct"/>
                                 
                             </Styles.WrapperGeneric>

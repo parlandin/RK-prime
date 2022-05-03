@@ -7,6 +7,7 @@ Styles.Wrapper = styled.div`
     flex-direction: column;
     width: 100%;
     margin-top: 35px;
+    margin-bottom: 35px;
 
     @media (max-width: 700px){
         margin-top: 20px;
@@ -38,7 +39,7 @@ Styles.WrapperProducts = styled.div`
 `
 
 Styles.WrapperGeneric = styled.div`
-    margin: 15px;
+    margin: 20px 15px;
     @media (max-width: 476px) and (min-width: 350px){
         width: 100%;
     }

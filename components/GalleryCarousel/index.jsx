@@ -1,18 +1,17 @@
 import React, { useState, useRef } from "react";
 import Image from "next/image";
 import Styles from "./gallery.style";
-import { dataImages } from "./dataImage";
 
 
 import Arrrow_Left from  "../../public/images/arrow-left.svg"
 import Arrrow_Right from  "../../public/images/arrow-right.svg"
-import Gallery2 from '../../public/images/Gallery2.jpg'
 
 
 
-const GalleryCarousel = ({arrayImages}) => {
+
+const GalleryCarousel = ({arrayImages, description}) => {
     const [currentSlide, setCurrentSlide] = useState(0);
-    const length = dataImages.length
+    const length = arrayImages.length
 
     const nextSlide = () => {
         setCurrentSlide(currentSlide === length - 1  ? 0 : currentSlide + 1)
@@ -28,10 +27,10 @@ const GalleryCarousel = ({arrayImages}) => {
     return (
         <Styles.Wrapper>
             <Styles.WrapperFeatured >
-                {dataImages.map((date, index) => {
+                {arrayImages.map((image, index) => {
                     return (
                         <Styles.CurrentImage className={index == currentSlide ? "CurrentImage-active" : ""} key={index}>
-                            {index == currentSlide && <Image src={date.image} alt="" />}
+                            {index == currentSlide && <Image src={image} width="380" height="380"  alt={description} />}
                         </Styles.CurrentImage>
                     )
                 })}
@@ -47,14 +46,14 @@ const GalleryCarousel = ({arrayImages}) => {
             
             
             <Styles.WrapperGallery>
-                {dataImages.map((data, index) => {
+                {arrayImages.map((image, index) => {
                     return (
                         <Styles.OptionImage 
                         type="button" 
                         key={index} 
                         className={index == currentSlide ? "selected" : ""}
                         onMouseEnter={() => selectCurrent(index) }>
-                            <Image src={data.image} alt="" />
+                            <Image src={image} alt={description} width="60" height="60"/>
                         </Styles.OptionImage>
                     )
                 })}

@@ -4,9 +4,9 @@ import Styles from "./Card.style";
 import {MdOutlineStarOutline} from "react-icons/md"
 
 
-const CardProduct = ({img, desc, title, price, customClass}) => {
+const CardProduct = ({img, desc, title, price, customClass, id}) => {
     return (
-        <Link href={`/produto/${title}`} passHref>
+        <Link href={`/produto/${title}&id=${id}`} passHref>
             <Styles.Wrapper className={customClass}>
             <Styles.WrapperImage>
                 <Image src={img} alt={desc}  width="200" height="200" />

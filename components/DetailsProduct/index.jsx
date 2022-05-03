@@ -6,7 +6,7 @@ import {FiShoppingCart} from "react-icons/fi"
 
 
 
-const DetailsProduct = ({title}) => {
+const DetailsProduct = ({title, price, amount, description}) => {
 
     function sendMessage(name, price, qtd){
         const message = `*Produtos*\n*nome:* ${name} \n*preço:* R$${price} \n*quantidade:* ${5}`
@@ -21,7 +21,8 @@ const DetailsProduct = ({title}) => {
                {title}
             </Styles.Title>
             <Styles.Description>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem eum, pariatur alias voluptatibus labore placeat sequi eveniet debitis assumenda iusto voluptate ullam nam consequuntur aspernatur ea qui.<Styles.DescriptionButton href="#comentario">ler mais</Styles.DescriptionButton>
+                {description}
+                <Styles.DescriptionButton href="#comentario">ler mais</Styles.DescriptionButton>
             </Styles.Description>
             
             <Styles.WrapperQtd>
