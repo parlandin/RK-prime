@@ -4,7 +4,11 @@ import CarouselProducts from "../../CarouselProducts";
 import Link from "next/link";
 
 
-const SectionCategorys = ({title, categorys, more}) => {
+
+const SectionCategorys = ({title, categorys, more, products}) => {
+
+    
+
     return (
         <Styles.Wrapper>
             <Styles.TitleSection>
@@ -18,7 +22,7 @@ const SectionCategorys = ({title, categorys, more}) => {
             </Styles.TitleSection>
 
             
-            <CarouselProducts />
+            <CarouselProducts arrayProducts={products} categorys={categorys} />
         </Styles.Wrapper>
     )
 }

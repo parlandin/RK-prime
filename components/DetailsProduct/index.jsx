@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Styles from "./details.style";
 import Button from "../Button";
 import AmountButton from "../AmountButton";
