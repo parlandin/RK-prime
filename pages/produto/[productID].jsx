@@ -14,7 +14,7 @@ export async function getStaticProps(context){
     const [title, id] = params.productId.split("&id=")
 
     const queryClient = new QueryClient()
-    console.log("product:", params.productId)
+    
 
     await queryClient.prefetchQuery(`${id}`, 
         async () => await (await fetch(`http://localhost:5000/produtos/${id}`)).json()
@@ -56,7 +56,7 @@ const Produtos = (props) => {
         async () => await (await fetch(`http://localhost:5000/produtos/${id}`)).json(), 
         { initialData: props.dehydratedState, staleTime: 50000 })
 
-    console.log(data)
+        
     
     return (
         <Container>

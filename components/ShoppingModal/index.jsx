@@ -6,8 +6,6 @@ import {BsWhatsapp} from "react-icons/bs"
 import upadateItemCart from "../../services/updateItemCart"
 
 
-import IMAGE from "../../public/images/product1.jpg"
-
 const ShoppingCartModal = ({handleOnClick}) => {
     const [shopCart, setShopCart] = useState([])
 
