@@ -7,6 +7,7 @@ Styles.Wrapper = styled.section`
     flex-direction: column;
     width: 100%;
     max-width: 500px;
+    color: #2c2c2c;
 `
 Styles.Title = styled.h1`
     font-size: 1.5rem;
@@ -18,7 +19,6 @@ Styles.Description = styled.p`
     max-width: 400px;
     margin: 20px 0;
     font-family: inherit;
-    max-height: 80px;
     min-height: 80px;
     overflow: hidden;
     
@@ -28,11 +28,9 @@ Styles.Description = styled.p`
     }
 `
 Styles.DescriptionButton = styled.a`
-    position: absolute;
-    border-bottom:1px solid #000;
-    font-size: 1.1rem;
-    margin-left: 5px;
-    color: #3e0551;
+    font-size: 1rem;
+    color: #000;
+    font-weight: 600;
 `
 
 Styles.Price = styled.p`
@@ -68,6 +66,7 @@ Styles.WrapperButtons = styled.div`
 Styles.Warning = styled.span`
     font-size: 1rem;
     font-weight: 500;
+    margin-right: 10px;
 `
 
 export default Styles;

@@ -1,16 +1,13 @@
 import Styles from "./Carousel.style";
-import { Swiper, SwiperSlide } from "swiper/react"
+import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper";
+import CardProduct from "../CardProduct";
 
 import "swiper/css/navigation";
 
-import Product1 from "../../public/images/product1.jpg"
-import Product2 from "../../public/images/product2.jpg"
-import CardProduct from "../CardProduct";
+
 
 const CarouselProducts = ({arrayProducts, categorys}) => {
-
-    if(!arrayProducts) return <p>not foud</p>
 
     return (
         <Styles.WrapperGereric>
@@ -82,9 +79,9 @@ const CarouselProducts = ({arrayProducts, categorys}) => {
                         <SwiperSlide key={product._id}>
                             <Styles.WrapperCard>
                                 <CardProduct img={product.imagens[0]} 
-                                title={product.nome}  
-                                price={product.preco}
-                                id={product._id}/>
+                                    title={product.nome}  
+                                    price={product.preco}
+                                    id={product._id}/>
                             </Styles.WrapperCard>
                         </SwiperSlide>
                     )

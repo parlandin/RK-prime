@@ -21,7 +21,7 @@ const DetailsProduct = ({title, price, amount, description}) => {
                {title}
             </Styles.Title>
             <Styles.Description>
-                {description}
+                {`${description.substring(0, 160)}...`}
                 <Styles.DescriptionButton href="#comentario">ler mais</Styles.DescriptionButton>
             </Styles.Description>
 

@@ -8,7 +8,6 @@ import ProductDescription from "../../components/ProductDescription";
 import { dehydrate, QueryClient, useQuery } from 'react-query';
 
 
-
 export async function getStaticProps(context){
     const {params} = context
     const [title, id] = params.productId.split("&id=")
@@ -37,27 +36,19 @@ export  async function getStaticPaths(){
             }
         }
     })
-    
-    return {paths, fallback:false}
-    
+    return {paths, fallback:false}  
 }
-
-
 
 const Produtos = (props) => {
     const {productId} = props.productId
 
     const [title, id] = productId.split("&id=")
 
-
-
     const {data, isLoading} = useQuery(
         `${id}`, 
         async () => await (await fetch(`http://localhost:5000/produtos/${id}`)).json(), 
         { initialData: props.dehydratedState, staleTime: 50000 })
 
-        
-    
     return (
         <Container>
             <Head>
@@ -80,7 +71,7 @@ const Produtos = (props) => {
                    
                 </Styles.ProdutoInfo>
 
-                <SectionCategorys  title={"Itens que podem ser do seu interesse"}/>
+                <SectionCategorys  title={"Itens que podem ser do seu interesse"} categorys="recomended" tags={data.tags}/>
                 
             </Styles.Wrapper>
         

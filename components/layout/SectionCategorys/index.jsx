@@ -2,12 +2,25 @@ import Styles from "./secCategoryes.style"
 import TitleCategory from '../../TitleCategory';
 import CarouselProducts from "../../CarouselProducts";
 import Link from "next/link";
+import {useEffect, useState} from "react"
 
 
 
-const SectionCategorys = ({title, categorys, more, products}) => {
+const SectionCategorys = ({title, categorys, more, products, tags}) => {
+    const [recomendedProduct, setRecomendedProduct] = useState([])
+    const [isLoanding, setIsLoanding] = useState(true)
 
-    
+    useEffect(() => {
+        if(categorys === "recomended" && !products){
+            setIsLoanding(true)
+            async function getProducts(){
+                const respose = await (await fetch(`http://localhost:5000/produtos/like/tags=${tags}`)).json()
+                setRecomendedProduct(respose)
+                setIsLoanding(false)
+            }
+            getProducts()
+        }
+    }, [])
 
     return (
         <Styles.Wrapper>
@@ -21,8 +34,10 @@ const SectionCategorys = ({title, categorys, more, products}) => {
                 
             </Styles.TitleSection>
 
-            
-            <CarouselProducts arrayProducts={products} categorys={categorys} />
+            {isLoanding && categorys === "recomended"
+             ? <p>carregando...</p> 
+             : <CarouselProducts arrayProducts={products ? products : recomendedProduct} categorys={categorys} />
+            }
         </Styles.Wrapper>
     )
 }

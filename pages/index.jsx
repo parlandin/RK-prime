@@ -31,9 +31,13 @@ export async function getStaticProps(){
 
     useEffect(() => {
         if(!isLoading){
-            setProducts({...products, spotlight:  getSpotlight(), acessories: getAcessories(), tattoos: getTattos()})
+            setProducts({
+                ...products, 
+                spotlight:  getSpotlight(), 
+                acessories: getAcessories(), 
+                tattoos: getTattos()
+            })
         }
-        
     },[])
 
 
