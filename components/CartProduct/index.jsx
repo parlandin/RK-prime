@@ -4,13 +4,16 @@ import Styles from "./Cart.style";
 import {VscTrash} from "react-icons/vsc"
 import removeItemCart from "../../services/removeItemCart";
 import AmountButton from "../AmountButton";
+import { useState } from "react";
 
 
-const CartProduct = ({img, desc, title, price, customClass, amount, setAmountProduct, id}) => {
+const CartProduct = ({img, desc, title, price, customClass, amount, setAmountProduct, id, selected}) => {
+    const [productSelected, setProductSelected] = useState(selected)
+
 
     return (
         <Styles.Wrapper className={customClass}>
-            <Link href={`/produto/${title}`} passHref>
+            <Link href={`/produto/${title}&id=${id}`} passHref>
                 <Styles.LinkProduct></Styles.LinkProduct>
             </Link> 
 
@@ -38,7 +41,11 @@ const CartProduct = ({img, desc, title, price, customClass, amount, setAmountPro
             <Styles.WrapperButton>
                 <Styles.Button className="finish">
                     <label>
-                        <input type="checkbox" name="" id="" />
+                        <input 
+                        type="checkbox" 
+                        name="" 
+                        id=""  
+                        checked={productSelected} onChange={() => setProductSelected(!productSelected)}/>
                     </label>
                 </Styles.Button>
 

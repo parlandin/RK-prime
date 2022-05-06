@@ -1,7 +1,7 @@
 import Styles from "./amount.style";
 import {AiOutlinePlus, AiOutlineMinus} from "react-icons/ai";
 
-const AmountButton = ({amount, setAmountProduct, id}) => {
+const AmountButton = ({amount, setAmountProduct, id=0}) => {
 
     function setMinuQtd() {
         setAmountProduct(id, "min")

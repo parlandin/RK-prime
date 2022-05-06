@@ -1,15 +1,62 @@
 import Styles from "./details.style";
 import Button from "../Button";
 import AmountButton from "../AmountButton";
-import {FaWhatsapp} from "react-icons/fa"
-import {FiShoppingCart} from "react-icons/fi"
+import {FaWhatsapp} from "react-icons/fa";
+import {FiShoppingCart} from "react-icons/fi";
+import { useEffect, useState } from "react";
+import upadateItemCart from "../../services/updateItemCart"
 
 
 
-const DetailsProduct = ({title, price, amount, description}) => {
+const DetailsProduct = ({title, price, max, description, id, image}) => {
+    const [amount, setAmount] = useState(1)
+    const [shopCart, setShopCart] = useState([])
+
+    useEffect(() => {
+        let itens = localStorage.getItem("shopCart")
+
+        if(itens){
+            const array = JSON.parse(itens)
+            setShopCart(array)
+        }
+    },[])
+
+
+    function setAmountProduct(id,operation){
+        if(operation === "plus"){
+            setAmount(amount + 1)
+        }
+        else {
+             setAmount(amount > 1 ? amount -1 : amount)
+        }
+    
+    
+        return
+    }
+
+    function addProductInCart(){
+        const products = [...shopCart]
+        for (let product of products){
+            if(product.id === id ){
+                console.log("nada")
+            }
+            else {
+                upadateItemCart([...products, 
+                    {   id: id, 
+                        name: title, 
+                        price: price, 
+                        qtd: amount, 
+                        selected: true,
+                        image: image,
+                        description: description
+                    }
+                ])
+            }
+        }
+    }
 
     function sendMessage(name, price, qtd){
-        const message = `*Produtos*\n*nome:* ${name} \n*preço:* R$${price} \n*quantidade:* ${5}`
+        const message = `*Produtos*\n*nome:* ${name} \n*preço:* R$${price} \n*quantidade:* ${qtd}`
         const urlText =  window.encodeURIComponent(message)
         const link = `https://api.whatsapp.com/send/?phone=5566984359798&text=${urlText}`
         window.open(link)   
@@ -25,23 +72,23 @@ const DetailsProduct = ({title, price, amount, description}) => {
                 <Styles.DescriptionButton href="#comentario">ler mais</Styles.DescriptionButton>
             </Styles.Description>
 
-            <Styles.Price>R$:{price}</Styles.Price>
+            <Styles.Price>R$:{price * amount}</Styles.Price>
             
             <Styles.WrapperQtd>
-                <AmountButton />
+                <AmountButton  amount={amount} setAmountProduct={setAmountProduct}/>
             </Styles.WrapperQtd>
 
             <Styles.Availability>Disponivel na loja</Styles.Availability>
 
             <Styles.WrapperGereric>
                 <Styles.WrapperButtons>
-                    <Button  text="Adicionar no carrinho">
+                    <Button  text="Adicionar no carrinho" onClick={addProductInCart}>
                         <FiShoppingCart style={{height: "1.3em",width: "1.3em"}}/>
                     </Button>
                     
                     <Button 
                     text="Fazer pedido"
-                    onClick={() => sendMessage(title, price)}>
+                    onClick={() => sendMessage(title, price * amount, amount)}>
                          <FaWhatsapp style={{height: "1.4em",width: "1.4em"}}/>
                     </Button>
                 </Styles.WrapperButtons>

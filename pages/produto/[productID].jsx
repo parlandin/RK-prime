@@ -64,8 +64,10 @@ const Produtos = (props) => {
                         <DetailsProduct 
                         title={data.nome} 
                         price={data.preco}
-                        amount={data.quantidade}
-                        description={data.descricao}/>
+                        max={data.quantidade}
+                        description={data.descricao}
+                        id={data._id}
+                        image={data.imagens[0]}/>
                     </Styles.WrapperGeneric>
                    
                    

@@ -38,14 +38,14 @@ const ShoppingCartModal = ({handleOnClick}) => {
     }
     
     function getTotal(){
-        const total = shopCart.reduce((prev, current) => prev + (current.preco * current.qtd), 0)
+        const total = shopCart.reduce((prev, current) => prev + (current.price * current.qtd), 0)
         return total.toFixed(2)
     }
 
     function sendMessage(){
         let message = ""
         for(let product of shopCart){
-            message += `*nome:* ${product.nome} \n*preço:* R$${product.preco} \n*quantidade:* ${product.qtd}\n\n`
+            message += `*nome:* ${product.name} \n*preço:* R$${product.price} \n*quantidade:* ${product.qtd}\n\n`
         }
         const messageFinaly = `*Produtos* \n\n${message} \n *total:* ${getTotal()}`
         const urlText =  window.encodeURIComponent(messageFinaly)
@@ -78,11 +78,12 @@ const ShoppingCartModal = ({handleOnClick}) => {
                                 <Styles.CardCart key={index}>
                                     <CartProduct 
                                     img={product.image} 
-                                    title={product.nome}
+                                    title={product.name}
                                     desc={product.descricao}
-                                    price={product.preco}
+                                    price={product.price}
                                     amount={product.qtd}
                                     id={product.id}
+                                    selected={product.selected}
                                     setAmountProduct={setAmountProduct}/>
                                     
                                 </Styles.CardCart>
