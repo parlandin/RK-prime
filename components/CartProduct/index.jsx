@@ -2,14 +2,18 @@ import Image from "next/image";
 import Link from "next/link";
 import Styles from "./Cart.style";
 import {VscTrash} from "react-icons/vsc"
-import removeItemCart from "../../services/removeItemCart";
 import AmountButton from "../AmountButton";
 import { useState } from "react";
+import {useTotalLengthCart} from "../../context/shoppingTotal"
 
 
-const CartProduct = ({img, desc, title, price, customClass, amount, setAmountProduct, id, selected}) => {
+const CartProduct = ({img, desc, title, price, customClass, amount, setAmountProduct, id, selected, functionRemove}) => {
     const [productSelected, setProductSelected] = useState(selected)
-
+    const [total, setTotal] = useTotalLengthCart()
+    function removeProduct(){
+        functionRemove(id)
+        setTotal(total - 1)
+    }
 
     return (
         <Styles.Wrapper className={customClass}>
@@ -49,7 +53,7 @@ const CartProduct = ({img, desc, title, price, customClass, amount, setAmountPro
                     </label>
                 </Styles.Button>
 
-                <Styles.Button className="canceled" onClick={() => removeItemCart(id)}>
+                <Styles.Button className="canceled" onClick={removeProduct}>
                     <VscTrash style={{color: "#000", height:"1.3em", width: "1.3em"}} />
                 </Styles.Button>
                 

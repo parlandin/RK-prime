@@ -2,7 +2,7 @@ import Header from "../components/layout/header";
 import Footer from "../components/layout/footer";
 import React, {useState} from "react"
 import { Hydrate, QueryClient, QueryClientProvider } from 'react-query'
-
+import { ShoppingContextProvider } from "../context/shoppingTotal";
 
 //css
 import GlobalStyle from "../styles/GlobalStyle";
@@ -27,14 +27,16 @@ function MyApp({ Component, pageProps }) {
     <>
         <GlobalStyle mobileAtive={menuMobile} />
         <SwiperGlobal />
-        <Header mobileAtive={setStateMenu}/>
+        <ShoppingContextProvider>
+            <Header mobileAtive={setStateMenu}/>
 
-        <QueryClientProvider client={queryClient}>
-            <Hydrate state={pageProps.dehydratedState}>
-                <Component {...pageProps} />
-            </Hydrate>
-        </QueryClientProvider>
-        
+            <QueryClientProvider client={queryClient}>
+                <Hydrate state={pageProps.dehydratedState}>
+                    <Component {...pageProps} />
+                </Hydrate>
+            </QueryClientProvider>
+
+        </ShoppingContextProvider>
         <Footer />
     </>
   )

@@ -35,7 +35,6 @@ Styles.WrapperGeneric = styled.div`
     height: 100vh;
     z-index: 10;
     background-color: #fff;
-    //box-shadow: 1px 1px 10px 3px #c2c0c0;
     z-index: 10;
 `
 
@@ -69,6 +68,7 @@ Styles.WrapperCart = styled.div`
     overflow-y: scroll;
     max-height: 100vh;
     padding-bottom: 200px;
+    overflow-x: none;
 `
 
 const lines = css`

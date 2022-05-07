@@ -4,7 +4,9 @@ import AmountButton from "../AmountButton";
 import {FaWhatsapp} from "react-icons/fa";
 import {FiShoppingCart} from "react-icons/fi";
 import { useEffect, useState } from "react";
-import upadateItemCart from "../../services/updateItemCart"
+import upadateItemCart from "../../services/updateItemCart";
+import {useTotalLengthCart} from "../../context/shoppingTotal";
+import getCartItens from "../../services/getCartItens"
 
 
 
@@ -12,13 +14,11 @@ const DetailsProduct = ({title, price, max, description, id, image}) => {
     const [amount, setAmount] = useState(1)
     const [shopCart, setShopCart] = useState([])
 
-    useEffect(() => {
-        let itens = localStorage.getItem("shopCart")
+    const [total, setTotal] = useTotalLengthCart()
 
-        if(itens){
-            const array = JSON.parse(itens)
-            setShopCart(array)
-        }
+
+    useEffect(() => {
+        setShopCart(getCartItens())
     },[])
 
 
@@ -44,7 +44,7 @@ const DetailsProduct = ({title, price, max, description, id, image}) => {
     }
 
     function addProductInCart(){
-        const products = [...shopCart]
+        const products = getCartItens()
         if(products.length > 0){
             for (let product of products){
                 if(product.id === id ){
@@ -52,11 +52,17 @@ const DetailsProduct = ({title, price, max, description, id, image}) => {
                     return
                 }
             }
-            upadateItemCart([...products, productObjt])
+            const arrayProducts =  [...products, productObjt]
+            upadateItemCart(arrayProducts)
+            setShopCart(arrayProducts)
+            setTotal(total + 1)
             return
         }
         else{
-            upadateItemCart([...products, productObjt])
+            const arrayProducts =  [...products, productObjt]
+            upadateItemCart(arrayProducts)
+            setShopCart(arrayProducts)
+            setTotal(total + 1)
             return
         }
     }

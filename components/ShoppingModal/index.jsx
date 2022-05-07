@@ -53,6 +53,15 @@ const ShoppingCartModal = ({handleOnClick}) => {
         window.open(link)   
     }
 
+    function updateCartOnRemoveItem(id){
+        const newProductArray = [...shopCart]
+        const arrayFilte = newProductArray.filter((product) =>  product.id != id)
+        
+        setShopCart(arrayFilte)
+        upadateItemCart(arrayFilte)
+        return
+    }
+
 
     return (
     <>
@@ -84,7 +93,8 @@ const ShoppingCartModal = ({handleOnClick}) => {
                                     amount={product.qtd}
                                     id={product.id}
                                     selected={product.selected}
-                                    setAmountProduct={setAmountProduct}/>
+                                    setAmountProduct={setAmountProduct}
+                                    functionRemove={updateCartOnRemoveItem}/>
                                     
                                 </Styles.CardCart>
                                 )
