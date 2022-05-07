@@ -29,29 +29,35 @@ const DetailsProduct = ({title, price, max, description, id, image}) => {
         else {
              setAmount(amount > 1 ? amount -1 : amount)
         }
-    
-    
+
         return
+    }
+
+    const productObjt =  {
+        id: id, 
+        name: title, 
+        price: price, 
+        qtd: amount, 
+        selected: true,
+        image: image,
+        description: description
     }
 
     function addProductInCart(){
         const products = [...shopCart]
-        for (let product of products){
-            if(product.id === id ){
-                console.log("nada")
+        if(products.length > 0){
+            for (let product of products){
+                if(product.id === id ){
+                    console.log("nada")
+                    return
+                }
             }
-            else {
-                upadateItemCart([...products, 
-                    {   id: id, 
-                        name: title, 
-                        price: price, 
-                        qtd: amount, 
-                        selected: true,
-                        image: image,
-                        description: description
-                    }
-                ])
-            }
+            upadateItemCart([...products, productObjt])
+            return
+        }
+        else{
+            upadateItemCart([...products, productObjt])
+            return
         }
     }
 

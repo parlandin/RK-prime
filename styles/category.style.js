@@ -21,10 +21,6 @@ Styles.WrapperTitle = styled.div`
 `
 
 Styles.WrapperProducts = styled.div`
-    /* display:flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
- */
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     margin: 0 auto;
@@ -38,7 +34,6 @@ Styles.WrapperProducts = styled.div`
         gap: 40px 20px;
     }
 
-    
 
     @media (max-width: 919px){
         grid-template-columns: 1fr 1fr 1fr;

@@ -10,11 +10,9 @@ import { dehydrate, QueryClient, useQuery } from 'react-query';
 
 export async function getStaticProps(context){
     const {params} = context
-    const [title, id] = params.productId.split("&id=")
-
+    const [ ,id] = params.productId.split("&id=")
     const queryClient = new QueryClient()
     
-
     await queryClient.prefetchQuery(`${id}`, 
         async () => await (await fetch(`http://localhost:5000/produtos/${id}`)).json()
     )
@@ -41,7 +39,6 @@ export  async function getStaticPaths(){
 
 const Produtos = (props) => {
     const {productId} = props.productId
-
     const [title, id] = productId.split("&id=")
 
     const {data, isLoading} = useQuery(
@@ -70,10 +67,9 @@ const Produtos = (props) => {
                         image={data.imagens[0]}/>
                     </Styles.WrapperGeneric>
                    
-                   
                 </Styles.ProdutoInfo>
 
-                <SectionCategorys  title={"Itens que podem ser do seu interesse"} categorys="recomended" tags={data.tags}/>
+                {/* <SectionCategorys  title={"Itens que podem ser do seu interesse"} categorys="recomended" tags={data.tags}/> */}
                 
             </Styles.Wrapper>
         
