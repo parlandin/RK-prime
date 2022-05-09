@@ -10,6 +10,7 @@ Styles.Wrapper = styled.div`
     border-radius: 10px;
     justify-content: space-between;
     align-items: center;
+    opacity: ${({selected}) => selected ? 1 : 0.5};
 
 `
 
@@ -18,10 +19,6 @@ Styles.WrapperGereric = styled.div`
     width: 100%;
     color: #2c2c2c;
     align-items: flex-start;
-
-   /*  @media (max-width: 405px){
-        flex-direction: column;
-    } */
 `
 
 Styles.LinkProduct = styled.a`
@@ -53,6 +50,7 @@ Styles.PTitle = styled.p`
     font-weight: 400;
     margin-right: 0;
     overflow: hidden;
+    word-wrap: break-word;
 
     @media (max-width: 404px){
         font-size: 1rem;
@@ -112,6 +110,30 @@ Styles.Button = styled.button`
     background-color: transparent;
 `
 
+Styles.Label = styled.label` 
+`
 
+Styles.InputCheck = styled.input`
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border: 1px solid #8b8b8b;
+    display: flex;
+    position: relative;
+    cursor: pointer;
+        
+    &:checked::before{
+        transition: all 500ms ease-in-out;
+        position: absolute;
+        left: 33%;
+        transform: translate(-50%);
+        content: " ";
+        width: 4px;
+        height: 8px;
+        border-right: 2px solid #423e3e;
+        border-bottom: 2px solid #423e3e;
+        transform: rotate(40deg);
+    }
+`
 
 export default Styles;

@@ -3,20 +3,49 @@ import Link from "next/link";
 import Styles from "./Cart.style";
 import {VscTrash} from "react-icons/vsc"
 import AmountButton from "../AmountButton";
-import { useState } from "react";
-import {useTotalLengthCart} from "../../context/shoppingTotal"
+import { useState , useEffect } from "react";
+import {useTotalLengthCart} from "../../context/shoppingTotal";
+import updateItemCart from "../../services/updateItemCart";
+import getCartItens from "../../services/getCartItens";
 
 
-const CartProduct = ({img, desc, title, price, customClass, amount, setAmountProduct, id, selected, functionRemove}) => {
-    const [productSelected, setProductSelected] = useState(selected)
+const CartProduct = (props) => {
+    const {
+        img, 
+        desc, 
+        title, 
+        price, 
+        customClass, 
+        amount, 
+        setAmountProduct, 
+        id, 
+        selected, 
+        functionRemove, 
+        updateTotal} = props
+
+    const [hasSelected, setHasSelected] = useState(selected)
     const [total, setTotal] = useTotalLengthCart()
+
+    
     function removeProduct(){
         functionRemove(id)
         setTotal(total - 1)
     }
 
+    function setProductSelectedInCart() {
+        setHasSelected(!hasSelected)
+        let arrayProducts = getCartItens()
+        for(let product of arrayProducts){
+            if(product.id == id){
+                product.selected = !hasSelected
+            }
+        }
+        updateItemCart(arrayProducts)
+        updateTotal()
+    }
+
     return (
-        <Styles.Wrapper className={customClass}>
+        <Styles.Wrapper className={customClass} selected={hasSelected}>
             <Link href={`/produto/${title}&id=${id}`} passHref>
                 <Styles.LinkProduct></Styles.LinkProduct>
             </Link> 
@@ -44,13 +73,13 @@ const CartProduct = ({img, desc, title, price, customClass, amount, setAmountPro
 
             <Styles.WrapperButton>
                 <Styles.Button className="finish">
-                    <label>
-                        <input 
+                    <Styles.Label>
+                        <Styles.InputCheck 
                         type="checkbox" 
                         name="" 
                         id=""  
-                        checked={productSelected} onChange={() => setProductSelected(!productSelected)}/>
-                    </label>
+                        checked={hasSelected} onChange={setProductSelectedInCart}/>
+                    </Styles.Label>
                 </Styles.Button>
 
                 <Styles.Button className="canceled" onClick={removeProduct}>

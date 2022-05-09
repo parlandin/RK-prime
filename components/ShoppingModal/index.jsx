@@ -1,23 +1,30 @@
-import { useEffect, useState } from "react"
-import CartProduct from "../CartProduct"
-import Styles from "./modal.style"
-import {FiX} from "react-icons/fi"
-import {BsWhatsapp} from "react-icons/bs"
-import upadateItemCart from "../../services/updateItemCart"
+import { useEffect, useState } from "react";
+import CartProduct from "../CartProduct";
+import Styles from "./modal.style";
+import {FiX} from "react-icons/fi";
+import {BsWhatsapp} from "react-icons/bs";
+import updateItemCart from "../../services/updateItemCart";
+import getCartItens from "../../services/getCartItens";
 
 
 const ShoppingCartModal = ({handleOnClick}) => {
     const [shopCart, setShopCart] = useState([])
+    const [totalPrice, setTotalPrice] = useState(0)
 
     useEffect(() => {
         let itens = localStorage.getItem("shopCart")
-
         if(itens){
             const array = JSON.parse(itens)
             setShopCart(array)
         }
+
     }, [])
 
+    useEffect(() => {
+        getTotal()
+    }, [shopCart])
+
+   
 
     function setAmountProduct(id, operation ){
         const newProductArray = [...shopCart]
@@ -33,21 +40,34 @@ const ShoppingCartModal = ({handleOnClick}) => {
             }
         }
         setShopCart(newProductArray)
-        upadateItemCart(newProductArray)
+        updateItemCart(newProductArray)
         return
     }
     
     function getTotal(){
-        const total = shopCart.reduce((prev, current) => prev + (current.price * current.qtd), 0)
-        return total.toFixed(2)
+        const arrayProducts = getCartItens()
+        const total = arrayProducts.reduce((prevValue, product) => {
+            if(product.selected){
+               return prevValue + (product.price * product.qtd)
+            }
+            else{
+                return prevValue + 0
+            }  
+            
+        }, 0)
+        return setTotalPrice(total.toFixed(2))
     }
 
     function sendMessage(){
         let message = ""
-        for(let product of shopCart){
-            message += `*nome:* ${product.name} \n*preço:* R$${product.price} \n*quantidade:* ${product.qtd}\n\n`
+        const arrayProducts = getCartItens()
+        for(let product of arrayProducts){
+            if(product.selected){
+                message += `*nome:* ${product.name} \n*preço:* R$${product.price} \n*quantidade:* ${product.qtd}\n\n`
+            }
+           
         }
-        const messageFinaly = `*Produtos* \n\n${message} \n *total:* ${getTotal()}`
+        const messageFinaly = `*Produtos* \n\n${message} \n *total:* ${totalPrice}`
         const urlText =  window.encodeURIComponent(messageFinaly)
         const link = `https://api.whatsapp.com/send/?phone=5566984359798&text=${urlText}`
         window.open(link)   
@@ -58,7 +78,7 @@ const ShoppingCartModal = ({handleOnClick}) => {
         const arrayFilte = newProductArray.filter((product) =>  product.id != id)
         
         setShopCart(arrayFilte)
-        upadateItemCart(arrayFilte)
+        updateItemCart(arrayFilte)
         return
     }
 
@@ -94,7 +114,8 @@ const ShoppingCartModal = ({handleOnClick}) => {
                                     id={product.id}
                                     selected={product.selected}
                                     setAmountProduct={setAmountProduct}
-                                    functionRemove={updateCartOnRemoveItem}/>
+                                    functionRemove={updateCartOnRemoveItem}
+                                    updateTotal={getTotal}/>
                                     
                                 </Styles.CardCart>
                                 )
@@ -105,7 +126,7 @@ const ShoppingCartModal = ({handleOnClick}) => {
                     <Styles.GerericTotal>
                         <Styles.TotalText>Total:</Styles.TotalText>
                         <Styles.Total>
-                            R$ {getTotal()}
+                            R$ {totalPrice}
                         </Styles.Total>
                     </Styles.GerericTotal>
 
