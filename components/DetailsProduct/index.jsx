@@ -48,7 +48,6 @@ const DetailsProduct = ({title, price, max, description, id, image}) => {
         if(products.length > 0){
             for (let product of products){
                 if(product.id === id ){
-                    console.log("nada")
                     return
                 }
             }
@@ -70,7 +69,7 @@ const DetailsProduct = ({title, price, max, description, id, image}) => {
     function sendMessage(name, price, qtd){
         const message = `*Produtos*\n*nome:* ${name} \n*preço:* R$${price} \n*quantidade:* ${qtd}`
         const urlText =  window.encodeURIComponent(message)
-        const link = `https://api.whatsapp.com/send/?phone=5566984359798&text=${urlText}`
+        const link = `https://api.whatsapp.com/send/?phone=5599999999999&text=${urlText}`
         window.open(link)   
     }
 

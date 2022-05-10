@@ -68,7 +68,7 @@ Styles.WrapperCart = styled.div`
     overflow-y: scroll;
     max-height: 100vh;
     padding-bottom: 200px;
-    overflow-x: none;
+    overflow-x: hidden;
 `
 
 const lines = css`

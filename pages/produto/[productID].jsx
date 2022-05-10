@@ -69,7 +69,7 @@ const Produtos = (props) => {
                    
                 </Styles.ProdutoInfo>
 
-                {/* <SectionCategorys  title={"Itens que podem ser do seu interesse"} categorys="recomended" tags={data.tags}/> */}
+                <SectionCategorys  title={"Itens que podem ser do seu interesse"} categorys="recomended" tags={data.tags}/>
                 
             </Styles.Wrapper>
         

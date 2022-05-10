@@ -8,10 +8,9 @@ Styles.Wrapper = styled.div`
     padding: 5px;
     position: relative;
     border-radius: 10px;
-    justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     opacity: ${({selected}) => selected ? 1 : 0.5};
-
+    flex-direction: column;
 `
 
 Styles.WrapperGereric = styled.div`
@@ -68,10 +67,8 @@ Styles.Price = styled.span`
 `
 
 Styles.WrapperQtd = styled.div`
-    position: absolute;
-    bottom: 0;
-    left: 86px;
     z-index: 20;
+    margin-left: 10px;
    
    @media (max-width:404px) {
        bottom: -28px;
@@ -80,30 +77,17 @@ Styles.WrapperQtd = styled.div`
 
 Styles.WrapperButton = styled.div`
     display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translateY(-50%);
-
-    @media (max-width: 534px) {
-        flex-direction: row;
-        bottom: -52px;
-        top: unset;
-        right: unset;
-        left: 1;
-    }
-
-    @media (max-width:404px) {
-       bottom: -75px;
-   }
+    align-items: center;
+    margin: 5px 10px;
 `
 
 Styles.Button = styled.button`
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 0.9rem;
-    padding: 9px;
     border-radius: 5px;
-    margin: 10px 0px;
+    margin-left: 10px;
     color: #fff;
     border: none;
     cursor: pointer;

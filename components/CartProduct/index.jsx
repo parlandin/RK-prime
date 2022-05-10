@@ -21,7 +21,8 @@ const CartProduct = (props) => {
         id, 
         selected, 
         functionRemove, 
-        updateTotal} = props
+        updateTotal
+    } = props
 
     const [hasSelected, setHasSelected] = useState(selected)
     const [total, setTotal] = useTotalLengthCart()
@@ -56,41 +57,32 @@ const CartProduct = (props) => {
                 </Styles.WrapperImage>
 
                 <Styles.WrapperInfo >
-
                     <Styles.PTitle className={customClass}>{title}</Styles.PTitle>
-
                     <Styles.Price className={customClass}>R${price}</Styles.Price>
-
-                    <Styles.WrapperQtd>
-                        <AmountButton amount={amount} setAmountProduct={setAmountProduct} id={id}/>
-                    </Styles.WrapperQtd>
-
                 </Styles.WrapperInfo>
-
             </Styles.WrapperGereric>
            
-
-
             <Styles.WrapperButton>
-                <Styles.Button className="finish">
-                    <Styles.Label>
-                        <Styles.InputCheck 
-                        type="checkbox" 
-                        name="" 
-                        id=""  
-                        checked={hasSelected} onChange={setProductSelectedInCart}/>
-                    </Styles.Label>
-                </Styles.Button>
+               
+                <Styles.Label>
+                    <Styles.InputCheck 
+                    type="checkbox" 
+                    name="" 
+                    id=""  
+                    checked={hasSelected} onChange={setProductSelectedInCart}/>
+                </Styles.Label>
 
                 <Styles.Button className="canceled" onClick={removeProduct}>
                     <VscTrash style={{color: "#000", height:"1.3em", width: "1.3em"}} />
                 </Styles.Button>
+
+                <Styles.WrapperQtd>
+                    <AmountButton amount={amount} setAmountProduct={setAmountProduct} id={id}/>
+                </Styles.WrapperQtd>
                 
             </Styles.WrapperButton>
 
         </Styles.Wrapper>
-       
-        
     )
 }
 
