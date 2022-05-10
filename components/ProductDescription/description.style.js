@@ -4,7 +4,7 @@ import styled from "styled-components";
 const Styles = {}
 
 Styles.Wrapper = styled.div`
-    margin: 20px 0;
+    margin: 20px 0 30px;
     border-radius: 5px;
     padding: 20px 10px;
     background-color: #fff;
