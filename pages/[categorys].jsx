@@ -1,11 +1,10 @@
-import Container from "../components/layout/Container"
-import TitleCategory from "../components/TitleCategory"
-import {Styles} from '../styles/category.style'
-import CardProduct from "../components/CardProduct"
+import Container from "../components/layout/Container";
+import TitleCategory from "../components/TitleCategory";
+import {Styles} from '../styles/category.style';
+import CardProduct from "../components/CardProduct";
 import { dehydrate, QueryClient, useQuery } from 'react-query';
-import Head from 'next/head'
-
-
+import Head from 'next/head';
+import Loading from "../components/Loading";
 
 
 export async function getStaticProps(context){
@@ -72,24 +71,27 @@ const Category = (props) => {
                     <Styles.WrapperTitle>
                         <TitleCategory title={trasnformTitleText(categorys)}  />
                     </Styles.WrapperTitle>
-                
-                    <Styles.WrapperProducts>
-                        {!isLoading && data.map((product) => {
-                            return (
-                            <Styles.WrapperGeneric key={product._id}>
-                                <CardProduct 
-                                img={product.imagens[0]} 
-                                title={product.nome}
-                                desc={product.descricao}
-                                price={product.preco}
-                                id={product._id}
-                                customClass="mobile-direct"/>
-                                
-                            </Styles.WrapperGeneric>
-                            )
-                        }) }
 
-                    </Styles.WrapperProducts>
+                    {isLoading
+                     ?  <Styles.WrapperLoading> <Loading/> </Styles.WrapperLoading>
+                     :  <Styles.WrapperProducts>
+                            {data.map((product) => {
+                                return (
+                                <Styles.WrapperGeneric key={product._id}>
+                                    <CardProduct 
+                                    img={product.imagens[0]} 
+                                    title={product.nome}
+                                    desc={product.descricao}
+                                    price={product.preco}
+                                    id={product._id}
+                                    customClass="mobile-direct"/>
+                                    
+                                </Styles.WrapperGeneric>
+                                )
+                            }) }
+                        </Styles.WrapperProducts>
+                    }   
+
                 </Styles.Wrapper>
             </Container>    
         </>

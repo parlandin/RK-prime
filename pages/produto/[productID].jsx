@@ -1,11 +1,12 @@
-import Head from "next/head"
-import Container from '../../components/layout/Container'
+import Head from "next/head";
+import Container from '../../components/layout/Container';
 import GalleryCarousel from '../../components/GalleryCarousel';
 import SectionCategorys from "../../components/layout/SectionCategorys"
 import {Styles} from '../../styles/produtos.style';
 import DetailsProduct from '../../components/DetailsProduct';
 import ProductDescription from "../../components/ProductDescription";
 import { dehydrate, QueryClient, useQuery } from 'react-query';
+import Loading from "../../components/Loading";
 
 
 export async function getStaticProps(context){
@@ -51,29 +52,33 @@ const Produtos = (props) => {
             <Head>
                 <title>{`${title} | RK Prime`}</title>
             </Head>
-            <Styles.Wrapper>
-                <Styles.ProdutoInfo>
-                    <Styles.WrapperGeneric className="SlideImages">
-                        <GalleryCarousel arrayImages={data.imagens} description={data.descricao}/>
-                    </Styles.WrapperGeneric>
+            {isLoading 
+             ? <Loading/>
+             : <>
+                <Styles.Wrapper>
+                    <Styles.ProdutoInfo>
+                        <Styles.WrapperGeneric className="SlideImages">
+                            <GalleryCarousel arrayImages={data.imagens} description={data.descricao}/>
+                        </Styles.WrapperGeneric>
+                        
+                        <Styles.WrapperGeneric>
+                            <DetailsProduct 
+                            title={data.nome} 
+                            price={data.preco}
+                            max={data.quantidade}
+                            description={data.descricao}
+                            id={data._id}
+                            image={data.imagens[0]}/>
+                        </Styles.WrapperGeneric>
                     
-                    <Styles.WrapperGeneric>
-                        <DetailsProduct 
-                        title={data.nome} 
-                        price={data.preco}
-                        max={data.quantidade}
-                        description={data.descricao}
-                        id={data._id}
-                        image={data.imagens[0]}/>
-                    </Styles.WrapperGeneric>
-                   
-                </Styles.ProdutoInfo>
+                    </Styles.ProdutoInfo>
 
-                <SectionCategorys  title={"Itens que podem ser do seu interesse"} categorys="recomended" tags={data.tags}/>
-                
-            </Styles.Wrapper>
-        
-            <ProductDescription  description={data.descricao}/>
+                    <SectionCategorys  title={"Itens que podem ser do seu interesse"} categorys="recomended" tags={data.tags}/>
+                    
+                </Styles.Wrapper>
+            
+                <ProductDescription  description={data.descricao}/>
+            </>}
         </Container>
         
     )

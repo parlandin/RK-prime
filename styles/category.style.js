@@ -14,6 +14,14 @@ Styles.Wrapper = styled.div`
     }
 `
 
+Styles.WrapperLoading = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 90vh;
+`
+
 Styles.WrapperTitle = styled.div`
     @media (max-width: 1030px){
         margin-left: 10px;

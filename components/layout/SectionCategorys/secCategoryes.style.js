@@ -7,6 +7,13 @@ Styles.Wrapper = styled.section`
     width: 100%;
     margin: 30px 0;
 `
+Styles.WrapperLoading = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 10px 0;
+`
 
 Styles.TitleSection = styled.div`
     display: flex;

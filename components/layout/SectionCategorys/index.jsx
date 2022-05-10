@@ -2,7 +2,8 @@ import Styles from "./secCategoryes.style"
 import TitleCategory from '../../TitleCategory';
 import CarouselProducts from "../../CarouselProducts";
 import Link from "next/link";
-import {useEffect, useState} from "react"
+import {useEffect, useState} from "react";
+import Loading from "../../Loading";
 
 
 
@@ -35,7 +36,7 @@ const SectionCategorys = ({title, categorys, more, products, tags}) => {
             </Styles.TitleSection>
 
             {isLoanding && categorys === "recomended"
-             ? <p>carregando...</p> 
+             ? <Styles.WrapperLoading> <Loading/> </Styles.WrapperLoading>
              : <CarouselProducts arrayProducts={products ? products : recomendedProduct} categorys={categorys} />
             }
         </Styles.Wrapper>

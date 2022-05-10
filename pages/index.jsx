@@ -5,6 +5,7 @@ import SectionCategorys from '../components/layout/SectionCategorys';
 import {Styles} from "../styles/Home.Styles";
 import { dehydrate, QueryClient, useQuery } from 'react-query';
 import { useEffect, useState } from "react";
+import Loading from "../components/Loading";
 
 
 
@@ -57,10 +58,12 @@ export async function getStaticProps(){
     return (
         <Container>
             <Head>
-            <title>RK Prime | Riska Tattoo</title>
+                <title>RK Prime | Riska Tattoo</title>
             </Head>
 
-            {!isLoading && <>
+            {isLoading 
+            ? <Styles.WrapperLoading> <Loading /> </Styles.WrapperLoading> 
+            : <>
             
                 <Styles.WrapperHome>
                 <Banner />
