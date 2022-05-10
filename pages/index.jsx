@@ -7,11 +7,7 @@ import { dehydrate, QueryClient, useQuery } from 'react-query';
 import { useEffect, useState } from "react";
 import Loading from "../components/Loading";
 
-
-
 const getProducts = async () => await (await fetch("http://localhost:5000/produtos")).json()
-
-
 
 export async function getStaticProps(){
     const queryClient = new QueryClient()
@@ -48,11 +44,11 @@ export async function getStaticProps(){
     }
     function getAcessories(){
         const newArray = data.filter((product) => product.categoria === "acessorios")
-        return newArray
+        return newArray.slice(0,9)
     }
     function getTattos(){
         const newArray = data.filter((product) => product.categoria === "tattoos")
-        return newArray
+        return newArray.slice(0,9)
     }
 
     return (
