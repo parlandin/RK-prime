@@ -125,7 +125,7 @@ Styles.InputCheck = styled.input`
     &:checked::before{
         transition: all 500ms ease-in-out;
         position: absolute;
-        left: 33%;
+        left: 30%;
         transform: translate(-50%);
         content: " ";
         width: 4px;
