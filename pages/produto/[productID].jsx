@@ -8,7 +8,6 @@ import ProductDescription from "../../components/ProductDescription";
 import { dehydrate, QueryClient, useQuery } from 'react-query';
 import Loading from "../../components/Loading";
 
-
 export async function getStaticProps(context){
     const {params} = context
     const [ ,id] = params.productId.split("&id=")
