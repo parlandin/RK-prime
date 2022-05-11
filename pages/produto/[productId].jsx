@@ -45,7 +45,7 @@ const Produtos = (props) => {
         `${id}`, 
         async () => await (await fetch(`https://rk-prime.herokuapp.com/produtos/${id}`)).json(), 
         { initialData: props.dehydratedState, staleTime: 50000 })
-
+        
     return (
         <Container>
             <Head>
