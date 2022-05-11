@@ -25,7 +25,7 @@ export async function getStaticProps(context){
 
 
 export  async function getStaticPaths(){
-    const response = await (await fetch(`http://localhost:5000/produtos/categorias/`)).json()
+    const response = await (await fetch(`https://rk-prime.herokuapp.com/produtos/categorias/`)).json()
     const paths = response.map((category) => {
         return {
             params: {
