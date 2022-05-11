@@ -6,7 +6,7 @@ import "swiper/css/pagination";
 
 
 import Image from "next/image"
-import BannerF2 from "../../public/images/final-exemplo2.jpg"
+import BannerImage from "../../public/images/banner-site.jpg";
 
 const Banner = () => {
     return (
@@ -26,13 +26,13 @@ const Banner = () => {
             className="mySwiper"
             >
                 <SwiperSlide>
-                    <Image src={BannerF2} alt=""/>
+                    <Image src={BannerImage} alt=""/>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <Image src={BannerF2} alt="" />
+                    <Image src={BannerImage} alt="" />
                 </SwiperSlide>
                 <SwiperSlide>
-                    <Image src={BannerF2} alt="" />
+                    <Image src={BannerImage} alt="" />
                 </SwiperSlide>
             </Swiper>
         </Styles.Wrapper>
