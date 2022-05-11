@@ -12,7 +12,7 @@ export async function getStaticProps(context){
     const queryClient = new QueryClient()
    
     await queryClient.prefetchQuery(`${params.categorys}`, 
-        async () => await (await fetch(`http://localhost:5000/produtos/categoria/${params.categorys}`)).json()
+        async () => await (await fetch(`https://rk-prime.herokuapp.com/produtos/categoria/${params.categorys}`)).json()
     )
     
     return {

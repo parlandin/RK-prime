@@ -15,7 +15,7 @@ const SectionCategorys = ({title, categorys, more, products, tags}) => {
         if(categorys === "recomended" && !products){
             setIsLoanding(true)
             async function getProducts(){
-                const respose = await (await fetch(`http://localhost:5000/produtos/like/tags=${tags}`)).json()
+                const respose = await (await fetch(`https://rk-prime.herokuapp.com/produtos/like/tags=${tags}`)).json()
                 setRecomendedProduct(respose)
                 setIsLoanding(false)
             }

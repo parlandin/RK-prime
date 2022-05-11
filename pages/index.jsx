@@ -7,7 +7,7 @@ import { dehydrate, QueryClient, useQuery } from 'react-query';
 import { useEffect, useState } from "react";
 import Loading from "../components/Loading";
 
-const getProducts = async () => await (await fetch("http://localhost:5000/produtos")).json()
+const getProducts = async () => await (await fetch("https://rk-prime.herokuapp.com/produtos")).json()
 
 export async function getStaticProps(){
     const queryClient = new QueryClient()
