@@ -10,7 +10,7 @@ const Logo  = () => {
     return (
         <Styles.WrapperLogo>
             <Link href="/" passHref>
-                <a><Image  src={LogoPicture} alt="" width="160px" height="60px"/></a>
+                <a><Image  src={LogoPicture} alt="logo do site" width="160px" height="60px"/></a>
             </Link>
         </Styles.WrapperLogo>
     )

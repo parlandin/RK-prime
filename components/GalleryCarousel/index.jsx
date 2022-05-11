@@ -35,11 +35,11 @@ const GalleryCarousel = ({arrayImages, description}) => {
                     )
                 })}
                 
-                <Styles.Arrow className="left" onClick={prevSlide}> 
+                <Styles.Arrow className="left" onClick={prevSlide} type="button" title="button left"> 
                     <Image src={Arrrow_Left} alt=""/>
                 </Styles.Arrow>
 
-                <Styles.Arrow className="right" onClick={nextSlide}>
+                <Styles.Arrow className="right" onClick={nextSlide} type="button" title="button left">
                     <Image src={Arrrow_Right} alt=""/>
                 </Styles.Arrow>
             </Styles.WrapperFeatured>

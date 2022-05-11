@@ -25,7 +25,7 @@ const ShoppingCart = () => {
 
     return (
         <>
-            <Styles.ShoppingCartLink onClick={handleOnClick}>
+            <Styles.ShoppingCartLink onClick={handleOnClick} type="button">
                 <Styles.ShoppingCartQntd>{cartLength}</Styles.ShoppingCartQntd>
                 <FiShoppingCart style={{height: "1.1em",width: "1.1em"}}/>
             </Styles.ShoppingCartLink>

@@ -85,12 +85,12 @@ const ShoppingCartModal = ({handleOnClick}) => {
 
     return (
     <>
-        <Styles.WrapperModal onClick={() => handleOnClick(false)}>
+        <Styles.WrapperModal onClick={() => handleOnClick(false)} >
         </Styles.WrapperModal>
 
         <Styles.WrapperGeneric>
             <Styles.Title>Carrinho de compras</Styles.Title>
-            <Styles.ClosedButton onClick={() => handleOnClick(false)}>
+            <Styles.ClosedButton onClick={() => handleOnClick(false)} type="button">
                 <FiX style={{height: "2em",width: "2em"}}/>
             </Styles.ClosedButton>
         

@@ -67,12 +67,12 @@ const CartProduct = (props) => {
                 <Styles.Label>
                     <Styles.InputCheck 
                     type="checkbox" 
-                    name="" 
+                    name="selectProduct" 
                     id=""  
                     checked={hasSelected} onChange={setProductSelectedInCart}/>
                 </Styles.Label>
 
-                <Styles.Button className="canceled" onClick={removeProduct}>
+                <Styles.Button className="canceled" onClick={removeProduct} type="button">
                     <VscTrash style={{color: "#000", height:"1.3em", width: "1.3em"}} />
                 </Styles.Button>
 
