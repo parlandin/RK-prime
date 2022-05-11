@@ -13,6 +13,7 @@ Styles.Button = styled.button`
     margin: 5px 0;
     margin-right: 10px;
     align-items: center;
+    position: relative;
 
     &:last-of-type {
         margin-right: 0px;

@@ -7,12 +7,15 @@ import { useEffect, useState } from "react";
 import upadateItemCart from "../../services/updateItemCart";
 import {useTotalLengthCart} from "../../context/shoppingTotal";
 import getCartItens from "../../services/getCartItens"
+import ToolTip from "../Tooltip";
 
 
 
 const DetailsProduct = ({title, price, max, description, id, image}) => {
     const [amount, setAmount] = useState(1)
     const [shopCart, setShopCart] = useState([])
+    const [buttonCartMessage, setButtonCartMessage] = useState(null)
+    const [buttonDisabled, setButtonDisabled] = useState(false)
 
     const [total, setTotal] = useTotalLengthCart()
 
@@ -34,7 +37,7 @@ const DetailsProduct = ({title, price, max, description, id, image}) => {
     }
 
     const productObjt =  {
-        id: id, 
+        id, 
         name: title, 
         price: price, 
         qtd: amount, 
@@ -45,24 +48,32 @@ const DetailsProduct = ({title, price, max, description, id, image}) => {
 
     function addProductInCart(){
         const products = getCartItens()
+        setButtonDisabled(true)
         if(products.length > 0){
             for (let product of products){
                 if(product.id === id ){
-                    return
+                    product.qtd += amount
+                    upadateItemCart([...products])
+                    setShopCart([...products])
+                    setButtonCartMessage("Produto Atualizado!")
+                    return setTimeout(() => setButtonCartMessage(null), 900)
                 }
             }
+
             const arrayProducts =  [...products, productObjt]
             upadateItemCart(arrayProducts)
             setShopCart(arrayProducts)
             setTotal(total + 1)
-            return
+            setButtonCartMessage("Produto Adicionado!")
+            return setTimeout(() => setButtonCartMessage(null), 900)
         }
         else{
             const arrayProducts =  [...products, productObjt]
             upadateItemCart(arrayProducts)
             setShopCart(arrayProducts)
             setTotal(total + 1)
-            return
+            setButtonCartMessage("Produto Adicionado!")
+            return setTimeout(() => setButtonCartMessage(null), 900)
         }
     }
 
@@ -95,6 +106,7 @@ const DetailsProduct = ({title, price, max, description, id, image}) => {
                 <Styles.WrapperButtons>
                     <Button  text="Adicionar no carrinho" onClick={addProductInCart}>
                         <FiShoppingCart style={{height: "1.3em",width: "1.3em"}}/>
+                        <ToolTip message={buttonCartMessage}/>
                     </Button>
                     
                     <Button 
