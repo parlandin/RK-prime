@@ -34,7 +34,7 @@ const DetailsProduct = ({title, price, max, description, id, image}) => {
     }
 
     const productObjt =  {
-        id: id, 
+        id, 
         name: title, 
         price: price, 
         qtd: amount, 
@@ -48,9 +48,13 @@ const DetailsProduct = ({title, price, max, description, id, image}) => {
         if(products.length > 0){
             for (let product of products){
                 if(product.id === id ){
+                    product.qtd += amount
+                    upadateItemCart([...products])
+                    setShopCart([...products])
                     return
                 }
             }
+
             const arrayProducts =  [...products, productObjt]
             upadateItemCart(arrayProducts)
             setShopCart(arrayProducts)

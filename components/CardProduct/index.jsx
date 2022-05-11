@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Styles from "./Card.style";
-import {MdOutlineStarOutline} from "react-icons/md"
+import {MdOutlineStarOutline, MdOutlineStarPurple500} from "react-icons/md"
 
 
 const CardProduct = ({img, desc, title, price, customClass, id}) => {
@@ -16,19 +16,19 @@ const CardProduct = ({img, desc, title, price, customClass, id}) => {
                 <Styles.PTitle className={customClass}>
                     {title}
                 </Styles.PTitle>
-                <Styles.Price className={customClass}>R${price}</Styles.Price>
+                <Styles.Price className={customClass}>R${parseFloat(price).toFixed(2)}</Styles.Price>
 
                 <Styles.WrapperRating className={customClass}>
                     <Styles.Icon className="title">Avaliação:</Styles.Icon>
 
                     <Styles.Icon>
-                       <MdOutlineStarOutline style={{height: "1em",width: "1em", color:"#5b5b5b"}}/>
+                       <MdOutlineStarPurple500 style={{height: "1em",width: "1em", color:"#ecd50b"}}/>
                     </Styles.Icon>
                     <Styles.Icon>
-                        <MdOutlineStarOutline style={{height: "1em",width: "1em", color:"#5b5b5b"}}/>
+                        <MdOutlineStarPurple500 style={{height: "1em",width: "1em", color:"#ecd50b"}}/>
                     </Styles.Icon>
                     <Styles.Icon>
-                        <MdOutlineStarOutline style={{height: "1em",width: "1em", color:"#5b5b5b"}}/>
+                        <MdOutlineStarPurple500 style={{height: "1em",width: "1em", color:"#ecd50b"}}/>
                     </Styles.Icon>
                     <Styles.Icon>
                         <MdOutlineStarOutline style={{height: "1em",width: "1em", color:"#5b5b5b"}}/>

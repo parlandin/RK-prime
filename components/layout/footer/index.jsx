@@ -50,7 +50,7 @@ const Footer = () => {
                 <GoogleMaps />
             </Styles.Wrapper>
             
-            <Styles.Copyright><p>©Todos os direitos resevado</p></Styles.Copyright>
+            <Styles.Copyright><p>©Todos os direitos reservados</p></Styles.Copyright>
         </Styles.WrapperFooter>
     )
 }

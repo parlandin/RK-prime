@@ -70,7 +70,7 @@ Styles.PTitle = styled.p`
 ` 
 
 Styles.Price = styled.span`
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: 400px;
     align-self: center;
     margin: 10px 0;

@@ -31,7 +31,7 @@ const Menu = ({activeButtonM, toggleStatebutton}) => {
 
                                 <Styles.DropDownItem onClick={activeButtonM ? toggleStatebutton : () => {}}>
                                     <Link href={"/cospalyer"} passHref>
-                                        <Styles.MenuLink>Cospalyer</Styles.MenuLink>
+                                        <Styles.MenuLink>Cosplayer</Styles.MenuLink>
                                     </Link>
                                 </Styles.DropDownItem>
 
