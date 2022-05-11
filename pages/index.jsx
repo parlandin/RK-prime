@@ -26,7 +26,7 @@ export async function getStaticProps(){
 
     const {data, isLoading} = useQuery('products', getProducts, { initialData: props.dehydratedState, staleTime: 50000 })
 
-    useEffect(() => {
+    useEffect(() => {""
         if(!isLoading){
             setProducts({
                 ...products, 
