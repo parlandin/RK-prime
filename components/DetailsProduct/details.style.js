@@ -7,16 +7,20 @@ Styles.Wrapper = styled.section`
     flex-direction: column;
     width: 100%;
     max-width: 500px;
+    color: #2c2c2c;
 `
 Styles.Title = styled.h1`
     font-size: 1.5rem;
 `
 
 Styles.Description = styled.p`
+    position: relative;
     font-size: 1rem;
     max-width: 400px;
     margin: 20px 0;
     font-family: inherit;
+    min-height: 80px;
+    overflow: hidden;
     
     @media (max-width: 515px){
         order: 5;
@@ -24,40 +28,23 @@ Styles.Description = styled.p`
     }
 `
 Styles.DescriptionButton = styled.a`
-    border-bottom:1px solid #000;
-    font-size: 1.1rem;
-    margin-left: 5px;
-    color: #3e0551;
-`
-
-
-Styles.WrapperSize = styled.div`
-    display: flex;
-    flex-direction: column;
-    margin: 10px 0 20px;
-`
-Styles.SizeText = styled.p`
-    font-size: 1.1rem;
-    font-weight: 500;
-`
-Styles.WrapperCheckBox = styled.div`
-    display: flex;
-`
-
-Styles.SelectSize = styled.div`
-    & + div {
-        margin-left: 10px;
-    }
-`
-
-Styles.CheckSize = styled.input`
-`
-Styles.CheckText = styled.label`
     font-size: 1rem;
-    font-weight: 500;
-    margin-left: 2px;
+    color: #000;
+    font-weight: 600;
 `
 
+Styles.Price = styled.p`
+    font-weight: 500;
+    margin: 10px 0;
+    font-size: 1.5rem;
+`
+
+Styles.WrapperQtd = styled.div`
+    margin: 10px 0 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+`
 
 Styles.Availability = styled.p`
     font-size: 1.1rem;
@@ -79,6 +66,7 @@ Styles.WrapperButtons = styled.div`
 Styles.Warning = styled.span`
     font-size: 1rem;
     font-weight: 500;
+    margin-right: 10px;
 `
 
 export default Styles;

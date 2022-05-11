@@ -1,47 +1,107 @@
-import Image from "next/image";
 import Styles from "./details.style";
 import Button from "../Button";
+import AmountButton from "../AmountButton";
+import {FaWhatsapp} from "react-icons/fa";
+import {FiShoppingCart} from "react-icons/fi";
+import { useEffect, useState } from "react";
+import upadateItemCart from "../../services/updateItemCart";
+import {useTotalLengthCart} from "../../context/shoppingTotal";
+import getCartItens from "../../services/getCartItens"
 
-import CartImage from "../../public/images/shopping-cart-button.svg"
-import WhatImage from "../../public/images/whatsapp-logo-button.svg"
 
-const DetailsProduct = ({title}) => {
+
+const DetailsProduct = ({title, price, max, description, id, image}) => {
+    const [amount, setAmount] = useState(1)
+    const [shopCart, setShopCart] = useState([])
+
+    const [total, setTotal] = useTotalLengthCart()
+
+
+    useEffect(() => {
+        setShopCart(getCartItens())
+    },[])
+
+
+    function setAmountProduct(id,operation){
+        if(operation === "plus"){
+            setAmount(amount + 1)
+        }
+        else {
+             setAmount(amount > 1 ? amount -1 : amount)
+        }
+
+        return
+    }
+
+    const productObjt =  {
+        id: id, 
+        name: title, 
+        price: price, 
+        qtd: amount, 
+        selected: true,
+        image: image,
+        description: description
+    }
+
+    function addProductInCart(){
+        const products = getCartItens()
+        if(products.length > 0){
+            for (let product of products){
+                if(product.id === id ){
+                    return
+                }
+            }
+            const arrayProducts =  [...products, productObjt]
+            upadateItemCart(arrayProducts)
+            setShopCart(arrayProducts)
+            setTotal(total + 1)
+            return
+        }
+        else{
+            const arrayProducts =  [...products, productObjt]
+            upadateItemCart(arrayProducts)
+            setShopCart(arrayProducts)
+            setTotal(total + 1)
+            return
+        }
+    }
+
+    function sendMessage(name, price, qtd){
+        const message = `*Produtos*\n*nome:* ${name} \n*preço:* R$${price} \n*quantidade:* ${qtd}`
+        const urlText =  window.encodeURIComponent(message)
+        const link = `https://api.whatsapp.com/send/?phone=5599999999999&text=${urlText}`
+        window.open(link)   
+    }
+
     return (
         <Styles.Wrapper>
             <Styles.Title>
                {title}
             </Styles.Title>
             <Styles.Description>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem eum, pariatur alias voluptatibus labore placeat sequi eveniet debitis assumenda iusto voluptate ullam nam consequuntur aspernatur ea qui.<Styles.DescriptionButton href="#comentario">ler mais</Styles.DescriptionButton>
+                {`${description.substring(0, 160)}...`}
+                <Styles.DescriptionButton href="#comentario">ler mais</Styles.DescriptionButton>
             </Styles.Description>
+
+            <Styles.Price>R$:{price * amount}</Styles.Price>
             
-            <Styles.WrapperSize>
-                <Styles.SizeText>Tamanhos</Styles.SizeText>
-                <Styles.WrapperCheckBox>
-                    <Styles.SelectSize >
-                        <Styles.CheckSize id="productSize_P" type="checkbox" name="productSize"  required/>
-                        <Styles.CheckText htmlFor="productSize_P">P</Styles.CheckText>
-                    </Styles.SelectSize>
-
-                    <Styles.SelectSize>
-                        <Styles.CheckSize id="productSize_M" type="checkbox" name="productSize" />
-                        <Styles.CheckText htmlFor="productSize_M">M</Styles.CheckText>
-                    </Styles.SelectSize>
-
-                    <Styles.SelectSize>
-                        <Styles.CheckSize id="productSize_G" type="checkbox" name="productSize" />
-                        <Styles.CheckText htmlFor="productSize_G">G</Styles.CheckText>
-                    </Styles.SelectSize>
-                </Styles.WrapperCheckBox>
-        
-            </Styles.WrapperSize>
+            <Styles.WrapperQtd>
+                <AmountButton  amount={amount} setAmountProduct={setAmountProduct}/>
+            </Styles.WrapperQtd>
 
             <Styles.Availability>Disponivel na loja</Styles.Availability>
 
             <Styles.WrapperGereric>
                 <Styles.WrapperButtons>
-                    <Button icon={CartImage} text="Adicionar no carrinho" />
-                    <Button icon={WhatImage} text="Fazer pedido"/>
+                    <Button  text="Adicionar no carrinho" onClick={addProductInCart}>
+                        <FiShoppingCart style={{height: "1.3em",width: "1.3em"}}/>
+                    </Button>
+                    
+                    <Button 
+                    text="Fazer pedido"
+                    onClick={() => sendMessage(title, price * amount, amount)}>
+                         <FaWhatsapp style={{height: "1.4em",width: "1.4em"}}/>
+                    </Button>
                 </Styles.WrapperButtons>
 
                 <Styles.Warning>*obs: todos os pedidos e compras são feitos atraves do Whatsapp</Styles.Warning>

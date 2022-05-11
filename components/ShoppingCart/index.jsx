@@ -1,26 +1,37 @@
-import Link from "next/link";
-import Image from "next/image";
 import Styles from "./shoppCart.style";
-import getCartLength from "../../services/getItemCart"
 import { useEffect, useState } from "react";
+import ShoppingCartModal from "../ShoppingModal";
+import {useTotalLengthCart} from "../../context/shoppingTotal";
+import {FiShoppingCart} from "react-icons/fi";
 
-import ShppingCartIMG from "../../public/images/shopping-cart.svg";
+
 
 
 const ShoppingCart = () => {
     const [cartLength, setCartLength] = useState(0)
+    const [isOpen, setIsOpen] = useState(false)
+
+    const [total, setTotal] = useTotalLengthCart()
 
     useEffect(()=> {
-        setCartLength(getCartLength())
-    },[])
+        setCartLength(total)
+    },[total])
+
+    function handleOnClick(bool){
+        if(bool) return setIsOpen(bool)
+
+        return setIsOpen(!isOpen)
+    }
 
     return (
-        <Link href={"/shoppingcart"} passHref>
-            <Styles.ShoppingCartLink>
+        <>
+            <Styles.ShoppingCartLink onClick={handleOnClick}>
                 <Styles.ShoppingCartQntd>{cartLength}</Styles.ShoppingCartQntd>
-                <Image  src={ShppingCartIMG} alt="" width="16px" height="16px"/>
+                <FiShoppingCart style={{height: "1.1em",width: "1.1em"}}/>
             </Styles.ShoppingCartLink>
-        </Link>
+           
+            {isOpen && <ShoppingCartModal handleOnClick={handleOnClick}/>}
+        </>
     )
 }
 

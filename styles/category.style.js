@@ -7,10 +7,19 @@ Styles.Wrapper = styled.div`
     flex-direction: column;
     width: 100%;
     margin-top: 35px;
+    margin-bottom: 35px;
 
     @media (max-width: 700px){
         margin-top: 20px;
     }
+`
+
+Styles.WrapperLoading = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 90vh;
 `
 
 Styles.WrapperTitle = styled.div`
@@ -20,25 +29,35 @@ Styles.WrapperTitle = styled.div`
 `
 
 Styles.WrapperProducts = styled.div`
-    display:flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin: 0 auto;
+    gap: 40px 60px;
 
-    @media (max-width: 936px){
-        justify-content: center;
+    @media (max-width: 1021px){
+        gap: 40px 40px;
+    }
+
+    @media (max-width: 965px){
+        gap: 40px 20px;
+    }
+
+
+    @media (max-width: 919px){
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 40px 30px;
+    }
+
+    @media (max-width: 695px){
+        grid-template-columns: 1fr 1fr;
     }
 
     @media (max-width: 476px){
-        justify-content:flex-start;
-    }
-
-    @media (max-width: 350px){
-        justify-content: center;
+        grid-template-columns: 1fr ;
     }
 `
 
 Styles.WrapperGeneric = styled.div`
-    margin: 15px;
     @media (max-width: 476px) and (min-width: 350px){
         width: 100%;
     }

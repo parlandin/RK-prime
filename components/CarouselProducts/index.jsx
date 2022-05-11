@@ -1,14 +1,14 @@
 import Styles from "./Carousel.style";
-import { Swiper, SwiperSlide } from "swiper/react"
+import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper";
+import CardProduct from "../CardProduct";
 
 import "swiper/css/navigation";
 
-import Product1 from "../../public/images/product1.jpg"
-import Product2 from "../../public/images/product2.jpg"
-import CardProduct from "../CardProduct";
 
-const CarouselProducts = () => {
+
+const CarouselProducts = ({arrayProducts, categorys}) => {
+
     return (
         <Styles.WrapperGereric>
             <Swiper
@@ -74,47 +74,19 @@ const CarouselProducts = () => {
             modules={[Navigation]}
             className="mySwiper"
             >
-                <SwiperSlide>
-                    <Styles.WrapperCard>
-                        <CardProduct img={Product1} 
-                        title="Brinco cruz styles new limitado + par de anel dbc"  
-                        price={"100"}/>
-                    </Styles.WrapperCard>
-                </SwiperSlide>
-                
-                
-                <SwiperSlide>
-                    <CardProduct img={Product2}
-                    title="Brinco cruz styles new limitado + par de  new limitado
-                    new limitado"
-                    price={"100"} />
-                </SwiperSlide>
-
-                <SwiperSlide>
-                <CardProduct img={Product1} title="Anel Minimalista Com Pulseira" price={"100"}/>
-                </SwiperSlide>
-
-                <SwiperSlide>
-                    <CardProduct img={Product2} title="Conjunto de joias de metal texturizado 5 peças" 
-                    price={"100"}/>
-                </SwiperSlide>
-
-                <SwiperSlide>
-                <CardProduct img={Product1} price={"100"}/>
-                </SwiperSlide>
-
-                <SwiperSlide>
-                    <CardProduct img={Product2} price={"100"}/>
-                </SwiperSlide>
-
-                <SwiperSlide>
-                <CardProduct img={Product1} price={"100"}/>
-                </SwiperSlide>
-
-                <SwiperSlide>
-                    <CardProduct img={Product2} price={"100"}/>
-                </SwiperSlide>
-
+                {arrayProducts.length >= 0 && arrayProducts.map((product) => {
+                    return (
+                        <SwiperSlide key={product._id}>
+                            <Styles.WrapperCard>
+                                <CardProduct img={product.imagens[0]} 
+                                    title={product.nome}  
+                                    price={product.preco}
+                                    id={product._id}
+                                    desc={product.descricao}/>
+                            </Styles.WrapperCard>
+                        </SwiperSlide>
+                    )
+                })}
             </Swiper>
         </Styles.WrapperGereric>
     )

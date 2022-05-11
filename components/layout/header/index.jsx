@@ -27,14 +27,15 @@ const Header = ({mobileAtive}) => {
 
     return (
         <Styles.WrapperHeader>
-            <Styles.Header active={activeButtonM}>
+            <Styles.WrapperGeneric>
+                <Styles.Header active={activeButtonM}>
 
-                <Logo />
-                <Menu activeButtonM={activeButtonM} toggleStatebutton={toggleStatebutton}/>
-                <ShoppingCart />
-                <MenuMobileButton onClick={toggleStatebutton} activeButtonM={activeButtonM}/>
-            </Styles.Header>
-
+                    <Logo />
+                    <Menu activeButtonM={activeButtonM} toggleStatebutton={toggleStatebutton}/>
+                    <ShoppingCart />
+                    <MenuMobileButton onClick={toggleStatebutton} activeButtonM={activeButtonM}/>
+                </Styles.Header>
+                </Styles.WrapperGeneric>
         </Styles.WrapperHeader>
     )
 }

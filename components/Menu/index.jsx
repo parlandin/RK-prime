@@ -52,7 +52,7 @@ const Menu = ({activeButtonM, toggleStatebutton}) => {
                 </Styles.MenuItem>
 
                 <Styles.MenuItem onClick={activeButtonM ? toggleStatebutton : () => {}}>
-                    <Link href={"/tattos"} passHref>
+                    <Link href={"/tattoos"} passHref>
                         <Styles.MenuLink>Tattoos</Styles.MenuLink>
                     </Link>
                 </Styles.MenuItem>

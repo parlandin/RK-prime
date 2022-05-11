@@ -1,9 +1,9 @@
 import Image from "next/image";
 import GoogleMaps from "../../GoogleMaps";
-import Styles from "./footer.style"
+import Styles from "./footer.style";
+import {FaWhatsapp} from "react-icons/fa";
 
-import Iinstragram  from "../../../public/images/instagram.svg"
-import Iwhatsapp from "../../../public/images/whatsapp.svg"
+import Iinstragram  from "../../../public/images/instagram.svg";
 
 const Footer = () => {
     
@@ -31,12 +31,12 @@ const Footer = () => {
 
                     <Styles.NetWorkColumn>
                         <Styles.NetWork>
-                            <Image src={Iwhatsapp} alt=""/>
+                            <FaWhatsapp style={{height: "1.4em",width: "1.4em", color: "#24b734"}}/>
                             <Styles.NetWorkText href="#" target="_blank">(99)9 9999-9999</Styles.NetWorkText>
                         </Styles.NetWork>
 
                         <Styles.NetWork>
-                            <Image src={Iwhatsapp} alt=""/>
+                            <FaWhatsapp style={{height: "1.4em",width: "1.4em", color: "#24b734"}}/>
                            <Styles.NetWorkText href="#" target="_blank">(99)9 9999-9999</Styles.NetWorkText>
                         </Styles.NetWork>
                     </Styles.NetWorkColumn>

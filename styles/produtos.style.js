@@ -18,17 +18,8 @@ Styles.ProdutoInfo = styled.div`
     background-color: #fff;
     box-shadow: 1px 1px 5px 1px #e2e2e2;
     padding-top: 10px;
+    border-radius: 4px;
 
-    &::after {
-        content: "";
-        width: 100%;
-        height: 1px;
-        background-color: #7774748a;
-        position: absolute;
-        top: 105%;
-        left: 50%;
-        transform: translateX(-50%);
-    }
 
     @media (max-width:660px){
         flex-wrap: wrap;
