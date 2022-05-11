@@ -44,8 +44,9 @@ const Produtos = (props) => {
     const {data, isLoading} = useQuery(
         `${id}`, 
         async () => await (await fetch(`https://rk-prime.herokuapp.com/produtos/${id}`)).json(), 
-        { initialData: props.dehydratedState, staleTime: 50000 })
-        
+        { initialData: props.dehydratedState, staleTime: 3600000 })
+
+
     return (
         <Container>
             <Head>

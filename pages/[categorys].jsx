@@ -45,7 +45,7 @@ const Category = (props) => {
     const {data, isLoading} = useQuery(
         `${categorys}`, 
         async () => await (await fetch(`https://rk-prime.herokuapp.com/produtos/categoria/${categorys}`)).json(), 
-        { initialData: props.dehydratedState, staleTime: 50000 })
+        { initialData: props.dehydratedState, staleTime: 3600000 })
     
     function trasnformTitleText(title) {
         const texts = {
