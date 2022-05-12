@@ -34,15 +34,14 @@ Styles.Wrapper = styled.a`
 
 Styles.WrapperImage = styled.div`
     padding: 5px;
-    //border: 1px solid #000;
     max-height: 160px;
     min-height: 160px;
     max-width: 140px;
     min-width: 140px;
+    width: 100%;
+    height: 100%;
     align-self: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: block;
     margin-top: 10px;
 `
 

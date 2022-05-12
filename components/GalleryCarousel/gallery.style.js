@@ -49,8 +49,8 @@ Styles.Arrow = styled.button`
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    width: 40px;
-    height: 40px;
+    width: 32px;
+    height: 32x;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -87,7 +87,6 @@ Styles.OptionImage = styled.button`
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 68px;
     width: 60px;
     height: 60px;
     overflow: hidden;
@@ -135,6 +134,10 @@ Styles.OptionImage = styled.button`
         }
     }
 `
-
+Styles.DivImage = styled.div`
+    width: 100%;
+    height: 100%;
+    display: block;
+`
 
 export default Styles

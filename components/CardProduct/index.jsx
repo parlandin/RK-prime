@@ -9,7 +9,7 @@ const CardProduct = ({img, desc, title, price, customClass, id}) => {
         <Link href={`/produto/${title}&id=${id}`} passHref>
             <Styles.Wrapper className={customClass}>
             <Styles.WrapperImage>
-                <Image src={img} alt={desc}  width="200" height="200" />
+                <Image src={img} alt={desc}  width="200" height="200" layout="responsive"/>
             </Styles.WrapperImage>
 
             <Styles.WrapperInfo >

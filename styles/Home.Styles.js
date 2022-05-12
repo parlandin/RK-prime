@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export const Styles = {}
 
-Styles.WrapperHome = styled.main`
+Styles.WrapperHome = styled.section`
     margin-top: 10px;
 `
 

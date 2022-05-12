@@ -30,17 +30,22 @@ const GalleryCarousel = ({arrayImages, description}) => {
                 {arrayImages.map((image, index) => {
                     return (
                         <Styles.CurrentImage className={index == currentSlide ? "CurrentImage-active" : ""} key={index}>
-                            {index == currentSlide && <Image src={image} width="380" height="380"  alt={description} />}
+                            {index == currentSlide && <Image src={image} width="340" height="340" layout="responsive"  alt={description} />}
                         </Styles.CurrentImage>
                     )
                 })}
                 
                 <Styles.Arrow className="left" onClick={prevSlide} type="button" title="button left"> 
-                    <Image src={Arrrow_Left} alt=""/>
+                    <Styles.DivImage>
+                        <Image src={Arrrow_Left} alt="botão imagem anterior" width="32" height="32" layout="responsive"/>
+                    </Styles.DivImage>
                 </Styles.Arrow>
 
                 <Styles.Arrow className="right" onClick={nextSlide} type="button" title="button left">
-                    <Image src={Arrrow_Right} alt=""/>
+                    <Styles.DivImage>
+                        <Image src={Arrrow_Right} alt="botão proxima imagem" width="32" height="32" layout="responsive"/>
+                    </Styles.DivImage>
+                    
                 </Styles.Arrow>
             </Styles.WrapperFeatured>
             
@@ -53,7 +58,9 @@ const GalleryCarousel = ({arrayImages, description}) => {
                         key={index} 
                         className={index == currentSlide ? "selected" : ""}
                         onMouseEnter={() => selectCurrent(index) }>
-                            <Image src={image} alt={description} width="60" height="60"/>
+                            <Styles.DivImage>
+                                <Image src={image} alt={description} width="60" height="60" layout="responsive" />
+                            </Styles.DivImage>
                         </Styles.OptionImage>
                     )
                 })}
