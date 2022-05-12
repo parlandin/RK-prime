@@ -30,19 +30,19 @@ const Menu = ({activeButtonM, toggleStatebutton}) => {
                             <Styles.MenuDropDown>
 
                                 <Styles.DropDownItem onClick={activeButtonM ? toggleStatebutton : () => {}}>
-                                    <Link href={"/cospalyer"} passHref>
+                                    <Link href={"/cosplayers"} passHref>
                                         <Styles.MenuLink>Cosplayer</Styles.MenuLink>
                                     </Link>
                                 </Styles.DropDownItem>
 
                                 <Styles.DropDownItem onClick={activeButtonM ? toggleStatebutton : () => {}}>
-                                    <Link href={"/acessoriosGeek"} passHref>
+                                    <Link href={"/acessoriosgeeks"} passHref>
                                         <Styles.MenuLink>Acessórios</Styles.MenuLink>
                                     </Link>
                                 </Styles.DropDownItem>
 
                                 <Styles.DropDownItem onClick={activeButtonM ? toggleStatebutton : () => {}}>
-                                    <Link href={"/Mangas"} passHref>
+                                    <Link href={"/mangas"} passHref>
                                         <Styles.MenuLink>Mangás</Styles.MenuLink>
                                     </Link>
                                 </Styles.DropDownItem>
