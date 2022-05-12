@@ -29,6 +29,10 @@ Styles.MenuLink = styled.a`
         height: 2px;
         border-radius: 1px;
         background-color: #000;
+
+        @media (max-width:730px){
+            background-color: #fff;
+        } 
     }
 
     &:hover::after {
