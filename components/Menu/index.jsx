@@ -1,5 +1,7 @@
-import Styles, {DropDownHover}  from "./menu.style"
+import Styles  from "./menu.style";
 import Link from "next/link";
+import MenuLink from "../MenuLink";
+import MenuDropDown from "../MenuDropdown";
 
 const Menu = ({activeButtonM, toggleStatebutton}) => {
     return (
@@ -8,52 +10,29 @@ const Menu = ({activeButtonM, toggleStatebutton}) => {
 
                 <Styles.MenuItem onClick={activeButtonM ? toggleStatebutton : () => {}}>  
                     <Link href={"/"} passHref>
-                        <Styles.MenuLink>Inicio</Styles.MenuLink>
+                        <MenuLink>Inicio</MenuLink>
                     </Link>
                 </Styles.MenuItem>
 
                 <Styles.MenuItem onClick={activeButtonM ? toggleStatebutton : () => {}}>
                     <Link href={"/acessorios"} passHref>
-                        <Styles.MenuLink>Acessórios</Styles.MenuLink>
+                        <MenuLink>Acessórios</MenuLink>
                     </Link>
                 </Styles.MenuItem>
 
                 <Styles.MenuItem onClick={activeButtonM ? toggleStatebutton : () => {}}>
                     <Link href={"/roupas"} passHref>
-                        <Styles.MenuLink>Roupas</Styles.MenuLink>
+                        <MenuLink>Roupas</MenuLink>
                     </Link>
                 </Styles.MenuItem>
 
                 <Styles.MenuItem>
-                    <DropDownHover active={activeButtonM}>
-                        <Styles.DropDownText>Geek</Styles.DropDownText>
-                            <Styles.MenuDropDown>
-
-                                <Styles.DropDownItem onClick={activeButtonM ? toggleStatebutton : () => {}}>
-                                    <Link href={"/cosplayers"} passHref>
-                                        <Styles.MenuLink>Cosplayer</Styles.MenuLink>
-                                    </Link>
-                                </Styles.DropDownItem>
-
-                                <Styles.DropDownItem onClick={activeButtonM ? toggleStatebutton : () => {}}>
-                                    <Link href={"/acessoriosgeeks"} passHref>
-                                        <Styles.MenuLink>Acessórios</Styles.MenuLink>
-                                    </Link>
-                                </Styles.DropDownItem>
-
-                                <Styles.DropDownItem onClick={activeButtonM ? toggleStatebutton : () => {}}>
-                                    <Link href={"/mangas"} passHref>
-                                        <Styles.MenuLink>Mangás</Styles.MenuLink>
-                                    </Link>
-                                </Styles.DropDownItem>
-
-                            </Styles.MenuDropDown>
-                        </DropDownHover>
+                    <MenuDropDown activeButtonM={activeButtonM} toggleStatebutton={toggleStatebutton}/>
                 </Styles.MenuItem>
 
                 <Styles.MenuItem onClick={activeButtonM ? toggleStatebutton : () => {}}>
                     <Link href={"/tattoos"} passHref>
-                        <Styles.MenuLink>Tattoos</Styles.MenuLink>
+                        <MenuLink>Tattoos</MenuLink>
                     </Link>
                 </Styles.MenuItem>
 
