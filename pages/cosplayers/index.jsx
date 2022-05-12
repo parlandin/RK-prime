@@ -1,4 +1,4 @@
-import Styles from "./cosplayers.style";
+import Styles from "../../styles/ComingSon.style";
 
 
 const Cosplayers = () => {

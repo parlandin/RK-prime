@@ -1,4 +1,4 @@
-import Styles from "./mangas.style";
+import Styles from "../../styles/ComingSon.style";
 
 
 const Mangas = () => {
