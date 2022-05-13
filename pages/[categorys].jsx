@@ -84,7 +84,8 @@ const Category = (props) => {
                                     desc={product.descricao}
                                     price={product.preco}
                                     id={product._id}
-                                    customClass="mobile-direct"/>
+                                    customClass="mobile-direct"
+                                    rating={product.nota}/>
                                     
                                 </Styles.WrapperGeneric>
                                 )

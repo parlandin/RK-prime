@@ -29,8 +29,11 @@ const GalleryCarousel = ({arrayImages, description}) => {
             <Styles.WrapperFeatured >
                 {arrayImages.map((image, index) => {
                     return (
-                        <Styles.CurrentImage className={index == currentSlide ? "CurrentImage-active" : ""} key={index}>
-                            {index == currentSlide && <Image src={image} width="340" height="340" layout="responsive"  alt={description} />}
+                        <Styles.CurrentImage 
+                           className={index == currentSlide ? "CurrentImage-active" : ""} 
+                           key={index}>
+                            {index == currentSlide && 
+                                <Image src={image} width="332" height="332" layout="responsive"  alt={description}/>}
                         </Styles.CurrentImage>
                     )
                 })}

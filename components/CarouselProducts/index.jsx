@@ -82,7 +82,8 @@ const CarouselProducts = ({arrayProducts, categorys}) => {
                                     title={product.nome}  
                                     price={product.preco}
                                     id={product._id}
-                                    desc={product.descricao}/>
+                                    desc={product.descricao}
+                                    rating={product.nota}/>
                             </Styles.WrapperCard>
                         </SwiperSlide>
                     )
