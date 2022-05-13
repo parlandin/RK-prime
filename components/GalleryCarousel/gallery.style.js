@@ -20,6 +20,8 @@ Styles.WrapperFeatured = styled.div`
     overflow: hidden;
     display: flex;
     border-bottom: 1px solid #7774748a;
+    justify-content: center;
+    align-items: center;
 
     @media (max-width: 360px) {
         min-height: 300px;
