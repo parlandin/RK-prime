@@ -5,7 +5,7 @@ const Styles = {}
 const Arrow = css`
     content: '';
     top: 9px;
-    left: 89%;
+    left: 77%;
     position: absolute;
     border-left: 6px solid transparent;
     border-right: 6px solid transparent;
@@ -18,7 +18,7 @@ Styles.DropDownHover = styled.button`
     cursor: pointer;
     border: none;
     background-color: transparent;
-    padding-right: 5px;
+    padding-right: 15px;
 
     &::after {
         ${Arrow}
