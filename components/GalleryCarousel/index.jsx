@@ -61,9 +61,9 @@ const GalleryCarousel = ({arrayImages, description}) => {
                         key={index} 
                         className={index == currentSlide ? "selected" : ""}
                         onMouseEnter={() => selectCurrent(index) }>
-                            <Styles.DivImage>
-                                <Image src={image} alt={description} width="60" height="60" layout="responsive" />
-                            </Styles.DivImage>
+                            
+                        <Image src={image} alt={description} width="60" height="60" />
+                            
                         </Styles.OptionImage>
                     )
                 })}
