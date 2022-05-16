@@ -24,6 +24,9 @@ const DetailsProduct = ({title, price, max, description, id, image}) => {
         setShopCart(getCartItens())
     },[])
 
+    useEffect(() => {
+        setAmount(1)
+    }, [id])
 
     function setAmountProduct(id,operation){
         if(operation === "plus"){
