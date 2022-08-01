@@ -20,7 +20,7 @@
     "swiper": "^8.1.1"
   },
   "devDependencies": {
-    "eslint": "8.13.0",
+    "eslint": "8.21.0",
     "eslint-config-next": "12.1.5"
   }
 }
