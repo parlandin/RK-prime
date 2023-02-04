@@ -46,7 +46,7 @@ const Produtos = (props) => {
 
   const { data, isLoading } = useQuery(
     `${id}`,
-    async () => await (await fetch(`${HOST}{/produtos/${id}`)).json(),
+    async () => await (await fetch(`${HOST}/produtos/${id}`)).json(),
     { initialData: props.dehydratedState, staleTime: 50000 }
   );
 
